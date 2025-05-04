@@ -121,6 +121,10 @@ return {
                     require('luasnip').lsp_expand(args.body)
                 end,
             },
+            preselect = cmp.PreselectMode.Item,
+            completion = {
+                completeopt = 'menu,menuone,noinsert',
+            },
             mapping = cmp.mapping.preset.insert({
                 ['<CR>'] = cmp.mapping.confirm({ select = true }),
                 ["<C-Space>"] = cmp.mapping.complete(),
@@ -128,17 +132,17 @@ return {
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' },
-                { name = 'path' },  -- File paths
-                { name = 'calc' },  -- Calculations
+                { name = 'path' },
+                { name = 'calc' },
             }, {
                 { name = 'buffer' },
             }),
             window = {
                 completion = {
-                    border = "rounded",  -- Rounded corners
+                    border = "rounded",
                 },
                 documentation = {
-                    border = "rounded",  -- Rounded corners for docs
+                    border = "rounded",
                 },
             },
         })
