@@ -50,14 +50,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
             defaults = {
                 path_display = { "smart" },
-                layout_config = {
-                    horizontal = {
-                        prompt_position = "top",
-                        preview_width = 0.55,
-                    },
-                    width = 0.87,
-                    height = 0.80,
-                },
                 -- mappings = {
                 --   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
                 -- },
