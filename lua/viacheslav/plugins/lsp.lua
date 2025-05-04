@@ -21,10 +21,8 @@ return {
             cmp_lsp.default_capabilities()
         )
 
-        -- Fidget (LSP Progress Indicator)
         require("fidget").setup()
 
-        -- Mason (Install LSP servers automatically)
         require("mason").setup({
             ui = {
 				icons = {
@@ -33,6 +31,20 @@ return {
 					package_uninstalled = "✗",
 				},
 			},
+        })
+        require("mason-tool-installer").setup({
+            ensure_installed = {
+                "prettier", -- prettier formatter
+                "stylua", -- lua formatter
+                "isort", -- python formatter
+                "black", -- python formatter
+                "pylint",
+                "eslint_d",
+                "markdownlint"
+            },
+            auto_update = true,
+            run_on_start = true,
+            run_on_write = true,
         })
 
 		vim.api.nvim_create_autocmd("LspAttach", {
@@ -60,13 +72,11 @@ return {
                 "pyright",
             },
             handlers = {
-                -- General handler for all LSP servers
                 function(server_name)
                     require("lspconfig")[server_name].setup({
                         capabilities = capabilities,
                     })
                 end,
-                -- Custom handler for specific servers (like lua_ls and pyright)
                 ["lua_ls"] = function()
                     require("lspconfig").lua_ls.setup({
                         capabilities = capabilities,
@@ -82,7 +92,6 @@ return {
                 ["pyright"] = function()
                     local lspconfig = require("lspconfig")
                     local util = require("lspconfig/util")
-
                     lspconfig.pyright.setup({
                         capabilities = capabilities,
                         settings = {
@@ -115,22 +124,6 @@ return {
             },
         })
 
-        require("mason-tool-installer").setup({
-            ensure_installed = {
-                "prettier", -- prettier formatter
-				"stylua", -- lua formatter
-				"isort", -- python formatter
-				"black", -- python formatter
-				"pylint",
-				"eslint_d",
-                "markdownlint"
-            },
-            auto_update = true,
-            run_on_start = true,
-            run_on_write = true,
-        })
-
-        -- Configure nvim-cmp
         cmp.setup({
             snippet = {
                 expand = function(args)
@@ -159,13 +152,11 @@ return {
             },
         })
 
-        -- Diagnostic configuration
         vim.diagnostic.config({
             virtual_text = { severity = vim.diagnostic.severity.ERROR },
             update_in_insert = true,
             float = { source = "always" },
         })
-
     end,
 }
 
