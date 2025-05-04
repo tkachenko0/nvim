@@ -38,7 +38,7 @@ return {
 			javascriptreact = eslint_linters,
 			typescriptreact = eslint_linters,
 			svelte = eslint_linters,
-			python = { "pylint" },
+			-- python = { "pylint" },
 			markdown = { "markdownlint" },
 		}
 
