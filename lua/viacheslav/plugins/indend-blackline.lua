@@ -1,15 +1,13 @@
 return {
-  "lukas-reineke/indent-blankline.nvim",
-  main = "ibl",
-  opts = {
-    indent = { char = "·" }, -- Or use "│" or other
-    whitespace = {
-      remove_blankline_trail = false
-    },
+	"lukas-reineke/indent-blankline.nvim",
+	event = { "BufReadPre", "BufNewFile" },
+	main = "ibl",
+	opts = {
+		indent = { char = "┊" },
     scope = {
       enabled = true, -- turn on to show scope guides
     },
-  }
+	},
 }
 
 
