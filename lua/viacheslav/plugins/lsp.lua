@@ -12,7 +12,6 @@ return {
     },
 
     config = function()
-        local cmp = require('cmp')
         local cmp_lsp = require("cmp_nvim_lsp")
         local capabilities = vim.tbl_deep_extend(
             "force",
@@ -22,16 +21,7 @@ return {
         )
 
         require("fidget").setup()
-
-        require("mason").setup({
-            ui = {
-				icons = {
-					package_installed = "✓",
-					package_pending = "➜",
-					package_uninstalled = "✗",
-				},
-			},
-        })
+        require("mason").setup()
         require("mason-tool-installer").setup({
             ensure_installed = {
                 "prettier", -- prettier formatter
@@ -124,6 +114,7 @@ return {
             },
         })
 
+        local cmp = require('cmp')
         cmp.setup({
             snippet = {
                 expand = function(args)
