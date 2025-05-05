@@ -8,7 +8,8 @@ return {
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
         "j-hui/fidget.nvim",
-        "WhoIsSethDaniel/mason-tool-installer.nvim"
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        "b0o/schemastore.nvim",
     },
 
     config = function()
@@ -31,7 +32,6 @@ return {
                 "pylint",
                 "eslint_d",
                 "markdownlint",
-                "jsonlint",
             },
             auto_update = true,
             run_on_start = true,
@@ -61,6 +61,7 @@ return {
                 "html",
                 "angularls",
                 "pyright",
+                "jsonls",
             },
             handlers = {
                 function(server_name)
@@ -110,6 +111,17 @@ return {
                                 print("Pyright using: " .. venv .. "/bin/python")
                             end
                         end,
+                    })
+                end,
+                ["jsonls"] = function()
+                    require("lspconfig").jsonls.setup({
+                        capabilities = capabilities,
+                        settings = {
+                            json = {
+                                schemas = require("schemastore").json.schemas(),
+                                validate = { enable = true },
+                            },
+                        },
                     })
                 end,
             },

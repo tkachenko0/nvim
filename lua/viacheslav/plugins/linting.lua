@@ -40,7 +40,6 @@ return {
 			svelte = eslint_linters,
 			-- python = { "pylint" },
 			markdown = { "markdownlint" },
-			json = { "jsonlint" },
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
