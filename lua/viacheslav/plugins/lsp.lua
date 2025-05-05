@@ -30,7 +30,8 @@ return {
                 "black", -- python formatter
                 "pylint",
                 "eslint_d",
-                "markdownlint"
+                "markdownlint",
+                "jsonlint",
             },
             auto_update = true,
             run_on_start = true,
