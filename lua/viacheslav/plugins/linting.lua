@@ -15,6 +15,7 @@ return {
 				".eslintrc.yml",
 				"eslint.config.js",
 				"eslint.config.cjs",
+				"eslint.config.mjs",
 			}
 
 			local cwd = vim.fn.getcwd()
