@@ -9,45 +9,32 @@ return {
                 sort_by = "case_sensitive",
                 view = {
                     width = 35,
-                    side = "left",
+                    side = "right",
+                    adaptive_size = true,
                     preserve_window_proportions = true,
                     number = false,
                     relativenumber = false,
                     signcolumn = "yes",
-                    adaptive_size = true,
                 },
                 renderer = {
                     group_empty = true,
+                    root_folder_label = false,
                     highlight_git = true,
-                    highlight_opened_files = "name",
-                    root_folder_label = ":~:s?$?/..?",
                     indent_markers = {
                         enable = true,
                     },
                     icons = {
-                        glyphs = {
-                            default = "",
-                            symlink = "",
-                            folder = {
-                                arrow_closed = "",
-                                arrow_open = "",
-                                default = "",
-                                open = "",
-                                empty = "",
-                                empty_open = "",
-                                symlink = "",
-                                symlink_open = "",
-                            },
-                            git = {
-                                unstaged = "✗",
-                                staged = "✓",
-                                unmerged = "",
-                                renamed = "➜",
-                                untracked = "★",
-                                deleted = "",
-                                ignored = "◌",
-                            },
+                      glyphs = {
+                        default = "󰈚",
+                        folder = {
+                          default = "",
+                          empty = "",
+                          empty_open = "",
+                          open = "",
+                          symlink = "",
                         },
+                        git = { unmerged = "" },
+                      },
                     },
                 },
                 filters = {
