@@ -16,6 +16,8 @@ return {
                 "html",
                 "json",
                 "yaml",
+                "markdown",
+                "markdown_inline",
                 "css",
             },
             sync_install = false,
@@ -27,6 +29,7 @@ return {
                 enable = true,
                 additional_vim_regex_highlighting = { "markdown" },
             },
+            fold = { enable = true }
         })
         local treesitter_parser_config = require("nvim-treesitter.parsers").get_parser_configs()
         treesitter_parser_config.templ = {
@@ -37,5 +40,6 @@ return {
             },
         }
         vim.treesitter.language.register("templ", "templ")
+
     end
 }
