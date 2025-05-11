@@ -62,6 +62,9 @@ return {
                 "angularls",
                 "pyright",
                 "jsonls",
+                "dockerls",
+                "docker_compose_language_service",
+                "yamlls"
             },
             handlers = {
                 function(server_name)
@@ -120,6 +123,37 @@ return {
                             json = {
                                 schemas = require("schemastore").json.schemas(),
                                 validate = { enable = true },
+                            },
+                        },
+                    })
+                end,
+                ["yamlls"] = function()
+                        require("lspconfig").yamlls.setup({
+                            capabilities = capabilities,
+                        settings = {
+                            yaml = {
+                                validate = true,
+                                hover = true,
+                                completion = true,
+                                schemas = require("schemastore").yaml.schemas(), -- use schemastore to get common schemas
+                                schemaStore = {
+                                    enable = false, -- disable built-in so schemastore.nvim takes over
+                                },
+                                format = {
+                                    enable = true,
+                                },
+                            },
+                        },
+                    })
+                end,
+                ["docker_compose_language_service"] = function()
+                    require("lspconfig").docker_compose_language_service.setup({
+                        capabilities = capabilities,
+                        filetypes = { "yaml" },
+                        root_dir = require("lspconfig.util").root_pattern("docker-compose.yaml", "docker-compose.yml", "compose.yaml", "compose.yml", ".git"),
+                        settings = {
+                            dockerCompose = {
+                                enable = true,
                             },
                         },
                     })
