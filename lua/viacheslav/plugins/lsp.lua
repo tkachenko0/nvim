@@ -198,7 +198,7 @@ return {
         vim.diagnostic.config({
             virtual_text = { severity = vim.diagnostic.severity.ERROR },
             update_in_insert = true,
-            float = { source = "always" },
+            float = { source = "always", border = "rounded" },
             signs = {
                 text = {
                     [vim.diagnostic.severity.ERROR] = "",
