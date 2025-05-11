@@ -9,7 +9,7 @@ return {
                 sort_by = "case_sensitive",
                 view = {
                     width = 35,
-                    side = "right",
+                    side = "left",
                     adaptive_size = true,
                     preserve_window_proportions = true,
                     number = false,
