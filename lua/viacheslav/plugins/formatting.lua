@@ -19,7 +19,7 @@ return { -- Autoformat
             -- have a well standardized coding style. You can add additional
             -- languages here or re-enable it for the disabled ones.
             print("Running format_on_save for", vim.bo[bufnr].filetype)
-            local disable_filetypes = { c = true, cpp = true }
+            local disable_filetypes = {}
             if disable_filetypes[vim.bo[bufnr].filetype] then
                 return nil
             else
