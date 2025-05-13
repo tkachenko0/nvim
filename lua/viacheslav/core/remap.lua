@@ -28,5 +28,5 @@ vim.keymap.set("n", "gg", "gg0")
 vim.keymap.set("n", "G", "G$")
 vim.keymap.set("v", "G", "G$")
 
-vim.api.nvim_set_keymap('n', '<Tab>', ':bnext<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<S-Tab>', ':bprevious<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<Tab>', '<C-6>', { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>q", ":bd<CR>", { desc = "Close buffer" })
