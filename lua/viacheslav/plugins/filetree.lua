@@ -5,6 +5,21 @@ return {
             "nvim-tree/nvim-web-devicons",
         },
         config = function()
+            local function on_attach(bufnr)
+                local api = require("nvim-tree.api")
+
+                local opts = function(desc)
+                    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+                end
+
+                -- Default mappings
+                api.config.mappings.default_on_attach(bufnr)
+
+                -- Custom mappings
+                vim.keymap.set("n", "<Right>", api.node.open.edit, opts("Open Node"))
+                vim.keymap.set("n", "<Left>", api.node.navigate.parent_close, opts("Close Parent Node"))
+            end
+
             require("nvim-tree").setup({
                 sort_by = "case_sensitive",
                 view = {
@@ -24,17 +39,17 @@ return {
                         enable = true,
                     },
                     icons = {
-                      glyphs = {
-                        default = "󰈚",
-                        folder = {
-                          default = "",
-                          empty = "",
-                          empty_open = "",
-                          open = "",
-                          symlink = "",
+                        glyphs = {
+                            default = "󰈚",
+                            folder = {
+                                default = "",
+                                empty = "",
+                                empty_open = "",
+                                open = "",
+                                symlink = "",
+                            },
+                            git = { unmerged = "" },
                         },
-                        git = { unmerged = "" },
-                      },
                     },
                 },
                 filters = {
@@ -64,6 +79,7 @@ return {
                     enable = true,
                     update_cwd = true,
                 },
+                on_attach = on_attach, -- ← important line
             })
         end,
     },
