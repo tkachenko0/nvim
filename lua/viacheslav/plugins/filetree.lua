@@ -34,6 +34,13 @@ return {
           { source = "git_status", display_name = "󰊢 Git" },
         },
       },
+       default_component_configs = {
+        git_status = {
+          symbols = {
+            ignored   = "◌",
+          },
+        },
+      },
       window = {
         position = "left",
         mappings = {
