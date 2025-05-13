@@ -22,8 +22,6 @@ return {
   cmd = "Neotree",
   keys = {
     { "<leader>e", "<cmd>Neotree filesystem reveal toggle<CR>", desc = "Toggle Filesystem Tree" },
-    { "<leader>b", "<cmd>Neotree buffers reveal toggle right<CR>", desc = "Toggle Buffers Tree" },
-    { "<leader>gs", "<cmd>Neotree git_status reveal toggle left<CR>", desc = "Toggle Git Status View" },
   },
   config = function()
     require("neo-tree").setup({
