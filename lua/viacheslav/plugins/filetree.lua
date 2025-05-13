@@ -73,7 +73,7 @@ return {
       },
       git_status = {
         follow_current_file = {
-          enabled = true,
+          enabled = false,
         },
         window = {
           mappings = {
