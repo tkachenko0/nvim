@@ -1,16 +1,3 @@
-local current_source_index = 1
-local sources = { "filesystem", "buffers", "git_status" }
-
-local function cycle_neo_tree_source(state)
-  current_source_index = current_source_index % #sources + 1
-  local source = sources[current_source_index]
-  require("neo-tree.command").execute({
-    source = source,
-    toggle = false,
-    reveal = true,
-  })
-end
-
 return {
   "nvim-neo-tree/neo-tree.nvim",
   branch = "v3.x",
@@ -25,6 +12,7 @@ return {
   },
   config = function()
     require("neo-tree").setup({
+      close_if_last_window = false,
       sources = { "filesystem", "buffers", "git_status" },
       source_selector = {
         winbar = true,
@@ -47,7 +35,7 @@ return {
           ["<cr>"] = "open",
           ["<Right>"] = "open",
           ["<Left>"] = "close_node",
-          ["<Tab>"] = cycle_neo_tree_source,
+          ["<Tab>"] = "next_source",
           ["P"] = {
             "toggle_preview",
             config = {
