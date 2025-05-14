@@ -16,6 +16,7 @@ return {
       sources = { "filesystem", "buffers", "git_status" },
       source_selector = {
         winbar = true,
+        tabs_layout = "stacked",
         sources = {
           { source = "filesystem", display_name = "󰉓 Files" },
           { source = "buffers",    display_name = "󰈚 Buffers" },
