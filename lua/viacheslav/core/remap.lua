@@ -22,7 +22,7 @@ vim.keymap.set("n", "x", '"_x', { silent = true })
 vim.keymap.set("n", "d", '"_d', { silent = true })
 vim.keymap.set("n", "c", '"_c', { silent = true })
 vim.keymap.set("n", "s", '"_s', { silent = true })
-vim.keymap.set("v", "s", '"_s', { silent = true })
+-- vim.keymap.set("v", "s", '"_s', { silent = true })
 
 vim.keymap.set("n", "gg", "gg0")
 vim.keymap.set("n", "G", "G$")
