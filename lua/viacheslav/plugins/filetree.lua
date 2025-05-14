@@ -67,6 +67,8 @@ return {
       filesystem = {
         follow_current_file = {
           enabled = true,
+          leave_dirs_open = true,
+          -- auto_expand_directories = false,
         },
         filtered_items = {
           visible = true,
