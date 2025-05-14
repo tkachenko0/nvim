@@ -30,3 +30,5 @@ vim.keymap.set("v", "G", "G$")
 
 vim.keymap.set('n', '<Tab>', '<C-6>', { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>q", ":bd<CR>", { desc = "Close buffer" })
+
+vim.keymap.set("n", "Q", ":qa<CR>", { desc = "Quit all" })
