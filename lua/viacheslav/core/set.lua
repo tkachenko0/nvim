@@ -29,3 +29,18 @@ vim.opt.clipboard:append("unnamedplus") -- use system clipboard as default regis
 
 -- end of buffer characters
 vim.opt.fillchars:append { eob = " " }
+
+vim.diagnostic.config({
+    virtual_text = { severity = vim.diagnostic.severity.ERROR },
+    update_in_insert = true,
+    float = { source = "always", border = "rounded" },
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = "",
+            [vim.diagnostic.severity.WARN] = "",
+            [vim.diagnostic.severity.INFO] = "",
+            [vim.diagnostic.severity.HINT] = "󰠠",
+        },
+    },
+})
+
