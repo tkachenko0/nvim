@@ -14,6 +14,22 @@ return {
         end,
     },
     {
+        'folke/todo-comments.nvim',
+        event = 'VimEnter',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+        opts = { signs = false },
+    },
+    {
+    "norcalli/nvim-colorizer.lua",  -- Colorizer plugin
+    config = function()
+        require("colorizer").setup({
+            "*",  -- Apply to all filetypes
+            css = { rgb_fn = true },  -- Support RGB functions in CSS
+            html = { names = true },  -- Support color names in HTML
+        })
+    end
+    },
+    {
     "laytan/cloak.nvim",
     config = function()
         require("cloak").setup({
@@ -32,5 +48,10 @@ return {
             },
         })
     end
-}
+},
+      {
+    -- Detect tabstop and shiftwidth automatically
+    'tpope/vim-sleuth',
+  },
+
 }
