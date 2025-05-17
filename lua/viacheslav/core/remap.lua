@@ -42,4 +42,3 @@ vim.keymap.set("n", "Q", ":qa<CR>", { desc = "Quit all" })
 -- Stay in indent mode
 vim.keymap.set('v', '<', '<gv', opts)
 vim.keymap.set('v', '>', '>gv', opts)
-
