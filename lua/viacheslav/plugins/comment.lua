@@ -6,4 +6,3 @@ return {
     vim.keymap.set('n', '<C-/>', require('Comment.api').toggle.linewise.current, opts)
   end,
 }
-

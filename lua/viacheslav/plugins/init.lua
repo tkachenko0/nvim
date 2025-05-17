@@ -20,38 +20,38 @@ return {
         opts = { signs = false },
     },
     {
-    "norcalli/nvim-colorizer.lua",  -- Colorizer plugin
-    config = function()
-        require("colorizer").setup({
-            "*",  -- Apply to all filetypes
-            css = { rgb_fn = true },  -- Support RGB functions in CSS
-            html = { names = true },  -- Support color names in HTML
-        })
-    end
+        "norcalli/nvim-colorizer.lua", -- Colorizer plugin
+        config = function()
+            require("colorizer").setup({
+                "*",                 -- Apply to all filetypes
+                css = { rgb_fn = true }, -- Support RGB functions in CSS
+                html = { names = true }, -- Support color names in HTML
+            })
+        end
     },
     {
-    "laytan/cloak.nvim",
-    config = function()
-        require("cloak").setup({
-            enabled = true,
-            cloak_character = "*",
-            highlight_group = "Comment",
-            patterns = {
-                {
-                    file_pattern = {
-                        ".env*",
-                        "wrangler.toml",
-                        ".dev.vars",
+        "laytan/cloak.nvim",
+        config = function()
+            require("cloak").setup({
+                enabled = true,
+                cloak_character = "*",
+                highlight_group = "Comment",
+                patterns = {
+                    {
+                        file_pattern = {
+                            ".env*",
+                            "wrangler.toml",
+                            ".dev.vars",
+                        },
+                        cloak_pattern = "=.+"
                     },
-                    cloak_pattern = "=.+"
                 },
-            },
-        })
-    end
-},
-      {
-    -- Detect tabstop and shiftwidth automatically
-    'tpope/vim-sleuth',
-  },
+            })
+        end
+    },
+    {
+        -- Detect tabstop and shiftwidth automatically
+        'tpope/vim-sleuth',
+    },
 
 }

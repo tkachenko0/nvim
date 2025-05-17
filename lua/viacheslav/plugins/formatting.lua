@@ -43,9 +43,8 @@ return { -- Autoformat
             markdown = { "prettier" },
             graphql = { "prettier" },
             liquid = { "prettier" },
-            lua = { "stylua" },
+            lua = {},
             python = { "isort", "black" },
         },
     },
 }
-

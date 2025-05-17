@@ -26,9 +26,9 @@ return {
         require("mason-tool-installer").setup({
             ensure_installed = {
                 "prettier", -- prettier formatter
-                "stylua", -- lua formatter
-                "isort", -- python formatter
-                "black", -- python formatter
+                "stylua",   -- lua formatter
+                "isort",    -- python formatter
+                "black",    -- python formatter
                 "pylint",
                 "eslint_d",
                 "markdownlint",
@@ -38,9 +38,9 @@ return {
             run_on_write = true,
         })
 
-		vim.api.nvim_create_autocmd("LspAttach", {
-			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-			callback = function(e)
+        vim.api.nvim_create_autocmd("LspAttach", {
+            group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+            callback = function(e)
                 local opts = { buffer = e.buf }
                 vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
                 vim.keymap.set("n", "K", function() vim.lsp.buf.hover { border = "single" } end, opts)
@@ -49,8 +49,8 @@ return {
                 vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
                 vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
                 vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-			end,
-		})
+            end,
+        })
 
         require("mason-lspconfig").setup({
             ensure_installed = {
@@ -128,8 +128,8 @@ return {
                     })
                 end,
                 ["yamlls"] = function()
-                        require("lspconfig").yamlls.setup({
-                            capabilities = capabilities,
+                    require("lspconfig").yamlls.setup({
+                        capabilities = capabilities,
                         settings = {
                             yaml = {
                                 validate = true,
@@ -137,7 +137,7 @@ return {
                                 completion = true,
                                 schemas = require("schemastore").yaml.schemas(), -- use schemastore to get common schemas
                                 schemaStore = {
-                                    enable = false, -- disable built-in so schemastore.nvim takes over
+                                    enable = false,                              -- disable built-in so schemastore.nvim takes over
                                 },
                                 format = {
                                     enable = true,
@@ -150,7 +150,8 @@ return {
                     require("lspconfig").docker_compose_language_service.setup({
                         capabilities = capabilities,
                         filetypes = { "yaml" },
-                        root_dir = require("lspconfig.util").root_pattern("docker-compose.yaml", "docker-compose.yml", "compose.yaml", "compose.yml", ".git"),
+                        root_dir = require("lspconfig.util").root_pattern("docker-compose.yaml", "docker-compose.yml",
+                            "compose.yaml", "compose.yml", ".git"),
                         settings = {
                             dockerCompose = {
                                 enable = true,

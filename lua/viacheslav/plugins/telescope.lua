@@ -92,7 +92,8 @@ return { -- Fuzzy Finder (files, lsp, etc)
             }
         end, { desc = '[S]earch by [G]rep (match case)' })
         vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-        vim.keymap.set('n', '<leader>/', function() builtin.current_buffer_fuzzy_find() end, { desc = '[/] Fuzzily search in current buffer' })
+        vim.keymap.set('n', '<leader>/', function() builtin.current_buffer_fuzzy_find() end,
+            { desc = '[/] Fuzzily search in current buffer' })
         -- vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
-end,
+    end,
 }

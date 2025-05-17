@@ -10,7 +10,7 @@ return {
 			ignore_whitespace = false,
 			virt_text_priority = 100,
 			use_focus = true,
-		  },
+		},
 		preview_config = {
 			-- Options passed to nvim_open_win
 			border = "rounded",
@@ -18,7 +18,7 @@ return {
 			relative = 'cursor',
 			row = 0,
 			col = 1
-		  },
+		},
 		on_attach = function(bufnr)
 			local gs = package.loaded.gitsigns
 			local function map(mode, l, r, desc)
@@ -50,4 +50,3 @@ return {
 		end,
 	},
 }
-

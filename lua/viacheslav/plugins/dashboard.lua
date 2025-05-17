@@ -7,9 +7,9 @@ return {
       config = {
         project = { enable = false },
         header = {
-  "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
-  "⠀⠀⠀⠀⠀⠀¯\\_(ツ)_/¯⠀⠀⠀⠀⠀⠀",
-},
+          "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+          "⠀⠀⠀⠀⠀⠀¯\\_(ツ)_/¯⠀⠀⠀⠀⠀⠀",
+        },
 
         footer = {},
         shortcut = {},
@@ -22,4 +22,3 @@ return {
   end,
   dependencies = { { 'nvim-tree/nvim-web-devicons' } }
 }
-

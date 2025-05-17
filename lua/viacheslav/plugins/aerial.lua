@@ -6,8 +6,8 @@ return {
   },
   keys = {
     { "<leader>a", "<cmd>AerialToggle!<CR>", desc = "Toggle Aerial outline" },
-    { "{", "<cmd>AerialPrev<CR>", desc = "Aerial: Previous symbol" },
-    { "}", "<cmd>AerialNext<CR>", desc = "Aerial: Next symbol" },
+    { "{",         "<cmd>AerialPrev<CR>",    desc = "Aerial: Previous symbol" },
+    { "}",         "<cmd>AerialNext<CR>",    desc = "Aerial: Next symbol" },
   },
   opts = {
     on_attach = function(bufnr)
@@ -44,4 +44,3 @@ return {
     highlight_on_jump = 300,
   },
 }
-

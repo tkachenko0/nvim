@@ -2,9 +2,9 @@ return {
   "nvim-neo-tree/neo-tree.nvim",
   branch = "v3.x",
   dependencies = {
-    "nvim-lua/plenary.nvim",           -- Required for neo-tree
-    "nvim-tree/nvim-web-devicons",     -- Optional, but provides file icons
-    "MunifTanjim/nui.nvim",            -- Required for neo-tree UI
+    "nvim-lua/plenary.nvim",       -- Required for neo-tree
+    "nvim-tree/nvim-web-devicons", -- Optional, but provides file icons
+    "MunifTanjim/nui.nvim",        -- Required for neo-tree UI
   },
   cmd = "Neotree",
   keys = {
@@ -19,14 +19,14 @@ return {
         tabs_layout = "stacked",
         sources = {
           { source = "filesystem", display_name = "󰉓 Files" },
-          { source = "buffers",    display_name = "󰈚 Buffers" },
+          { source = "buffers", display_name = "󰈚 Buffers" },
           { source = "git_status", display_name = "󰊢 Git" },
         },
       },
-       default_component_configs = {
+      default_component_configs = {
         git_status = {
           symbols = {
-            ignored   = "◌",
+            ignored = "◌",
           },
         },
       },
@@ -79,4 +79,3 @@ return {
     })
   end,
 }
-
