@@ -1,6 +1,6 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
-
+vim.o.mouse = 'a' -- Enable mouse mode (default: '')
 vim.opt.cursorline = true
 
 vim.opt.tabstop = 4        -- A tab character is displayed as 4 spaces wide
