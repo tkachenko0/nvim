@@ -38,6 +38,8 @@ vim.keymap.set("v", "G", "G$")
 vim.keymap.set('n', '<Tab>', '<C-6>', { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>x", ":bd<CR>", { desc = "Close buffer" })
 vim.keymap.set("n", "Q", ":qa<CR>", { desc = "Quit all" })
+vim.keymap.set('n', '<A-Left>', '<C-o>', { noremap = true, silent = true })
+vim.keymap.set('n', '<A-Right>', '<C-i>', { noremap = true, silent = true })
 
 -- Stay in indent mode
 vim.keymap.set('v', '<', '<gv', opts)
