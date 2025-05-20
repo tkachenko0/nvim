@@ -16,6 +16,7 @@ vim.filetype.add({
     }
 })
 
+-- Highlight on yank
 autocmd('TextYankPost', {
     group = yank_group,
     pattern = '*',
@@ -24,5 +25,12 @@ autocmd('TextYankPost', {
             higroup = 'IncSearch',
             timeout = 40,
         })
+    end,
+})
+
+-- Open Neo-tree on startup
+autocmd("VimEnter", {
+    callback = function()
+        vim.cmd("Neotree filesystem reveal left")
     end,
 })
