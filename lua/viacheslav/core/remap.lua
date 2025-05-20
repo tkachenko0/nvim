@@ -3,6 +3,9 @@ vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle Fil
 
 vim.keymap.set('n', ';', ':')
 
+-- Clear highlights for search
+vim.keymap.set("n", "<esc>", "<cmd>nohlsearch<cr>", { desc = "Clear highlights" })
+
 -- Move lines up and down
 vim.keymap.set('v', '<M-Down>', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', '<M-Up>', ":m '<-2<CR>gv=gv")
