@@ -34,3 +34,10 @@ autocmd('TextYankPost', {
 --         vim.cmd("Neotree filesystem reveal left")
 --     end,
 -- })
+
+-- -- Remove trailing whitespace on save
+-- autocmd({ "BufWritePre" }, {
+--     group = ThePrimeagenGroup,
+--     pattern = "*",
+--     command = [[%s/\s\+$//e]],
+-- })
