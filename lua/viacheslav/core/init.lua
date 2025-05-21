@@ -29,8 +29,8 @@ autocmd('TextYankPost', {
 })
 
 -- Open Neo-tree on startup
-autocmd("VimEnter", {
-    callback = function()
-        vim.cmd("Neotree filesystem reveal left")
-    end,
-})
+-- autocmd("VimEnter", {
+--     callback = function()
+--         vim.cmd("Neotree filesystem reveal left")
+--     end,
+-- })
