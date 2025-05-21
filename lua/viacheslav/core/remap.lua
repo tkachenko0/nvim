@@ -28,6 +28,7 @@ vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>")
 -- to not copy when deleting
 vim.keymap.set("n", "x", '"_x', { silent = true })
 vim.keymap.set("n", "d", '"_d', { silent = true })
+vim.keymap.set("v", "d", '"_d', { silent = true })
 vim.keymap.set("n", "c", '"_c', { silent = true })
 vim.keymap.set("n", "s", '"_s', { silent = true })
 vim.keymap.set("v", "s", '"_s', { silent = true })
