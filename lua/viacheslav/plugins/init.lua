@@ -4,7 +4,6 @@ return {
         name = "plenary"
     },
     "github/copilot.vim",
-    "eandrju/cellular-automaton.nvim",
     "gpanders/editorconfig.nvim",
     {
         "windwp/nvim-autopairs",
@@ -23,7 +22,7 @@ return {
         "norcalli/nvim-colorizer.lua", -- Colorizer plugin
         config = function()
             require("colorizer").setup({
-                "*",                 -- Apply to all filetypes
+                "*",                     -- Apply to all filetypes
                 css = { rgb_fn = true }, -- Support RGB functions in CSS
                 html = { names = true }, -- Support color names in HTML
             })

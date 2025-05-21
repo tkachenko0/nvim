@@ -23,8 +23,6 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 -- Substitute
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
-vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>")
-
 -- to not copy when deleting
 vim.keymap.set("n", "x", '"_x', { silent = true })
 vim.keymap.set("n", "d", '"_d', { silent = true })
@@ -38,11 +36,14 @@ vim.keymap.set("n", "gg", "gg0")
 vim.keymap.set("n", "G", "G$")
 vim.keymap.set("v", "G", "G$")
 
+-- Stay in indent mode
+vim.keymap.set('v', '<', '<gv', opts)
+vim.keymap.set('v', '>', '>gv', opts)
+
 -- Buffers
 vim.keymap.set('n', '<Tab>', '<C-6>', { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>x", ":bd<CR>", { desc = "Close buffer" })
 vim.keymap.set("n", "Q", ":qa<CR>", { desc = "Quit all" })
-
 
 -- Cycle through normal buffers with Alt+Left and Alt+Right
 vim.keymap.set('n', '<A-Left>', function()
@@ -94,7 +95,3 @@ vim.keymap.set('n', '<A-Right>', function()
     if next_index > #bufnrs then next_index = 1 end
     vim.api.nvim_set_current_buf(bufnrs[next_index])
 end, { noremap = true, silent = true })
-
--- Stay in indent mode
-vim.keymap.set('v', '<', '<gv', opts)
-vim.keymap.set('v', '>', '>gv', opts)
