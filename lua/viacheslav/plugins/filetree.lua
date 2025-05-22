@@ -29,6 +29,9 @@ return {
             ignored = "◌",
           },
         },
+        indent = {
+          with_markers = false,
+        },
       },
       window = {
         position = "left",
