@@ -30,6 +30,7 @@ vim.keymap.set("v", "d", '"_d', { silent = true })
 vim.keymap.set("n", "c", '"_c', { silent = true })
 vim.keymap.set("n", "s", '"_s', { silent = true })
 vim.keymap.set("v", "s", '"_s', { silent = true })
+vim.keymap.set("n", "S", '"_S', { silent = true })
 
 -- Go to beginning and end of the file
 vim.keymap.set("n", "gg", "gg0")
