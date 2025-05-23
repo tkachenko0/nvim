@@ -1,13 +1,7 @@
 require("viacheslav.core.set")
 require("viacheslav.core.remap")
 
-local augroup = vim.api.nvim_create_augroup
-
-local autocmd = vim.api.nvim_create_autocmd
-local yank_group = augroup('HighlightYank', {})
-
-autocmd('TextYankPost', {
-    group = yank_group,
+vim.api.nvim_create_autocmd('TextYankPost', {
     pattern = '*',
     callback = function()
         vim.highlight.on_yank({
