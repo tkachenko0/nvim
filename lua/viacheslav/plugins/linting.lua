@@ -31,29 +31,20 @@ return {
 			return false
 		end
 
-		local eslint_linters = eslint_config_exists() and { "eslint_d" } or {}
-
 		lint.linters_by_ft = {
-			javascript = eslint_linters,
-			typescript = eslint_linters,
-			javascriptreact = eslint_linters,
-			typescriptreact = eslint_linters,
-			svelte = eslint_linters,
+			javascript = eslint_config_exists() and { "eslint_d" } or {},
+			typescript = eslint_config_exists() and { "eslint_d" } or {},
+			javascriptreact = eslint_config_exists() and { "eslint_d" } or {},
+			typescriptreact = eslint_config_exists() and { "eslint_d" } or {},
+			svelte = eslint_config_exists() and { "eslint_d" } or {},
 			-- python = { "pylint" },
 			markdown = { "markdownlint" },
 		}
 
-		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
-
 		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
-			group = lint_augroup,
 			callback = function()
 				lint.try_lint()
 			end,
 		})
-
-		vim.keymap.set("n", "<leader>l", function()
-			lint.try_lint()
-		end, { desc = "Trigger linting for current file" })
 	end,
 }
