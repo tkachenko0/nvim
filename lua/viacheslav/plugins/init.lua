@@ -7,6 +7,20 @@ return {
     "gpanders/editorconfig.nvim",
     'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
     {
+        "RRethy/vim-illuminate",
+        event = "VeryLazy",
+        config = function()
+            require('illuminate').configure({
+                providers = {
+                    'lsp',
+                    'treesitter',
+                    'regex',
+                },
+                delay = 100,
+            })
+        end,
+    },
+    {
         "mbbill/undotree",
         config = function()
             vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
