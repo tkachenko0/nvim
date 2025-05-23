@@ -7,6 +7,12 @@ return {
     "gpanders/editorconfig.nvim",
     'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
     {
+        "mbbill/undotree",
+        config = function()
+            vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+        end
+    },
+    {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
         config = function()
