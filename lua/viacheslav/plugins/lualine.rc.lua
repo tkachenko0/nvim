@@ -59,12 +59,12 @@ return {
                 disabled_filetypes = {}
             },
             sections = {
-                lualine_a = { 'mode' },
+                lualine_a = {},
                 lualine_b = { 'branch' },
                 lualine_c = { filename_config },
-                lualine_x = { diagnostics_config, 'encoding', 'filetype' },
-                lualine_y = { 'progress' },
-                lualine_z = { 'location' }
+                lualine_x = { diagnostics_config, 'filetype' },
+                lualine_y = {},
+                lualine_z = {}
             },
             inactive_sections = {
                 lualine_a = {},
@@ -73,7 +73,7 @@ return {
                     {
                         'filename',
                         file_status = true,
-                        path = 1 -- Show relative path in inactive sections
+                        path = 1
                     }
                 },
                 lualine_x = { 'location' },
