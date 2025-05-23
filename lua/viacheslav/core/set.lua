@@ -27,7 +27,7 @@ vim.opt.clipboard:append("unnamedplus")
 vim.opt.fillchars:append { eob = " " }
 
 -- Enable file system watcher
-vim.opt.updatetime = 250
+vim.opt.updatetime = 200
 
 -- Auto-reload files when changed externally
 vim.opt.autoread = true
