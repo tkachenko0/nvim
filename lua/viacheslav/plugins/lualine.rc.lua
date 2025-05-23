@@ -8,12 +8,30 @@ function _G.GitBranch()
     return ""
 end
 
+local signs = { error = ' ', warn = ' ', info = ' ', hint = ' ' }
+
+function Diagnostics()
+    local bufnr = 0 -- current buffer
+    local result = {}
+
+    for type, icon in pairs(signs) do
+        local n = #vim.diagnostic.get(bufnr, { severity = vim.diagnostic.severity[type:upper()] })
+        if n > 0 then
+            table.insert(result, icon .. n)
+        end
+    end
+
+    return table.concat(result, ' ')
+end
+
 vim.o.statusline =
-    "%{v:lua.GitBranch()} " .. -- Git branch
-    "%<%f %m%r" ..             -- File path and flags
-    "%=" ..                    -- Right align
-    "%l:%c " ..                -- Line, Column
-    "[%y]"                     -- Filetype
+    "%{v:lua.GitBranch()}    " .. -- Git branch
+    "%<%f %m%r" ..                -- File path and flags
+    "%=" ..                       -- Right align
+    -- "%l:%c " ..                   -- Line, Column (optional)
+    " %{v:lua.Diagnostics()} " .. -- Diagnostics
+    "%y"                          -- Filetype
+
 
 return {}
 -- return {
