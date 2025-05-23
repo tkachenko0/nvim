@@ -26,6 +26,18 @@ vim.opt.clipboard:append("unnamedplus")
 
 vim.opt.fillchars:append { eob = " " }
 
+-- Enable file system watcher
+vim.opt.updatetime = 250
+
+-- Auto-reload files when changed externally
+vim.opt.autoread = true
+
+-- Trigger checktime more frequently
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+    pattern = "*",
+    command = "if mode() != 'c' | checktime | endif",
+})
+
 vim.diagnostic.config({
     virtual_text = { severity = vim.diagnostic.severity.ERROR },
     update_in_insert = true,
