@@ -1,6 +1,6 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
-vim.o.mouse = 'a' -- Enable mouse mode (default: '')
+vim.o.mouse = 'a'
 vim.opt.cursorline = true
 
 vim.opt.tabstop = 4        -- A tab character is displayed as 4 spaces wide
@@ -12,8 +12,6 @@ vim.opt.smartindent = true -- Auto-indents new lines smartly based on syntax
 vim.opt.wrap = false
 vim.opt.swapfile = false
 vim.opt.backup = false
--- vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
--- vim.opt.undofile = true
 
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
@@ -24,10 +22,8 @@ vim.opt.scrolloff = 15
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
--- clipboard
-vim.opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+vim.opt.clipboard:append("unnamedplus")
 
--- end of buffer characters
 vim.opt.fillchars:append { eob = " " }
 
 vim.diagnostic.config({
