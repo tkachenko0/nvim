@@ -5,6 +5,7 @@ return {
     },
     "github/copilot.vim",
     "gpanders/editorconfig.nvim",
+    'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
     {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
@@ -13,12 +14,12 @@ return {
         end,
     },
     {
-        "norcalli/nvim-colorizer.lua", -- Colorizer plugin
+        "norcalli/nvim-colorizer.lua",
         config = function()
             require("colorizer").setup({
-                "*",                     -- Apply to all filetypes
-                css = { rgb_fn = true }, -- Support RGB functions in CSS
-                html = { names = true }, -- Support color names in HTML
+                "*",
+                css = { rgb_fn = true },
+                html = { names = true },
             })
         end
     },
@@ -42,9 +43,4 @@ return {
             })
         end
     },
-    {
-        -- Detect tabstop and shiftwidth automatically
-        'tpope/vim-sleuth',
-    },
-
 }
