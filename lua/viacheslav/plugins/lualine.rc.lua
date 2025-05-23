@@ -1,3 +1,20 @@
+function _G.GitBranch()
+    local handle = io.popen("git -C " .. vim.fn.expand("%:p:h") .. " rev-parse --abbrev-ref HEAD 2>/dev/null")
+    if handle then
+        local branch = handle:read("*l")
+        handle:close()
+        return branch and " " .. branch or ""
+    end
+    return ""
+end
+
+vim.o.statusline =
+    "%{v:lua.GitBranch()} " .. -- Git branch
+    "%<%f %m%r" ..             -- File path and flags
+    "%=" ..                    -- Right align
+    "%l:%c " ..                -- Line, Column
+    "[%y]"                     -- Filetype
+
 return {}
 -- return {
 --     "nvim-lualine/lualine.nvim",
