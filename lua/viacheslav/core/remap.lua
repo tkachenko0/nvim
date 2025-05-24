@@ -38,8 +38,8 @@ vim.keymap.set("n", "G", "G$")
 vim.keymap.set("v", "G", "G$")
 
 -- Stay in indent mode
-vim.keymap.set('v', '<', '<gv', opts)
-vim.keymap.set('v', '>', '>gv', opts)
+vim.keymap.set('v', '<', '<gv')
+vim.keymap.set('v', '>', '>gv')
 
 -- Buffers
 vim.keymap.set('n', '<Tab>', '<C-6>', { noremap = true, silent = true })
