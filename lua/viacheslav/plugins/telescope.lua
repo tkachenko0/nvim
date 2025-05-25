@@ -14,19 +14,25 @@ return {
         { 'nvim-tree/nvim-web-devicons',            enabled = vim.g.have_nerd_font },
     },
     config = function()
+        local actions = require("telescope.actions")
         require('telescope').setup {
             defaults = {
                 -- prompt_prefix = "   ",
                 path_display = { "smart" },
                 mappings = {
-                    i = { -- Insert mode mappings
-                        ["<C-q>"] = require('telescope.actions').send_to_qflist + require('telescope.actions').open_qflist,
+                    i = {
+                        ["<C-q>"] = function(prompt_bufnr)
+                            actions.send_to_qflist(prompt_bufnr) -- Send to quickfix
+                            vim.cmd("Trouble qflist open")
+                        end,
                     },
-                    n = { -- Normal mode mappings
-                        ["<C-q>"] = require('telescope.actions').send_to_qflist + require('telescope.actions').open_qflist,
+                    n = {
+                        ["<C-q>"] = function(prompt_bufnr)
+                            actions.send_to_qflist(prompt_bufnr)
+                            vim.cmd("Trouble qflist open")
+                        end,
                     },
                 },
-
             },
             extensions = {
                 ['ui-select'] = {
