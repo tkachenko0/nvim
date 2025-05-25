@@ -25,7 +25,7 @@ return {
 		require('trouble').setup {
 			modes = {
 				qflist = {
-					win = { position = "right" },
+					win = { position = "right", size = 60 },
 				},
 			},
 		}
