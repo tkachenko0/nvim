@@ -32,6 +32,7 @@ return {
                 "pylint",
                 "eslint_d",
                 "markdownlint",
+                "azure-pipelines-language-server", -- azure pipelines language server
             },
             auto_update = true,
             run_on_start = true,
@@ -64,7 +65,8 @@ return {
                 "jsonls",
                 "dockerls",
                 "docker_compose_language_service",
-                "yamlls"
+                "yamlls",
+                "azure_pipelines_ls"
             },
             handlers = {
                 function(server_name)
@@ -157,6 +159,31 @@ return {
                                 enable = true,
                             },
                         },
+                    })
+                end,
+                ["azure_pipelines_ls"] = function()
+                    require("lspconfig").azure_pipelines_ls.setup({
+                        capabilities = capabilities,
+                        filetypes = { "yaml" },
+                        root_dir = require("lspconfig.util").root_pattern(
+                            "azure-pipelines.yml",
+                            "azure-pipelines.yaml",
+                            ".azure-pipelines.yml",
+                            ".azure-pipelines.yaml",
+                            ".git"
+                        ),
+                        settings = {
+                            yaml = {
+                                schemas = {
+                                    ["https://raw.githubusercontent.com/microsoft/azure-pipelines-vscode/master/service-schema.json"] = {
+                                        "azure-pipelines.yml",
+                                        "azure-pipelines.yaml",
+                                        ".azure-pipelines.yml",
+                                        ".azure-pipelines.yaml"
+                                    }
+                                }
+                            }
+                        }
                     })
                 end,
             },
