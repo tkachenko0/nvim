@@ -18,6 +18,14 @@ return {
             defaults = {
                 -- prompt_prefix = "   ",
                 path_display = { "smart" },
+                mappings = {
+                    i = { -- Insert mode mappings
+                        ["<C-q>"] = require('telescope.actions').send_to_qflist + require('telescope.actions').open_qflist,
+                    },
+                    n = { -- Normal mode mappings
+                        ["<C-q>"] = require('telescope.actions').send_to_qflist + require('telescope.actions').open_qflist,
+                    },
+                },
 
             },
             extensions = {
