@@ -70,6 +70,7 @@ return {
           never_show = {
             ".git",
             ".DS_Store",
+            "__pycache__",
           },
         },
         use_libuv_file_watcher = true,
