@@ -43,7 +43,6 @@ vim.keymap.set('v', '>', '>gv')
 
 -- Buffers
 vim.keymap.set('n', '<Tab>', '<C-6>', { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>x", ":bd<CR>", { desc = "Close buffer" })
 vim.keymap.set("n", "Q", ":qa<CR>", { desc = "Quit all" })
 
 -- Cycle through normal buffers with Alt+Left and Alt+Right

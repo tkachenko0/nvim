@@ -16,7 +16,7 @@ return {
 			desc = "LSP Definitions / references / ... (Trouble)",
 		},
 		{
-			"<leader>xq",
+			"<leader>q",
 			"<cmd>Trouble qflist toggle<cr>",
 			desc = "Quickfix List (Trouble)",
 		},
