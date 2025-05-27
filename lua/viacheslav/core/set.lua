@@ -26,6 +26,8 @@ vim.opt.clipboard:append("unnamedplus")
 
 vim.opt.fillchars:append { eob = " " }
 
+vim.opt.termguicolors = true
+
 -- Enable file system watcher
 vim.opt.updatetime = 200
 
