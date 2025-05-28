@@ -36,6 +36,10 @@ return {
         indent = {
           with_markers = false,
         },
+        name = {
+          highlight = "NeoTreeFileName",
+          use_git_status_colors = true,
+        },
       },
 
       window = {
@@ -59,7 +63,6 @@ return {
         follow_current_file = {
           enabled = true,
           leave_dirs_open = true,
-          -- auto_expand_directories = false,
         },
         filtered_items = {
           visible = true,
@@ -80,10 +83,12 @@ return {
           enabled = false,
         },
         window = {
-          mappings = {
-          },
+          mappings = {},
         },
       },
     })
+
+    vim.api.nvim_set_hl(0, "NeoTreeGitIgnored", { fg = "#6A6A6A", italic = true }) -- soft gray, italic
+    vim.api.nvim_set_hl(0, "NeoTreeHidden", { fg = "#6A6A6A", italic = true })     -- same for hidden files
   end,
 }
