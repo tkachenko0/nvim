@@ -3,9 +3,13 @@ return {
         "nvim-lua/plenary.nvim",
         name = "plenary"
     },
+
     "github/copilot.vim",
+
     "gpanders/editorconfig.nvim",
+
     'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+
     {
         "RRethy/vim-illuminate",
         event = "VeryLazy",
@@ -20,12 +24,14 @@ return {
             })
         end,
     },
+
     {
         "mbbill/undotree",
         config = function()
             vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
         end
     },
+
     {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
@@ -33,6 +39,7 @@ return {
             require("nvim-autopairs").setup()
         end,
     },
+
     {
         "norcalli/nvim-colorizer.lua",
         config = function()
@@ -42,6 +49,7 @@ return {
             })
         end
     },
+
     {
         "laytan/cloak.nvim",
         config = function()
@@ -62,4 +70,5 @@ return {
             })
         end
     },
+
 }

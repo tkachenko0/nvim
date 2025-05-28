@@ -46,6 +46,7 @@ return {
                     require("lspconfig")[server_name].setup({
                     })
                 end,
+
                 ["lua_ls"] = function()
                     require("lspconfig").lua_ls.setup({
                         settings = {
@@ -57,6 +58,7 @@ return {
                         },
                     })
                 end,
+
                 ["pyright"] = function()
                     local lspconfig = require("lspconfig")
                     local util = require("lspconfig/util")
@@ -88,6 +90,7 @@ return {
                         end,
                     })
                 end,
+
                 ["jsonls"] = function()
                     require("lspconfig").jsonls.setup({
                         settings = {
@@ -98,6 +101,7 @@ return {
                         },
                     })
                 end,
+
                 ["yamlls"] = function()
                     require("lspconfig").yamlls.setup({
                         settings = {
@@ -116,6 +120,7 @@ return {
                         },
                     })
                 end,
+
                 ["docker_compose_language_service"] = function()
                     require("lspconfig").docker_compose_language_service.setup({
                         filetypes = { "yaml" },
