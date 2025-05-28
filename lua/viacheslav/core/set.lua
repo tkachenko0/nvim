@@ -26,8 +26,13 @@ vim.opt.incsearch = true -- Show search results as you type
 
 vim.opt.termguicolors = true
 
+vim.opt.shortmess:append "sI"
+
 vim.opt.scrolloff = 15
+
+-- For things like git signs, diagnostics, breakpoints, etc.
 vim.opt.signcolumn = "yes"
+
 vim.opt.isfname:append("@-@")
 
 vim.opt.clipboard:append("unnamedplus")
