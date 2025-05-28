@@ -36,7 +36,7 @@ return {
           },
         },
         window = {
-          position = "right",
+          position = "left",
           mappings = {
             ["<cr>"] = "open",
             ["<Right>"] = "open",
