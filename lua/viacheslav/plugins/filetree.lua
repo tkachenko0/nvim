@@ -2,9 +2,9 @@ return {
   "nvim-neo-tree/neo-tree.nvim",
   branch = "v3.x",
   dependencies = {
-    "nvim-lua/plenary.nvim",         -- Required for neo-tree
-    "nvim-tree/nvim-web-devicons",   -- Optional, but provides file icons
-    "MunifTanjim/nui.nvim",          -- Required for neo-tree UI
+    "nvim-lua/plenary.nvim",
+    "nvim-tree/nvim-web-devicons",
+    "MunifTanjim/nui.nvim",
   },
   cmd = "Neotree",
   keys = {
