@@ -1,7 +1,13 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.o.mouse = 'a'
+
+-- Highlight the current line
 vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number" -- only highlight the line number
+
+-- Global status line
+vim.o.laststatus = 3
 
 vim.opt.tabstop = 4        -- A tab character is displayed as 4 spaces wide
 vim.opt.softtabstop = 4    -- When you hit <Tab> in insert mode, it inserts 4 spaces
@@ -13,8 +19,10 @@ vim.opt.wrap = false
 vim.opt.swapfile = false
 vim.opt.backup = false
 
-vim.opt.hlsearch = true
-vim.opt.incsearch = true
+-- Search settings
+vim.o.ignorecase = true  -- Ignore case when searching
+vim.opt.hlsearch = true  -- Highlight search results
+vim.opt.incsearch = true -- Show search results as you type
 
 vim.opt.termguicolors = true
 
