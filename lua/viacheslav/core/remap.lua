@@ -21,6 +21,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- Substitute
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
+vim.keymap.set("i", "clg", "console.log($1)", { noremap = true, expr = false })
 -- to not copy when deleting
 vim.keymap.set("n", "x", '"_x', { silent = true })
 vim.keymap.set("n", "d", '"_d', { silent = true })
