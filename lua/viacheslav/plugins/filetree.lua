@@ -51,9 +51,9 @@ return {
           position = "right",
           mappings = {
             ["<cr>"] = "open",
-            ["<Right>"] = "open",
-            ["<Left>"] = "close_node",
             ["<Tab>"] = "next_source",
+            -- ["<Right>"] = "open",
+            -- ["<Left>"] = "close_node",
           },
         },
 
