@@ -88,7 +88,46 @@ return {
             enabled = false,
           },
           window = {
-            mappings = {},
+            mappings = {
+              -- Stage/unstage files
+              ["A"] = "git_add_all",
+              ["a"] = "git_add_file",
+              ["u"] = "git_unstage_file",
+              ["r"] = "git_revert_file",
+              -- Commit operations
+              ["gc"] = "git_commit",
+              ["gp"] = "git_push",
+              ["gg"] = "git_commit_and_push",
+              -- Custom git operations
+              ["gd"] = {
+                function(state)
+                  local node = state.tree:get_node()
+                  local path = node:get_id()
+                  vim.cmd("DiffviewOpen -- " .. path)
+                end,
+                desc = "git diff file",
+              },
+              ["gD"] = {
+                function(state)
+                  vim.cmd("DiffviewOpen")
+                end,
+                desc = "git diff all",
+              },
+              ["gh"] = {
+                function(state)
+                  local node = state.tree:get_node()
+                  local path = node:get_id()
+                  vim.cmd("DiffviewFileHistory " .. path)
+                end,
+                desc = "git file history",
+              },
+              ["gH"] = {
+                function(state)
+                  vim.cmd("DiffviewFileHistory")
+                end,
+                desc = "git history",
+              },
+            },
           },
         },
       })
@@ -112,9 +151,9 @@ return {
         api.config.mappings.default_on_attach(bufnr)
         vim.keymap.set("n", "<Right>", api.node.open.edit, opts("Open Node"))
         vim.keymap.set("n", "<Left>", api.node.navigate.parent_close, opts("Close Parent Node"))
+        vim.keymap.set("n", "v", api.node.open.vertical, opts("Open: Vertical Split"))
       end
       require("nvim-tree").setup({
-        sort_by = "case_sensitive",
         view = {
           width = 35,
           side = "left",
