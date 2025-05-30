@@ -89,44 +89,13 @@ return {
           },
           window = {
             mappings = {
-              -- Stage/unstage files
               ["A"] = "git_add_all",
               ["a"] = "git_add_file",
               ["u"] = "git_unstage_file",
               ["r"] = "git_revert_file",
-              -- Commit operations
-              ["gc"] = "git_commit",
-              ["gp"] = "git_push",
+              ["c"] = "git_commit",
+              ["p"] = "git_push",
               ["gg"] = "git_commit_and_push",
-              -- Custom git operations
-              ["gd"] = {
-                function(state)
-                  local node = state.tree:get_node()
-                  local path = node:get_id()
-                  vim.cmd("DiffviewOpen -- " .. path)
-                end,
-                desc = "git diff file",
-              },
-              ["gD"] = {
-                function(state)
-                  vim.cmd("DiffviewOpen")
-                end,
-                desc = "git diff all",
-              },
-              ["gh"] = {
-                function(state)
-                  local node = state.tree:get_node()
-                  local path = node:get_id()
-                  vim.cmd("DiffviewFileHistory " .. path)
-                end,
-                desc = "git file history",
-              },
-              ["gH"] = {
-                function(state)
-                  vim.cmd("DiffviewFileHistory")
-                end,
-                desc = "git history",
-              },
             },
           },
         },
