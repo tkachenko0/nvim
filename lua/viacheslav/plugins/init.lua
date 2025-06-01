@@ -38,15 +38,15 @@ return {
         end,
     },
 
-    {
-        "norcalli/nvim-colorizer.lua",
-        config = function()
-            require("colorizer").setup({
-                "css",
-                "scss",
-            })
-        end
-    },
+    -- {
+    --     "norcalli/nvim-colorizer.lua",
+    --     config = function()
+    --         require("colorizer").setup({
+    --             "css",
+    --             "scss",
+    --         })
+    --     end
+    -- },
 
     {
         "laytan/cloak.nvim",
