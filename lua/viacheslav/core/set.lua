@@ -4,7 +4,7 @@ vim.o.mouse = 'a'
 
 -- Highlight the current line
 vim.opt.cursorline = true
-vim.opt.cursorlineopt = "number" -- only highlight the line number
+-- vim.opt.cursorlineopt = "number" -- only highlight the line number
 
 -- Global status line
 vim.o.laststatus = 3
