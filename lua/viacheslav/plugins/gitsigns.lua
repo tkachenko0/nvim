@@ -30,9 +30,7 @@ return {
 			map("n", "<leader>hR", gs.reset_buffer, "Reset buffer")
 			map("n", "<leader>hu", gs.undo_stage_hunk, "Undo stage hunk")
 			map("n", "<leader>hd", gs.diffthis, "Diff this")
-			map("n", "<leader>hD", function()
-				gs.diffthis("~")
-			end, "Diff this ~")
+			map("n", "<leader>hD", function() gs.diffthis("~") end, "Diff this ~")
 		end,
 	},
 }
