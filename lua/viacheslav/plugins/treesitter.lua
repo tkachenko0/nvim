@@ -48,6 +48,15 @@ return {
                         },
                     },
                 },
+                incremental_selection = {
+                    enable = true,
+                    keymaps = {
+                        init_selection = "<M-w>",    -- Alt-w to start selection
+                        node_incremental = "<M-w>",  -- Alt-w to expand
+                        node_decremental = "<M-W>",  -- Alt-Shift-w to shrink
+                        scope_incremental = "<M-s>", -- Optional: Alt-s for scope
+                    },
+                },
                 fold = { enable = true },
             })
         end,
