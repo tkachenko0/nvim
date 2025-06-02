@@ -4,9 +4,10 @@ return {
         name = "plenary"
     },
 
-    "github/copilot.vim",
+    -- "github/copilot.vim",
 
-    'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+    -- Detect tabstop and shiftwidth automatically
+    'tpope/vim-sleuth',
 
     {
         "RRethy/vim-illuminate",
