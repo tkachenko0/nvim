@@ -54,7 +54,7 @@ return {
         mappings = {
           ["<cr>"] = "open",
           ["<Tab>"] = "next_source",
-          ["<Right>"] = "open",
+          ["<Right>"] = "toggle_node",
           ["<Left>"] = "close_node",
         },
       },
@@ -106,16 +106,8 @@ return {
         follow_current_file = {
           enabled = true,
         },
-        window = {
-          mappings = {
-            ["<cr>"] = "open",
-            ["o"] = "open",
-            ["l"] = "open",
-            ["<Right>"] = "toggle_node",
-            ["<Left>"] = "close_node",
-          },
-        },
       },
+
     })
 
     vim.api.nvim_set_hl(0, "NeoTreeGitIgnored", { fg = "#6A6A6A", italic = true })
