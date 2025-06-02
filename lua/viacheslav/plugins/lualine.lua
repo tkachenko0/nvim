@@ -23,7 +23,7 @@ return {
                 disabled_filetypes = {}
             },
             sections = {
-                lualine_a = {},
+                lualine_a = { "mode" },
                 lualine_b = { 'branch' },
                 lualine_c = { filename_config },
                 lualine_x = { diagnostics_config, 'filetype' },
