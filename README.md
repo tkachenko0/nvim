@@ -6,6 +6,7 @@ This is my personal Neovim setup, heavily inspired by [ThePrimeagen's](https://g
 
 A fast, modular Neovim configuration powered by lazy.nvim. Features full TypeScript development support with Prettier and ESLint integration, git status with Gitsigns, environment variable hiding with Cloak, advanced search with Telescope, powerful syntax highlighting with Treesitter, diagnostics with Trouble, session management with Undotree, fast navigation with Harpoon, and more.
 
+
 ![image](https://github.com/user-attachments/assets/5f1fb7a1-b763-476b-8b59-a0e6986d4371)
 
 ## Structure
