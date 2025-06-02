@@ -51,8 +51,8 @@ return {
         mappings = {
           ["<cr>"] = "open",
           ["<Tab>"] = "next_source",
-          -- ["<Right>"] = "open",
-          -- ["<Left>"] = "close_node",
+          ["<Right>"] = "open",
+          ["<Left>"] = "close_node",
         },
       },
 
