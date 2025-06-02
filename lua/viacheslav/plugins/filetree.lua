@@ -9,7 +9,8 @@ return {
   cmd = "Neotree",
   keys = {
     -- { "<leader>e", "<cmd>Neotree filesystem reveal toggle<CR>" },
-    { "\\", "<cmd>Neotree filesystem reveal toggle<CR>" },
+    { "\\",         "<cmd>Neotree filesystem reveal toggle<CR>" },
+    { "<leader>ts", "<cmd>Neotree document_symbols toggle<CR>" }, -- Added shortcut for document symbols
   },
   config = function()
     require("neo-tree").setup({
@@ -18,7 +19,8 @@ return {
       sources = {
         "filesystem",
         "buffers",
-        "git_status"
+        "git_status",
+        "document_symbols",
       },
 
       source_selector = {
@@ -28,6 +30,7 @@ return {
           { source = "filesystem", display_name = "󰉓 Files" },
           { source = "buffers", display_name = "󰈚 Buffers" },
           { source = "git_status", display_name = "󰊢 Git" },
+          { source = "document_symbols", display_name = "󰈹 Symbols" },
         },
       },
 
@@ -98,9 +101,24 @@ return {
           },
         },
       },
+
+      document_symbols = {
+        follow_current_file = {
+          enabled = true,
+        },
+        window = {
+          mappings = {
+            ["<cr>"] = "open",
+            ["o"] = "open",
+            ["l"] = "open",
+            ["<Right>"] = "toggle_node",
+            ["<Left>"] = "close_node",
+          },
+        },
+      },
     })
 
-    vim.api.nvim_set_hl(0, "NeoTreeGitIgnored", { fg = "#6A6A6A", italic = true }) -- soft gray, italic
-    vim.api.nvim_set_hl(0, "NeoTreeHidden", { fg = "#6A6A6A", italic = true })     -- same for hidden files
+    vim.api.nvim_set_hl(0, "NeoTreeGitIgnored", { fg = "#6A6A6A", italic = true })
+    vim.api.nvim_set_hl(0, "NeoTreeHidden", { fg = "#6A6A6A", italic = true })
   end,
 }
