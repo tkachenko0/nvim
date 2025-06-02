@@ -9,8 +9,6 @@ return {
   cmd = "Neotree",
   keys = {
     -- { "<leader>e", "<cmd>Neotree filesystem reveal toggle<CR>" },
-    -- { "<leader>b", "<cmd>Neotree buffers reveal toggle<CR>" },
-    -- { '\\', ':Neotree buffers reveal toggle<CR>' }
     { "\\", "<cmd>Neotree filesystem reveal toggle<CR>" },
   },
   config = function()
@@ -102,7 +100,7 @@ return {
       },
     })
 
-    vim.api.nvim_set_hl(0, "NeoTreeGitIgnored", { fg = "#6A6A6A", italic = true })   -- soft gray, italic
-    vim.api.nvim_set_hl(0, "NeoTreeHidden", { fg = "#6A6A6A", italic = true })       -- same for hidden files
+    vim.api.nvim_set_hl(0, "NeoTreeGitIgnored", { fg = "#6A6A6A", italic = true }) -- soft gray, italic
+    vim.api.nvim_set_hl(0, "NeoTreeHidden", { fg = "#6A6A6A", italic = true })     -- same for hidden files
   end,
 }
