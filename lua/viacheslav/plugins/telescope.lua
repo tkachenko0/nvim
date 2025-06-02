@@ -57,6 +57,10 @@ return {
         end, { desc = '[S]earch [F]iles (Git or all folders)' })
 
         vim.keymap.set('n', '<leader>fr', require('telescope.builtin').lsp_references, { desc = '[G]o to [R]eferences' })
+        vim.keymap.set('n', '<leader>fs', require('telescope.builtin').lsp_document_symbols,
+            { desc = 'Buffer symbols' })
+        vim.keymap.set('n', '<leader>fS', require('telescope.builtin').lsp_dynamic_workspace_symbols,
+            { desc = 'Project symbols' })
         vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
         vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
         vim.keymap.set('n', '<leader>fG', function()
