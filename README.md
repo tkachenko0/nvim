@@ -8,6 +8,8 @@ A fast, modular Neovim configuration powered by lazy.nvim. Features full TypeScr
 
 
 
+
+
 ![image](https://github.com/user-attachments/assets/5f1fb7a1-b763-476b-8b59-a0e6986d4371)
 
 ## Structure
