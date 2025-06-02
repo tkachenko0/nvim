@@ -53,7 +53,7 @@ return {
                 disabled_filetypes = {}
             },
             sections = {
-                lualine_a = { "mode" },
+                lualine_a = {},
                 lualine_b = { branch_config },
                 lualine_c = { filename_config },
                 lualine_x = { diagnostics_config, 'filetype' },
@@ -61,7 +61,7 @@ return {
                 lualine_z = {}
             },
             inactive_sections = {
-                lualine_a = {},
+                -- lualine_a = {},
                 lualine_b = {},
                 lualine_c = {
                     {
