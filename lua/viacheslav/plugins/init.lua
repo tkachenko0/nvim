@@ -6,8 +6,6 @@ return {
 
     "github/copilot.vim",
 
-    'sindrets/diffview.nvim',
-
     -- Detect tabstop and shiftwidth automatically
     'tpope/vim-sleuth',
 
