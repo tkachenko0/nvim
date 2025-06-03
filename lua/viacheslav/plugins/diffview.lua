@@ -21,6 +21,7 @@ return {
             keymaps = {
                 file_panel = {
                     { "n", "a", require("diffview.actions").toggle_stage_entry, { desc = "Stage / unstage the selected entry." } },
+                    { "n", "A", require("diffview.actions").stage_all,          { desc = "Stage all entries" } },
                 },
             },
             hooks = {
