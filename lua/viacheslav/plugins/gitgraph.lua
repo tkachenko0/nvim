@@ -1,50 +1,48 @@
-return {}
-
--- return {
---   'isakbm/gitgraph.nvim',
---   opts = {
---     git_cmd = "git",
---     symbols = {
---       merge_commit = '◉',
---       commit = '◯',
---       merge_commit_end = '◉',
---       commit_end = '◯',
---       edge = '|',
---       edge_start = '|',
---       edge_end = '|',
---       branch = '|',
---       branch_start = '┌',
---       branch_end = '└',
---       merge_branch = '┤',
---       merge_branch_start = '┼',
---       merge_branch_end = '┴',
---     },
---     format = {
---       timestamp = '%H:%M:%S %d-%m-%Y',
---       fields = {
---         'branch_name',
---         -- 'timestamp',
---         'author',
---         'tag',
---         'hash',
---       },
---     },
---     hooks = {
---       on_select_commit = function(commit)
---         print('selected commit:', commit.hash)
---       end,
---       on_select_range_commit = function(from, to)
---         print('selected range:', from.hash, to.hash)
---       end,
---     },
---   },
---   keys = {
---     {
---       "<leader>gg",
---       function()
---         require('gitgraph').draw({}, { all = true, max_count = 5000 })
---       end,
---       desc = "GitGraph - Draw",
---     },
---   },
--- }
+return {
+    'isakbm/gitgraph.nvim',
+    opts = {
+        git_cmd = "git",
+        symbols = {
+            merge_commit = '◉',
+            commit = '◯',
+            merge_commit_end = '◉',
+            commit_end = '◯',
+            edge = '|',
+            edge_start = '|',
+            edge_end = '|',
+            branch = '|',
+            branch_start = '┌',
+            branch_end = '└',
+            merge_branch = '┤',
+            merge_branch_start = '┼',
+            merge_branch_end = '┴',
+        },
+        format = {
+            timestamp = '%H:%M:%S %d-%m-%Y',
+            fields = {
+                'branch_name',
+                -- 'timestamp',
+                'author',
+                'tag',
+                'hash',
+            },
+        },
+        hooks = {
+            on_select_commit = function(commit)
+                print('selected commit:', commit.hash)
+            end,
+            on_select_range_commit = function(from, to)
+                print('selected range:', from.hash, to.hash)
+            end,
+        },
+    },
+    keys = {
+        {
+            "<leader>gg",
+            function()
+                require('gitgraph').draw({}, { all = true, max_count = 5000 })
+            end,
+            desc = "GitGraph - Draw",
+        },
+    },
+}
