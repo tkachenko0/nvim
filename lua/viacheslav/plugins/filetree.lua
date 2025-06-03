@@ -13,6 +13,8 @@ return {
   config = function()
     require("neo-tree").setup({
       close_if_last_window = true,
+      hide_root_node = true,
+      log_level = "error",
 
       sources = {
         "filesystem",
@@ -21,7 +23,7 @@ return {
       },
 
       source_selector = {
-        winbar = true,
+        winbar = false,
         tabs_layout = "stacked",
         sources = {
           { source = "filesystem", display_name = "󰉓 Files" },
