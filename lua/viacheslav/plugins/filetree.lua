@@ -23,8 +23,8 @@ return {
       },
 
       source_selector = {
-        winbar = false,
-        tabs_layout = "stacked",
+        winbar = true,
+        tabs_layout = "equal",
         sources = {
           { source = "filesystem", display_name = "󰉓 Files" },
           { source = "buffers", display_name = "󰈚 Buffers" },
