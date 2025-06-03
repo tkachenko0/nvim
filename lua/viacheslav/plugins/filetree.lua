@@ -20,7 +20,7 @@ return {
         "filesystem",
         "buffers",
         "git_status",
-        "document_symbols",
+        -- "document_symbols",
       },
 
       source_selector = {
@@ -30,7 +30,7 @@ return {
           { source = "filesystem", display_name = "󰉓 Files" },
           { source = "buffers", display_name = "󰈚 Buffers" },
           { source = "git_status", display_name = "󰊢 Git" },
-          { source = "document_symbols", display_name = "󰈹 Symbols" },
+          -- { source = "document_symbols", display_name = "󰈹 Symbols" },
         },
       },
 
@@ -102,11 +102,11 @@ return {
         },
       },
 
-      document_symbols = {
-        follow_current_file = {
-          enabled = true,
-        },
-      },
+      -- document_symbols = {
+      --   follow_current_file = {
+      --     enabled = true,
+      --   },
+      -- },
 
     })
 
