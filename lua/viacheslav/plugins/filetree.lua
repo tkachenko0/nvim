@@ -8,9 +8,7 @@ return {
   },
   cmd = "Neotree",
   keys = {
-    -- { "<leader>e", "<cmd>Neotree filesystem reveal toggle<CR>" },
     { "\\",         "<cmd>Neotree filesystem reveal toggle<CR>" },
-    { "<leader>ts", "<cmd>Neotree document_symbols toggle<CR>" }, -- Added shortcut for document symbols
   },
   config = function()
     require("neo-tree").setup({
