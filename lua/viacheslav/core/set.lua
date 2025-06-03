@@ -54,8 +54,8 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHo
 })
 
 vim.diagnostic.config({
-    -- virtual_text = { severity = vim.diagnostic.severity.ERROR },
-    virtual_text = false,
+    virtual_text = { severity = vim.diagnostic.severity.ERROR },
+    -- virtual_text = false,
     update_in_insert = true,
     float = { source = "always", border = "rounded" },
     signs = {

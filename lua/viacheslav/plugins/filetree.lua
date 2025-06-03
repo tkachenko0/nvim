@@ -51,6 +51,8 @@ return {
 
       window = {
         position = "left",
+        auto_expand_width = true,
+        -- width = 35,
         mappings = {
           ["<cr>"] = "open",
           ["<Tab>"] = "next_source",
