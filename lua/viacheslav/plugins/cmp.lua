@@ -34,6 +34,8 @@ return {
             mapping = {
                 ["<C-Space>"] = cmp.mapping.complete(),
                 ["<CR>"] = cmp.mapping.confirm({ select = true }),
+                ["<Down>"] = cmp.mapping.select_next_item(),
+                ["<Up>"] = cmp.mapping.select_prev_item(),
             },
             sources = {
                 { name = "nvim_lsp" },

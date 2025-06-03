@@ -2,15 +2,24 @@ return {
     'stevearc/conform.nvim',
     event = { 'BufWritePre' },
     cmd = { 'ConformInfo' },
-    keys = {},
+    keys = {
+        {
+            "<leader>f",
+            function()
+                require("conform").format({ async = true, lsp_fallback = true })
+            end,
+            desc = "Format file",
+        },
+    },
     opts = {
         notify_on_error = false,
-        format_on_save = function()
-            return {
-                timeout_ms = 3000,
-                lsp_format = 'fallback',
-            }
-        end,
+        -- format_on_save = function()
+        --     return {
+        --         timeout_ms = 3000,
+        --         lsp_format = 'fallback',
+        --     }
+        -- end,
+        format_on_save = false,
         formatters_by_ft = {
             javascript = { "prettier" },
             typescript = { "prettier" },
