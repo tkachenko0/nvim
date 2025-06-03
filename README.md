@@ -6,10 +6,6 @@ This is my personal Neovim setup, heavily inspired by [ThePrimeagen's](https://g
 
 A fast, modular Neovim configuration powered by lazy.nvim. Features full TypeScript development support with Prettier and ESLint integration, git status with Gitsigns, environment variable hiding with Cloak, advanced search with Telescope, powerful syntax highlighting with Treesitter, diagnostics with Trouble, session management with Undotree, fast navigation with Harpoon, and more.
 
-
-
-
-
 ![image](https://github.com/user-attachments/assets/5f1fb7a1-b763-476b-8b59-a0e6986d4371)
 
 ## Structure
@@ -49,21 +45,31 @@ A fast, modular Neovim configuration powered by lazy.nvim. Features full TypeScr
 Make sure you have the following installed:
 
 - **ripgrep** (for Telescope search, etc.)
+
   ```bash
   sudo apt install ripgrep
   ```
 
 - **gcc** (needed for building certain plugins; install if not already available)
+
   ```bash
   sudo apt install gcc
   ```
 
 - **Node.js** (some LSP servers and plugins require Node)
-  
 - **luarocks** (for managing Lua packages)
+
   ```bash
   sudo apt install luarocks
   ```
+
+- Diffview
+
+TO make diffview work i i had to update git version:
+
+```
+:checkhealth diffview
+```
 
 ---
 
@@ -72,6 +78,7 @@ Make sure you have the following installed:
 1. Install [Neovim 0.9+](https://github.com/neovim/neovim/wiki/Installing-Neovim) if you don't have it already.
 
 2. Clone this repository into your Neovim config directory:
+
    ```bash
    git clone <this-repo-url> ~/.config/nvim
    ```
