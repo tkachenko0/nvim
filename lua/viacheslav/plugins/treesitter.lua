@@ -19,7 +19,6 @@ return {
                     "terraform",
                     "sql",
                     "toml",
-                    -- "go",
                 },
                 sync_install = false,
                 auto_install = true,
