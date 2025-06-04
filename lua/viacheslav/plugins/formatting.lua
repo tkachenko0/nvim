@@ -43,12 +43,12 @@ return {
 
         vim.g.autoformat_enabled = true
 
-        vim.api.nvim_create_user_command("AutoformatDisable", function()
+        vim.api.nvim_create_user_command("FormatDisable", function()
             vim.g.autoformat_enabled = false
             print("Autoformat on save: Disabled")
         end, {})
 
-        vim.api.nvim_create_user_command("AutoformatEnable", function()
+        vim.api.nvim_create_user_command("FormatEnable", function()
             vim.g.autoformat_enabled = true
             print("Autoformat on save: Enabled")
         end, {})
