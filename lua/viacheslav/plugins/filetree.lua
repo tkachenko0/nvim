@@ -23,7 +23,7 @@ return {
       },
 
       source_selector = {
-        winbar = true,
+        winbar = false,
         tabs_layout = "equal",
         sources = {
           { source = "filesystem", display_name = "󰉓 Files" },
