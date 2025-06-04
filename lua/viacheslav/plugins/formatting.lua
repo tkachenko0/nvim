@@ -13,9 +13,8 @@ return {
     },
     opts = {
         notify_on_error = false,
-        format_on_save = function(bufnr)
-            -- You can store disabled buffers in a table if needed for fine-grained control
-            return not vim.g.autoformat_disabled
+        format_on_save = function()
+            return vim.g.autoformat_enabled
                 and {
                     timeout_ms = 3000,
                     lsp_fallback = true,
@@ -42,17 +41,15 @@ return {
     config = function(_, opts)
         require("conform").setup(opts)
 
-        -- Global flag for autoformat
-        vim.g.autoformat_disabled = false
+        vim.g.autoformat_enabled = true
 
-        -- Toggle commands
         vim.api.nvim_create_user_command("AutoformatDisable", function()
-            vim.g.autoformat_disabled = true
+            vim.g.autoformat_enabled = false
             print("Autoformat on save: Disabled")
         end, {})
 
         vim.api.nvim_create_user_command("AutoformatEnable", function()
-            vim.g.autoformat_disabled = false
+            vim.g.autoformat_enabled = true
             print("Autoformat on save: Enabled")
         end, {})
     end,

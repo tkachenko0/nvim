@@ -1,4 +1,5 @@
 return {
+
     {
         "nvim-lua/plenary.nvim",
         name = "plenary"
@@ -51,16 +52,6 @@ return {
             require("nvim-autopairs").setup()
         end,
     },
-
-    -- {
-    --     "norcalli/nvim-colorizer.lua",
-    --     config = function()
-    --         require("colorizer").setup({
-    --             "css",
-    --             "scss",
-    --         })
-    --     end
-    -- },
 
     {
         "laytan/cloak.nvim",

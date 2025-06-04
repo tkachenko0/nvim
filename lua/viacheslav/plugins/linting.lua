@@ -17,9 +17,7 @@ return {
 				"eslint.config.cjs",
 				"eslint.config.mjs",
 			}
-
 			local cwd = vim.fn.getcwd()
-
 			for _, filename in ipairs(config_files) do
 				local full_path = cwd .. "/" .. filename
 				local stat = uv.fs_stat(full_path)
@@ -27,7 +25,6 @@ return {
 					return true
 				end
 			end
-
 			return false
 		end
 
