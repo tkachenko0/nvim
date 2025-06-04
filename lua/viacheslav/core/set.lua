@@ -3,8 +3,8 @@ vim.opt.relativenumber = true
 vim.o.mouse = 'a'
 
 -- Spelling
-vim.opt.spell = true
-vim.opt.spelllang = { "en", "it" }
+-- vim.opt.spell = true
+-- vim.opt.spelllang = { "en", "it" }
 
 -- Highlight the current line
 vim.opt.cursorline = true
