@@ -2,6 +2,10 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.o.mouse = 'a'
 
+-- Spelling
+-- vim.opt.spell = true
+-- vim.opt.spelllang = { "en", "it" }
+
 -- Highlight the current line
 vim.opt.cursorline = true
 -- vim.opt.cursorlineopt = "number" -- only highlight the line number
