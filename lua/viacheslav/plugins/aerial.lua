@@ -9,9 +9,13 @@ return {
     },
     opts = {
         lazy_load = true,
-        filter_kind = false,
         layout = { min_width = 28 },
-        backends = { "lsp", "treesitter", "markdown", "man" },
+        backends = {
+            "lsp",
+            "treesitter",
+            "markdown",
+            "man"
+        },
         attach_mode = "global",
         highlight_mode = "split_width",
         highlight_closest = true,
