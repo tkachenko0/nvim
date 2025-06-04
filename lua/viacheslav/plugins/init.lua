@@ -11,6 +11,15 @@ return {
     'tpope/vim-sleuth',
 
     {
+        'willothy/nvim-cokeline',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'nvim-tree/nvim-web-devicons',
+        },
+        config = true
+    },
+
+    {
         'windwp/nvim-ts-autotag',
         config = function()
             require('nvim-ts-autotag').setup({
