@@ -48,43 +48,43 @@ vim.keymap.set("n", "Q", ":qa<CR>", { desc = "Quit all" })
 vim.keymap.set("n", "<C-c>", "<cmd>%y+<CR>")
 
 -- Cycle through normal buffers with Alt+Left and Alt+Right
-vim.keymap.set('n', '<A-Left>', function()
-    local bufnrs = vim.tbl_filter(function(b)
-        return vim.bo[b].buflisted
-            and vim.api.nvim_buf_is_valid(b)
-            and vim.bo[b].buftype == ''
-    end, vim.api.nvim_list_bufs())
-    if #bufnrs <= 1 then return end
-    local current = vim.api.nvim_get_current_buf()
-    local index = 0
-    for i, bufnr in ipairs(bufnrs) do
-        if bufnr == current then
-            index = i
-            break
-        end
-    end
-    local prev_index = index - 1
-    if prev_index < 1 then prev_index = #bufnrs end
-    vim.api.nvim_set_current_buf(bufnrs[prev_index])
-end, { noremap = true, silent = true })
+-- vim.keymap.set('n', '<A-Left>', function()
+--     local bufnrs = vim.tbl_filter(function(b)
+--         return vim.bo[b].buflisted
+--             and vim.api.nvim_buf_is_valid(b)
+--             and vim.bo[b].buftype == ''
+--     end, vim.api.nvim_list_bufs())
+--     if #bufnrs <= 1 then return end
+--     local current = vim.api.nvim_get_current_buf()
+--     local index = 0
+--     for i, bufnr in ipairs(bufnrs) do
+--         if bufnr == current then
+--             index = i
+--             break
+--         end
+--     end
+--     local prev_index = index - 1
+--     if prev_index < 1 then prev_index = #bufnrs end
+--     vim.api.nvim_set_current_buf(bufnrs[prev_index])
+-- end, { noremap = true, silent = true })
 
-vim.keymap.set('n', '<A-Right>', function()
-    local bufnrs = vim.tbl_filter(function(b)
-        -- Filter out non-normal buffers (like NeoTree)
-        return vim.bo[b].buflisted
-            and vim.api.nvim_buf_is_valid(b)
-            and vim.bo[b].buftype == ''
-    end, vim.api.nvim_list_bufs())
-    if #bufnrs <= 1 then return end
-    local current = vim.api.nvim_get_current_buf()
-    local index = 0
-    for i, bufnr in ipairs(bufnrs) do
-        if bufnr == current then
-            index = i
-            break
-        end
-    end
-    local next_index = index + 1
-    if next_index > #bufnrs then next_index = 1 end
-    vim.api.nvim_set_current_buf(bufnrs[next_index])
-end, { noremap = true, silent = true })
+-- vim.keymap.set('n', '<A-Right>', function()
+--     local bufnrs = vim.tbl_filter(function(b)
+--         -- Filter out non-normal buffers (like NeoTree)
+--         return vim.bo[b].buflisted
+--             and vim.api.nvim_buf_is_valid(b)
+--             and vim.bo[b].buftype == ''
+--     end, vim.api.nvim_list_bufs())
+--     if #bufnrs <= 1 then return end
+--     local current = vim.api.nvim_get_current_buf()
+--     local index = 0
+--     for i, bufnr in ipairs(bufnrs) do
+--         if bufnr == current then
+--             index = i
+--             break
+--         end
+--     end
+--     local next_index = index + 1
+--     if next_index > #bufnrs then next_index = 1 end
+--     vim.api.nvim_set_current_buf(bufnrs[next_index])
+-- end, { noremap = true, silent = true })
