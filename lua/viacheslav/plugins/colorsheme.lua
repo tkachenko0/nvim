@@ -1,6 +1,5 @@
 return
 
-
 {
     "Mofiqul/vscode.nvim",
     config = function()
