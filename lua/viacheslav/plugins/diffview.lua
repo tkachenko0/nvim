@@ -17,11 +17,12 @@ return {
         { '<leader>dc', '<cmd>DiffviewClose<cr>',       desc = 'Close Diffview' },
     },
     config = function()
-        require('diffview').setup({
+        local actions = require("diffview.actions")
+        require("diffview").setup({
             keymaps = {
                 file_panel = {
-                    { "n", "a", require("diffview.actions").toggle_stage_entry, { desc = "Stage / unstage the selected entry." } },
-                    { "n", "A", require("diffview.actions").stage_all,          { desc = "Stage all entries" } },
+                    { "n", "a", actions.toggle_stage_entry, { desc = "Stage / unstage the selected entry." } },
+                    { "n", "A", actions.stage_all,          { desc = "Stage all entries" } },
                 },
             },
             hooks = {
