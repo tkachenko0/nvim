@@ -66,6 +66,7 @@ return {
                             ".env*",
                             "wrangler.toml",
                             ".dev.vars",
+                            ".npmrc",
                         },
                         cloak_pattern = "=.+"
                     },
