@@ -11,37 +11,39 @@ A fast, modular Neovim configuration powered by lazy.nvim. Features full TypeScr
 ## Structure
 
 ```
+.
+├── README.md
 ├── init.lua
 ├── lazy-lock.json
-├── lua/
-│   └── theprimeagen/
-│       ├── init.lua
-│       ├── lazy/
-│       │   ├── autopairs.rc.lua
-│       │   ├── cloak.lua
-│       │   ├── colors.lua
-│       │   ├── conform.lua
-│       │   ├── filetree.lua
-│       │   ├── fugitive.lua
-│       │   ├── gitsigns.lua
-│       │   ├── harpoon.lua
-│       │   ├── init.lua
-│       │   ├── lsp.lua
-│       │   ├── lualine.rc.lua
-│       │   ├── telescope.lua
-│       │   ├── treesitter.lua
-│       │   ├── trouble.lua
-│       │   └── undotree.lua
-│       ├── lazy_init.lua
-│       ├── remap.lua
-│       └── set.lua
-└── README.md
+└── lua
+    └── viacheslav
+        ├── core
+        │   ├── init.lua
+        │   ├── remap.lua
+        │   └── set.lua
+        ├── lazy.lua
+        └── plugins
+            ├── aerial.lua
+            ├── bufferline.lua
+            ├── cmp.lua
+            ├── colorsheme.lua
+            ├── dashboard.lua
+            ├── filetree.lua
+            ├── formatting.lua
+            ├── gitstuff.lua
+            ├── indend-blackline.lua
+            ├── init.lua
+            ├── linting.lua
+            ├── lsp.lua
+            ├── lualine.lua
+            ├── telescope.lua
+            ├── treesitter.lua
+            └── trouble.lua
 ```
 
 ---
 
 ## Prerequisites
-
 
 Do not use apt to install neovim, build FROM SOURCE!
 
