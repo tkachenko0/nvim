@@ -42,6 +42,9 @@ A fast, modular Neovim configuration powered by lazy.nvim. Features full TypeScr
 
 ## Prerequisites
 
+
+Do not use apt to install neovim, build FROM SOURCE!
+
 Make sure you have the following installed:
 
 - **ripgrep** (for Telescope search, etc.)
