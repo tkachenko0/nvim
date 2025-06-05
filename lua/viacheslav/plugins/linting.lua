@@ -29,11 +29,11 @@ return {
 		end
 
 		lint.linters_by_ft = {
-			javascript = eslint_config_exists() and { "eslint" } or {},
-			typescript = eslint_config_exists() and { "eslint" } or {},
-			javascriptreact = eslint_config_exists() and { "eslint" } or {},
-			typescriptreact = eslint_config_exists() and { "eslint" } or {},
-			svelte = eslint_config_exists() and { "eslint" } or {},
+			-- javascript = eslint_config_exists() and { "eslint" } or {},
+			-- typescript = eslint_config_exists() and { "eslint" } or {},
+			-- javascriptreact = eslint_config_exists() and { "eslint" } or {},
+			-- typescriptreact = eslint_config_exists() and { "eslint" } or {},
+			-- svelte = eslint_config_exists() and { "eslint" } or {},
 			-- python = { "pylint" },
 			markdown = { "markdownlint" },
 		}
