@@ -47,6 +47,9 @@ vim.keymap.set("n", "Q", ":qa<CR>", { desc = "Quit all" })
 -- Copy athe whole file
 vim.keymap.set("n", "<C-c>", "<cmd>%y+<CR>")
 
+-- Select all
+vim.keymap.set("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
+
 -- Cycle through normal buffers with Alt+Left and Alt+Right
 -- vim.keymap.set('n', '<A-Left>', function()
 --     local bufnrs = vim.tbl_filter(function(b)
