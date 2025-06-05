@@ -19,7 +19,6 @@ return {
                 "isort",    -- python formatter
                 "black",    -- python formatter
                 "pylint",
-                "eslint_d",
                 "markdownlint",
             },
             auto_update = true,
@@ -39,7 +38,8 @@ return {
                 "jsonls",
                 "dockerls",
                 "docker_compose_language_service",
-                "yamlls"
+                "yamlls",
+                "eslint",
             },
             handlers = {
                 function(server_name)
