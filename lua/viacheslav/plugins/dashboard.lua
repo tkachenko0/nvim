@@ -1,23 +1,35 @@
 return {
-    'nvimdev/dashboard-nvim',
-    event = 'VimEnter',
-    dependencies = { { 'nvim-tree/nvim-web-devicons' } },
+    "goolord/alpha-nvim",
+    dependencies = {
+        "nvim-tree/nvim-web-devicons",
+    },
+
     config = function()
-        require('dashboard').setup {
-            theme = 'hyper',
-            config = {
-                project = { enable = false },
-                header = {
-                    "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
-                    "⠀⠀⠀⠀⠀⠀¯\\_(ツ)_/¯⠀⠀⠀⠀⠀⠀",
-                },
-                footer = {},
-                shortcut = {},
-                mru = {
-                    limit = 10,
-                    cwd_only = true,
-                },
-            },
+        local alpha = require("alpha")
+        local startify = require("alpha.themes.startify")
+
+        startify.section.header.val = {
+            [[                                                                       ]],
+            [[                                                                       ]],
+            [[                                                                       ]],
+            [[                                                                       ]],
+            [[                                                                     ]],
+            [[       ████ ██████           █████      ██                     ]],
+            [[      ███████████             █████                             ]],
+            [[      █████████ ███████████████████ ███   ███████████   ]],
+            [[     █████████  ███    █████████████ █████ ██████████████   ]],
+            [[    █████████ ██████████ █████████ █████ █████ ████ █████   ]],
+            [[  ███████████ ███    ███ █████████ █████ █████ ████ █████  ]],
+            [[ ██████  █████████████████████ ████ █████ █████ ████ ██████ ]],
+            [[                                                                       ]],
+            [[                                                                       ]],
+            [[                                                                       ]],
         }
+
+        startify.section.mru_cwd.val = { { type = "padding", val = 0 } }
+        startify.section.bottom_buttons.val = {}
+        startify.section.top_buttons.val = {}
+
+        alpha.setup(startify.opts)
     end,
 }
