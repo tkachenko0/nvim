@@ -10,8 +10,11 @@ return {
     },
 
     config = function()
+        -- notification for lsp progress
         require("fidget").setup()
+
         require("mason").setup()
+
         require("mason-tool-installer").setup({
             ensure_installed = {
                 "prettier", -- prettier formatter
