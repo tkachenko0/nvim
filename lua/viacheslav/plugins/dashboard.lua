@@ -25,9 +25,9 @@ return {
             [[                                                                       ]],
         }
 
-        startify.section.mru_cwd.val = { { type = "padding", val = 0 } }
-        startify.section.bottom_buttons.val = {}
         startify.section.top_buttons.val = {}
+        startify.section.mru.val = { { type = "padding", val = 0 } }
+        startify.section.bottom_buttons.val = {}
 
         alpha.setup(startify.opts)
     end,

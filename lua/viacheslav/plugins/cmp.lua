@@ -14,16 +14,9 @@ return {
         local luasnip = require("luasnip")
         cmp.setup({
             preselect = cmp.PreselectMode.Item,
-            completion = {
-                completeopt = 'menu,menuone,noinsert',
-            },
             window = {
-                completion = {
-                    border = "rounded",
-                },
-                documentation = {
-                    border = "rounded",
-                },
+                completion = cmp.config.window.bordered(),
+                documentation = cmp.config.window.bordered(),
             },
             snippet = {
                 expand = function(args)
