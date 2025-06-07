@@ -10,7 +10,6 @@ return
                 disable_nvimtree_bg = true,
             })
             vim.cmd("colorscheme vscode")
-
             -- Git diff colors (Visual Studio-like)
             vim.cmd([[
                 highlight DiffAdd    guibg=#144212 guifg=NONE gui=NONE
