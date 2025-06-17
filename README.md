@@ -2,7 +2,7 @@
 
 This is my personal Neovim setup, heavily inspired by [ThePrimeagen's](https://github.com/ThePrimeagen/neovimrc) configuration.
 
-Part of my [Dotfiles repo]() 
+Part of my [Dotfiles repo](https://github.com/tkachenko0/dotfiles).
 
 This is my personal Neovim setup, heavily inspired by [ThePrimeagen's](https://github.com/ThePrimeagen/neovimrc) configuration.
 
@@ -43,4 +43,3 @@ Here’s the refactored and expanded list of features, grouped by category and c
 ## Inspirations
 
 - [ThePrimeagen's Neovim Config](https://github.com/ThePrimeagen/neovimrc)
-
