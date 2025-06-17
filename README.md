@@ -14,11 +14,11 @@ Here’s the refactored and expanded list of features, grouped by category and c
 
 ### Core Development Tools
 
-- **LSP** support for intelligent code completion, diagnostics, and refactoring
-- **Telescope** for powerful fuzzy finding and live grep
-- **Treesitter** for advanced syntax highlighting and code understanding
-- **Undotree** for visual undo history and session management
-- **Trouble** for managing LSP diagnostics, references, and quickfixes
+- **LSP** support for intelligent code completion, diagnostics, and refactoring.
+- **Telescope** for powerful fuzzy finding and live grep.
+- **Treesitter** for advanced syntax highlighting and code understanding.
+- **Undotree** for visual undo history and session management.
+- **Trouble** for managing LSP diagnostics, references, and quickfixes.
 
 ### 🛠Language & Framework Support
 
