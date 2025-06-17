@@ -49,6 +49,8 @@ vim.keymap.set({ "n", "v" }, "G", "G$")
 -- Stay in indent mode
 vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
+vim.keymap.set('n', '>', '>>')
+vim.keymap.set('n', '<', '<<')
 
 -- Buffers
 vim.keymap.set("n", "<C-c>", "<cmd>%y+<CR>", { desc = "Copy the whole file" })
