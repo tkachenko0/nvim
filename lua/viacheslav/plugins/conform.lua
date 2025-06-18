@@ -10,9 +10,11 @@ return {
         {
             "<leader>f",
             function()
-                require("conform").format({ async = true, lsp_fallback = true })
-            end,
-            desc = "Format file",
+                require("conform").format({
+                    async = true,
+                    lsp_fallback = true
+                })
+            end
         },
     },
     opts = {
@@ -45,7 +47,7 @@ return {
     config = function(_, opts)
         require("conform").setup(opts)
 
-        vim.g.autoformat_enabled = true
+        vim.g.autoformat_enabled = false
 
         vim.api.nvim_create_user_command("FormatDisable", function()
             vim.g.autoformat_enabled = false
