@@ -48,18 +48,19 @@ return {
 			'DiffviewFileHistory',
 		},
 		keys = {
-			{ '<leader>ds', '<cmd>DiffviewOpen<cr>',          desc = 'Open Diffview' },
-			{ '<leader>dh', '<cmd>DiffviewFileHistory<cr>',   desc = 'File History' },
-			{ '<leader>dH', '<cmd>DiffviewFileHistory %<cr>', desc = 'File History' },
-			{ '<leader>dc', '<cmd>DiffviewClose<cr>',         desc = 'Close Diffview' },
+			{ '<leader>ds', '<cmd>DiffviewOpen<cr>' },
+			{ '<leader>dh', '<cmd>DiffviewFileHistory<cr>' },
+			{ '<leader>dH', '<cmd>DiffviewFileHistory %<cr>' },
+			{ '<leader>dc', '<cmd>DiffviewClose<cr>' },
 		},
 		config = function()
 			local actions = require("diffview.actions")
 			require("diffview").setup({
 				keymaps = {
 					file_panel = {
-						{ "n", "a", actions.toggle_stage_entry, { desc = "Stage / unstage the selected entry." } },
-						{ "n", "A", actions.stage_all,          { desc = "Stage all entries" } },
+						{ "n", "a", actions.toggle_stage_entry },
+						{ "n", "A", actions.stage_all },
+						{ "n", '<leader>e', '<cmd>DiffviewToggleFiles<cr>' },
 					},
 				},
 			})
