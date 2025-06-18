@@ -7,7 +7,68 @@ return {
     },
     config = function()
         require('cokeline').setup({
-            show_if_buffers_are_at_least = 2,
+            show_if_buffers_are_at_least = 1,
+            default_hl = {
+                fg = function(buffer)
+                    return buffer.is_focused and '#cccccc' or '#888888'
+                end,
+                bg = function(buffer)
+                    return buffer.is_focused and '#3c3836' or '#1d2021'
+                end,
+                bold = function(buffer)
+                    return buffer.is_focused
+                end,
+            },
+            components = {
+                {
+                    text = ' ',
+                    bg = function(buffer)
+                        return buffer.is_focused and '#3c3836' or '#1d2021'
+                    end,
+                },
+                {
+                    text = function(buffer)
+                        return buffer.devicon.icon .. ' '
+                    end,
+                    fg = function(buffer)
+                        return buffer.is_focused and buffer.devicon.color or '#666666'
+                    end,
+                    bg = function(buffer)
+                        return buffer.is_focused and '#3c3836' or '#1d2021'
+                    end,
+                },
+                {
+                    text = function(buffer)
+                        return buffer.filename
+                    end,
+                    fg = function(buffer)
+                        return buffer.is_focused and '#cccccc' or '#888888'
+                    end,
+                    bg = function(buffer)
+                        return buffer.is_focused and '#3c3836' or '#1d2021'
+                    end,
+                    bold = function(buffer)
+                        return buffer.is_focused
+                    end,
+                },
+                {
+                    text = function(buffer)
+                        return buffer.is_modified and ' ●' or ''
+                    end,
+                    fg = function(buffer)
+                        return buffer.is_focused and '#cccccc' or '#888888'
+                    end,
+                    bg = function(buffer)
+                        return buffer.is_focused and '#3c3836' or '#1d2021'
+                    end,
+                },
+                {
+                    text = ' ',
+                    bg = function(buffer)
+                        return buffer.is_focused and '#3c3836' or '#1d2021'
+                    end,
+                },
+            },
         })
         vim.keymap.set('n', '<A-Left>', '<Plug>(cokeline-focus-prev)')
         vim.keymap.set('n', '<A-Right>', '<Plug>(cokeline-focus-next)')
