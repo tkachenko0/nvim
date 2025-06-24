@@ -19,6 +19,6 @@ return {
         })
         vim.keymap.set('n', '<A-Left>', '<Plug>(cokeline-focus-prev)')
         vim.keymap.set('n', '<A-Right>', '<Plug>(cokeline-focus-next)')
-        vim.keymap.set('n', '<leader>x', '<Cmd>bdelete<CR>')
+        vim.keymap.set('n', '<leader>X', '<Cmd>bdelete<CR>')
     end,
 }
