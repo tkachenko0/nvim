@@ -8,7 +8,7 @@ return {
     },
     keys = {
         {
-            "<leader>f",
+            "<leader>F",
             function()
                 require("conform").format({
                     async = true,
@@ -46,14 +46,11 @@ return {
     },
     config = function(_, opts)
         require("conform").setup(opts)
-
         vim.g.autoformat_enabled = false
-
         vim.api.nvim_create_user_command("FormatDisable", function()
             vim.g.autoformat_enabled = false
             print("Autoformat on save: Disabled")
         end, {})
-
         vim.api.nvim_create_user_command("FormatEnable", function()
             vim.g.autoformat_enabled = true
             print("Autoformat on save: Enabled")

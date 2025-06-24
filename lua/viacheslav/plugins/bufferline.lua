@@ -15,9 +15,6 @@ return {
                 bg = function(buffer)
                     return buffer.is_focused and '#3c3836' or '#1d2021'
                 end,
-                bold = function(buffer)
-                    return buffer.is_focused
-                end,
             },
         })
         vim.keymap.set('n', '<A-Left>', '<Plug>(cokeline-focus-prev)')

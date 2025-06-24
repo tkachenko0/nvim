@@ -49,7 +49,6 @@ return {
 
       window = {
         position = "left",
-        -- auto_expand_width = true,
         width = 50,
         mappings = {
           ["<cr>"] = "open",
