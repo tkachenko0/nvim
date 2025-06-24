@@ -6,9 +6,12 @@ return {
         "L3MON4D3/LuaSnip",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
         "b0o/schemastore.nvim",
+        "j-hui/fidget.nvim",
     },
 
     config = function()
+        require("fidget").setup()
+
         require("mason").setup()
 
         require("mason-tool-installer").setup({
