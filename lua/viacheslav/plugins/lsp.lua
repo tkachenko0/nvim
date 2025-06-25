@@ -8,12 +8,9 @@ return {
         "b0o/schemastore.nvim",
         "j-hui/fidget.nvim",
     },
-
     config = function()
         require("fidget").setup()
-
         require("mason").setup()
-
         require("mason-tool-installer").setup({
             ensure_installed = {
                 "prettier",
@@ -27,7 +24,6 @@ return {
             run_on_start = true,
             run_on_write = true,
         })
-
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
@@ -47,18 +43,6 @@ return {
                     require("lspconfig")[server_name].setup({
                     })
                 end,
-
-                ["lua_ls"] = function()
-                    require("lspconfig").lua_ls.setup({
-                        settings = {
-                            Lua = {
-                                diagnostics = {
-                                    globals = { "vim" } },
-                            },
-                        },
-                    })
-                end,
-
                 ["jsonls"] = function()
                     require("lspconfig").jsonls.setup({
                         settings = {
@@ -69,7 +53,6 @@ return {
                         },
                     })
                 end,
-
                 ["yamlls"] = function()
                     require("lspconfig").yamlls.setup({
                         settings = {
@@ -88,25 +71,19 @@ return {
                         },
                     })
                 end,
-
                 ["docker_compose_language_service"] = function()
                     require("lspconfig").docker_compose_language_service.setup({
-                        filetypes = { "yaml" },
                         root_dir = require("lspconfig.util").root_pattern(
                             "docker-compose.yaml",
+                            "Docker-compose.yaml",
                             "docker-compose.yml",
+                            "Docker-compose.yml",
                             "compose.yaml",
                             "compose.yml",
                             ".git"
                         ),
-                        settings = {
-                            dockerCompose = {
-                                enable = true,
-                            },
-                        },
                     })
                 end,
-
             },
         })
     end,

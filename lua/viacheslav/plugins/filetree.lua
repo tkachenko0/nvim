@@ -15,12 +15,10 @@ return {
       close_if_last_window = true,
       hide_root_node = true,
       log_level = "error",
-
       sources = {
         "filesystem",
-        -- "buffers",
+        "buffers",
       },
-
       source_selector = {
         winbar = false,
         tabs_layout = "equal",
@@ -30,7 +28,6 @@ return {
           { source = "git_status", display_name = "󰊢 Git" },
         },
       },
-
       default_component_configs = {
         git_status = {
           symbols = {
@@ -45,9 +42,8 @@ return {
           use_git_status_colors = true,
         },
       },
-
       window = {
-        width = 50,
+        -- width = 50,
         mappings = {
           ["<cr>"] = "open",
           ["<Tab>"] = "next_source",
@@ -55,7 +51,6 @@ return {
           ["<Left>"] = "close_node",
         },
       },
-
       filesystem = {
         follow_current_file = {
           enabled = true,
@@ -74,7 +69,6 @@ return {
         },
         use_libuv_file_watcher = true,
       },
-
       buffers = {
         follow_current_file = {
           enabled = true,
@@ -82,7 +76,6 @@ return {
         show_hidden = true,
       },
     })
-
     vim.api.nvim_set_hl(0, "NeoTreeGitIgnored", { fg = "#6A6A6A", italic = true })
     vim.api.nvim_set_hl(0, "NeoTreeHidden", { fg = "#6A6A6A", italic = true })
   end,

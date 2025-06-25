@@ -49,11 +49,9 @@ return {
         vim.g.autoformat_enabled = false
         vim.api.nvim_create_user_command("FormatDisable", function()
             vim.g.autoformat_enabled = false
-            print("Autoformat on save: Disabled")
         end, {})
         vim.api.nvim_create_user_command("FormatEnable", function()
             vim.g.autoformat_enabled = true
-            print("Autoformat on save: Enabled")
         end, {})
     end,
 }
