@@ -53,48 +53,9 @@ return {
                         settings = {
                             Lua = {
                                 diagnostics = {
-                                    globals = {
-                                        "vim",
-                                        "it",
-                                        "describe",
-                                        "before_each",
-                                        "after_each"
-                                    },
-                                },
+                                    globals = { "vim" } },
                             },
                         },
-                    })
-                end,
-
-                ["pyright"] = function()
-                    local lspconfig = require("lspconfig")
-                    local util = require("lspconfig/util")
-                    lspconfig.pyright.setup({
-                        settings = {
-                            python = {
-                                analysis = {
-                                    reportMissingImports = "error",
-                                },
-                            },
-                        },
-                        root_dir = function(fname)
-                            return util.root_pattern(
-                                "pyproject.toml",
-                                "setup.py",
-                                "setup.cfg",
-                                "requirements.txt",
-                                ".git"
-                            )(fname) or vim.fn.getcwd()
-                        end,
-                        on_init = function(client)
-                            local venv = os.getenv("VIRTUAL_ENV")
-                            if venv then
-                                client.config.settings = client.config.settings or {}
-                                client.config.settings.python = client.config.settings.python or {}
-                                client.config.settings.python.pythonPath = venv .. "/bin/python"
-                                print("Pyright using: " .. venv .. "/bin/python")
-                            end
-                        end,
                     })
                 end,
 
