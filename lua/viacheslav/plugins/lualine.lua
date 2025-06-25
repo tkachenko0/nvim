@@ -10,19 +10,17 @@ return {
             sections = {
                 lualine_a = {
                     {
-                        'mode',
+                        'branch',
                         separator = { right = '' },
                     },
                 },
                 lualine_b = {
                     {
-                        'branch',
+                        'diagnostics',
                         right_padding = 0,
                     },
                 },
                 lualine_c = {
-                    'filename',
-                    'diagnostics',
                 },
                 lualine_x = {
                     'diff',
