@@ -18,12 +18,11 @@ return {
 
       sources = {
         "filesystem",
-        "buffers",
-        "git_status",
+        -- "buffers",
       },
 
       source_selector = {
-        winbar = true,
+        winbar = false,
         tabs_layout = "equal",
         sources = {
           { source = "filesystem", display_name = "󰉓 Files" },
@@ -48,7 +47,6 @@ return {
       },
 
       window = {
-        position = "left",
         width = 50,
         mappings = {
           ["<cr>"] = "open",
@@ -56,13 +54,6 @@ return {
           ["<Right>"] = "toggle_node",
           ["<Left>"] = "close_node",
         },
-      },
-
-      buffers = {
-        follow_current_file = {
-          enabled = true,
-        },
-        show_hidden = true,
       },
 
       filesystem = {
@@ -84,23 +75,12 @@ return {
         use_libuv_file_watcher = true,
       },
 
-      git_status = {
+      buffers = {
         follow_current_file = {
-          enabled = false,
+          enabled = true,
         },
-        window = {
-          mappings = {
-            ["A"] = "git_add_all",
-            ["a"] = "git_add_file",
-            ["u"] = "git_unstage_file",
-            ["r"] = "git_revert_file",
-            ["c"] = "git_commit",
-            ["p"] = "git_push",
-            ["gg"] = "git_commit_and_push",
-          },
-        },
+        show_hidden = true,
       },
-
     })
 
     vim.api.nvim_set_hl(0, "NeoTreeGitIgnored", { fg = "#6A6A6A", italic = true })

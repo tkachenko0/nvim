@@ -1,6 +1,5 @@
 return {
     'willothy/nvim-cokeline',
-    -- enabled = false,
     dependencies = {
         'nvim-lua/plenary.nvim',
         'nvim-tree/nvim-web-devicons',
@@ -19,6 +18,5 @@ return {
         })
         vim.keymap.set('n', '<A-Left>', '<Plug>(cokeline-focus-prev)')
         vim.keymap.set('n', '<A-Right>', '<Plug>(cokeline-focus-next)')
-        vim.keymap.set('n', '<leader>X', '<Cmd>bdelete<CR>')
     end,
 }

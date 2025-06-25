@@ -5,8 +5,8 @@ vim.o.mouse = 'a'
 -- Highlight the current line
 vim.opt.cursorline = true
 
--- Global status line
-vim.o.laststatus = 3
+-- Neovim bottm line (3 for global, 0 for none, 2 is strange)
+vim.o.laststatus = 0
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
