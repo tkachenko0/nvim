@@ -16,6 +16,7 @@ return {
                     "lua",
                     "jsdoc",
                     "html",
+                    "go",
                     "json",
                     "yaml",
                     "css",

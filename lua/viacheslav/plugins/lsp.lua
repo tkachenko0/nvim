@@ -37,6 +37,8 @@ return {
                 "docker_compose_language_service",
                 "yamlls",
                 "eslint",
+                -- the one for go language
+                "gopls",
             },
             handlers = {
                 function(server_name)
