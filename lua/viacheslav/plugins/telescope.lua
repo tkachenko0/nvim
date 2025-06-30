@@ -21,6 +21,9 @@ return {
         require('telescope').setup {
             defaults = {
                 path_display = { "smart" },
+                defaults = {
+                    hidden = true, -- For find_files
+                },
                 mappings = {
                     i = {
                         ["<C-q>"] = function(prompt_bufnr)
