@@ -8,7 +8,7 @@ return {
   },
   cmd = "Neotree",
   keys = {
-    { "\\", "<cmd>Neotree filesystem reveal toggle<CR>" },
+    { "<leader>\\", "<cmd>Neotree filesystem reveal toggle<CR>" },
   },
   config = function()
     require("neo-tree").setup({
