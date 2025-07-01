@@ -42,7 +42,7 @@ vim.opt.termguicolors = true
 
 vim.opt.updatetime = 50 -- Enable file system watcher
 
-vim.opt.autoread = true  -- Auto-reload files when changed externally
+vim.opt.autoread = true -- Auto-reload files when changed externally
 
 -- Folding
 vim.opt.foldmethod = "expr"
