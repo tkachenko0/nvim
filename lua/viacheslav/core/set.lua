@@ -40,7 +40,7 @@ vim.opt.fillchars:append { eob = " " }
 
 vim.opt.termguicolors = true
 
-vim.opt.updatetime = 200 -- Enable file system watcher
+vim.opt.updatetime = 50 -- Enable file system watcher
 
 vim.opt.autoread = true  -- Auto-reload files when changed externally
 
