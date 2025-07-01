@@ -15,15 +15,15 @@ return {
                     },
                 },
                 lualine_b = {
+                },
+                lualine_c = {
+                    'filename',
                     {
                         'diagnostics',
                         right_padding = 0,
                     },
                 },
-                lualine_c = {
-                },
                 lualine_x = {
-                    'diff',
                 },
                 lualine_y = {
                     'filetype',

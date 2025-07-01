@@ -5,7 +5,7 @@ vim.o.mouse = 'a'
 -- Highlight the current line
 vim.opt.cursorline = true
 
--- Neovim bottm line (3 for global, 0 for none, 2 is strange)
+-- Neovim bottm line
 vim.o.laststatus = 0
 
 vim.opt.tabstop = 4
@@ -24,9 +24,6 @@ vim.o.smartcase = true   -- Override ignorecase if search contains uppercase let
 vim.opt.hlsearch = true  -- Highlight search results
 vim.opt.incsearch = true -- Show search results as you type
 
-vim.opt.termguicolors = true
-
-vim.opt.shortmess:append "sI"
 
 vim.opt.scrolloff = 12
 
@@ -36,7 +33,7 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.clipboard:append("unnamedplus")
 
-vim.opt.fillchars:append { eob = " " }
+vim.opt.fillchars:append({ eob = " " })
 
 vim.opt.termguicolors = true
 
@@ -51,10 +48,7 @@ vim.opt.foldcolumn = "0"
 vim.opt.foldtext = ""
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
-vim.opt.foldnestmax = 4
-vim.opt.fillchars:append({
-    fold = " ", -- Clean fold fill character
-})
+vim.opt.fillchars:append({ fold = " " }) -- Clean fold fill character
 
 -- Trigger checktime more frequently
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {

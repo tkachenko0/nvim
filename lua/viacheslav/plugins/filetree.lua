@@ -43,7 +43,6 @@ return {
         },
       },
       window = {
-        -- width = 50,
         mappings = {
           ["<cr>"] = "open",
           ["<Tab>"] = "next_source",
