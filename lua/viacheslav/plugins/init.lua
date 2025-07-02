@@ -31,7 +31,10 @@ return {
             require("colorizer").setup({
                 "css",
                 "scss",
-                "lua"
+                "lua",
+                "tsx",
+                "html",
+                "less",
             })
         end
     },
