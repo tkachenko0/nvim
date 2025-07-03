@@ -61,5 +61,6 @@ vim.keymap.set('n', '<leader>X', '<Cmd>bdelete<CR>', { desc = 'Close right buffe
 -- vim.keymap.set('n', '<A-Left>', '<Cmd>bprevious<CR>', { desc = 'Previous buffer' })
 -- vim.keymap.set('n', '<A-Right>', '<Cmd>bnext<CR>', { desc = 'Next buffer' })
 
--- Misc
+-- Deletions
 vim.keymap.set("n", "cw", "caw", { desc = "Change word under cursor" })
+vim.keymap.set("n", "dw", "daw", { desc = "Delete word under cursor" })
