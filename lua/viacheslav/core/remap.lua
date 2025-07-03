@@ -60,3 +60,6 @@ vim.keymap.set("n", "Q", ":qa<CR>", { desc = "Quit all" })
 vim.keymap.set('n', '<leader>X', '<Cmd>bdelete<CR>', { desc = 'Close right buffer' })
 -- vim.keymap.set('n', '<A-Left>', '<Cmd>bprevious<CR>', { desc = 'Previous buffer' })
 -- vim.keymap.set('n', '<A-Right>', '<Cmd>bnext<CR>', { desc = 'Next buffer' })
+
+-- Misc
+vim.keymap.set("n", "cw", "caw", { desc = "Change word under cursor" })
