@@ -24,6 +24,7 @@ return {
                     },
                 },
                 lualine_x = {
+                    'diff',
                 },
                 lualine_y = {
                     'filetype',
