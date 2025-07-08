@@ -62,6 +62,6 @@ vim.keymap.set('n', '<leader>X', '<Cmd>bdelete<CR>', { desc = 'Close right buffe
 -- vim.keymap.set('n', '<A-Right>', '<Cmd>bnext<CR>', { desc = 'Next buffer' })
 
 -- Deletions
-vim.keymap.set("n", "cw", "ciw")
-vim.keymap.set("n", "dw", "diw")
+vim.keymap.set("n", "_cw", "ciw")
+vim.keymap.set("n", "_dw", "diw")
 vim.keymap.set("n", "yw", "yiw")
