@@ -15,6 +15,11 @@ return {
             },
         })
         vim.keymap.set("n", "\\", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-        vim.api.nvim_set_hl(0, "OilHidden", { fg = "#6c7086" })
+
+        vim.api.nvim_create_autocmd("VimEnter", {
+            callback = function()
+                vim.api.nvim_set_hl(0, "OilHidden", { fg = "#6c7086" })
+            end,
+        })
     end,
 }
