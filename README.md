@@ -4,8 +4,6 @@ This is my personal Neovim setup, heavily inspired by [ThePrimeagen's](https://g
 
 Part of my [Dotfiles repo](https://github.com/tkachenko0/dotfiles).
 
-This is my personal Neovim setup, heavily inspired by [ThePrimeagen's](https://github.com/ThePrimeagen/neovimrc) configuration.
-
 A fast, modular Neovim configuration powered by lazy.nvim. Features full TypeScript development support with Prettier and ESLint integration, git status with Gitsigns, environment variable hiding with Cloak, advanced search with Telescope, powerful syntax highlighting with Treesitter, diagnostics with Trouble, session management with Undotree, fast navigation with Harpoon, and more.
 
 Here’s the refactored and expanded list of features, grouped by category and clearly labeled for readability:
