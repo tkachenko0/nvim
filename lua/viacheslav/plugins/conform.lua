@@ -47,7 +47,7 @@ return {
     },
     config = function(_, opts)
         require("conform").setup(opts)
-        vim.g.autoformat_enabled = false
+        vim.g.autoformat_enabled = true
         vim.api.nvim_create_user_command("FormatDisable", function()
             vim.g.autoformat_enabled = false
         end, {})

@@ -29,3 +29,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
         end, opts)
     end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "yaml",
+    callback = function()
+        vim.opt_local.cursorcolumn = true
+    end,
+})
