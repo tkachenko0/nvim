@@ -11,7 +11,9 @@ return {
                 lualine_a = {
                     {
                         'branch',
-                        separator = { right = '' },
+                        separator = {
+                            right = ''
+                        },
                     },
                 },
                 lualine_b = {
