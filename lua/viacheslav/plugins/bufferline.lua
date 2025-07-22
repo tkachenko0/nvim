@@ -7,7 +7,7 @@ return {
     },
     config = function()
         require('cokeline').setup({
-            show_if_buffers_are_at_least = 2,
+            show_if_buffers_are_at_least = 3,
             default_hl = {
                 fg = function(buffer)
                     return buffer.is_focused and '#cccccc' or '#888888'
