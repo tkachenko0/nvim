@@ -7,7 +7,7 @@ vim.o.mouse = 'a'
 vim.opt.cursorline = true
 
 -- Neovim bottm line
-vim.o.laststatus = 0
+vim.o.laststatus = 3
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -36,7 +36,7 @@ vim.opt.fillchars:append({ eob = " " }) -- Eliminate the end-of-buffer character
 vim.opt.termguicolors = true            -- Enable 24-bit RGB color in the TUI
 
 vim.opt.signcolumn =
-"yes"                                   -- Activate sign column from the start for things like diagnostics, gitsigns, etc.
+"yes" -- Activate sign column from the start for things like diagnostics, gitsigns, etc.
 
 -- Folding
 vim.opt.foldmethod = "expr"
