@@ -36,6 +36,7 @@ return {
                 "html",
                 "less",
                 "tmux",
+                "typescriptreact",
             })
         end
     },
