@@ -12,7 +12,7 @@ return {
   },
   config = function()
     require("neo-tree").setup({
-      close_if_last_window = true,
+      close_if_last_window = false,
       hide_root_node = true,
       log_level = "error",
       sources = {
