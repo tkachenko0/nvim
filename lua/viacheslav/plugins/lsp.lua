@@ -38,10 +38,23 @@ return {
                 "yamlls",
                 "eslint",
                 "gopls",
+                "omnisharp", -- https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.413-linux-x64-binaries
             },
             handlers = {
                 function(server_name)
                     require("lspconfig")[server_name].setup({
+                    })
+                end,
+                ["omnisharp"] = function()
+                    local pid = vim.fn.getpid()
+                    require("lspconfig").omnisharp.setup({
+                        cmd = { "omnisharp", "--languageserver", "--hostPID", tostring(pid) },
+                        enable_editorconfig_support = true,
+                        enable_ms_build_load_projects_on_demand = false,
+                        enable_roslyn_analyzers = true,
+                        organize_imports_on_format = true,
+                        enable_import_completion = true,
+                        sdk_include_prereleases = true,
                     })
                 end,
                 ["jsonls"] = function()
