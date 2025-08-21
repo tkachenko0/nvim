@@ -20,7 +20,7 @@ return {
         "buffers",
       },
       source_selector = {
-        winbar = false,
+        winbar = true,
         tabs_layout = "equal",
         sources = {
           { source = "filesystem", display_name = "󰉓 Files" },
