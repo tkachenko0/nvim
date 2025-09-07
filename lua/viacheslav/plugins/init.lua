@@ -82,4 +82,10 @@ return {
         },
     },
 
+
+    -- for C# support
+    {
+        "Hoffs/omnisharp-extended-lsp.nvim",
+        ft = "cs", -- Only load for C# files
+    },
 }
