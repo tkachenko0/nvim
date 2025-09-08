@@ -39,6 +39,7 @@ return {
                 "eslint",
                 "gopls",
                 "omnisharp", -- https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.413-linux-x64-binaries
+                "sqlls",
             },
             handlers = {
                 function(server_name)
