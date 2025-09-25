@@ -3,14 +3,21 @@ return {
     dependencies = {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
-        "L3MON4D3/LuaSnip",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
         "b0o/schemastore.nvim",
         "j-hui/fidget.nvim",
+        -- add roslyn.nvim
+        "seblj/roslyn.nvim",
     },
     config = function()
         require("fidget").setup()
-        require("mason").setup()
+        require("mason").setup({
+            registries = {
+                "github:mason-org/mason-registry",
+                "github:Crashdummyy/mason-registry", -- needed for roslyn
+            },
+        })
+
         require("mason-tool-installer").setup({
             ensure_installed = {
                 "prettier",
@@ -19,11 +26,12 @@ return {
                 "black",
                 "pylint",
                 "markdownlint",
+                "roslyn", -- install Roslyn LSP through Mason
             },
             auto_update = true,
             run_on_start = true,
-            run_on_write = true,
         })
+
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
@@ -38,25 +46,11 @@ return {
                 "yamlls",
                 "eslint",
                 "gopls",
-                "omnisharp", -- https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.413-linux-x64-binaries
                 "sqlls",
             },
             handlers = {
                 function(server_name)
-                    require("lspconfig")[server_name].setup({
-                    })
-                end,
-                ["omnisharp"] = function()
-                    local pid = vim.fn.getpid()
-                    require("lspconfig").omnisharp.setup({
-                        cmd = { "omnisharp", "--languageserver", "--hostPID", tostring(pid) },
-                        enable_editorconfig_support = true,
-                        enable_ms_build_load_projects_on_demand = false,
-                        enable_roslyn_analyzers = true,
-                        organize_imports_on_format = true,
-                        enable_import_completion = true,
-                        sdk_include_prereleases = true,
-                    })
+                    require("lspconfig")[server_name].setup({})
                 end,
                 ["jsonls"] = function()
                     require("lspconfig").jsonls.setup({
@@ -76,12 +70,8 @@ return {
                                 hover = true,
                                 completion = true,
                                 schemas = require("schemastore").yaml.schemas(),
-                                schemaStore = {
-                                    enable = false,
-                                },
-                                format = {
-                                    enable = true,
-                                },
+                                schemaStore = { enable = false },
+                                format = { enable = true },
                             },
                         },
                     })
@@ -99,6 +89,30 @@ return {
                         ),
                     })
                 end,
+            },
+        })
+
+        -- Roslyn.nvim setup (separate from mason-lspconfig)
+        require("roslyn").setup({
+            filewatching = "auto",
+            broad_search = false,
+            lock_target = false,
+            silent = false,
+        })
+
+        -- Extra Roslyn-specific LSP config
+        vim.lsp.config("roslyn", {
+            on_attach = function(client, bufnr)
+                print("Roslyn LSP attached to buffer " .. bufnr)
+            end,
+            settings = {
+                ["csharp|inlay_hints"] = {
+                    csharp_enable_inlay_hints_for_implicit_object_creation = true,
+                    csharp_enable_inlay_hints_for_implicit_variable_types = true,
+                },
+                ["csharp|code_lens"] = {
+                    dotnet_enable_references_code_lens = true,
+                },
             },
         })
     end,
