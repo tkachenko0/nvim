@@ -42,6 +42,9 @@ vim.keymap.set("n", "S", '"_S', { silent = true })
 vim.keymap.set({ "n", "v" }, "s", '"_s', { silent = true })
 vim.keymap.set({ "n", "v" }, "d", '"_d', { silent = true })
 
+-- Paste without overwriting the unnamed register
+vim.keymap.set("v", "p", '"_dP', { silent = true })
+
 -- Go to beginning and end of the file
 vim.keymap.set({ "n", "v" }, "gg", "gg0")
 vim.keymap.set({ "n", "v" }, "G", "G$")
