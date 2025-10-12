@@ -49,7 +49,7 @@ vim.opt.foldcolumn = "0"
 vim.opt.foldtext = ""
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
-vim.opt.fillchars:append({ fold = " " }) -- Clean fold fill character
+-- vim.opt.fillchars:append({ fold = " " }) -- Clean fold fill character
 
 -- Auto-reload files when changed externally
 vim.opt.autoread = true
