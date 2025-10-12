@@ -20,16 +20,20 @@ vim.opt.swapfile = false -- .swp files creation
 vim.opt.backup = false   -- Disable backup files
 
 -- Search settings
-vim.o.ignorecase = true                 -- Ignore case when searching
-vim.o.smartcase = true                  -- Override ignorecase if search contains uppercase letters
-vim.opt.hlsearch = true                 -- Highlight search results
-vim.opt.incsearch = true                -- Show search results as you type
+vim.o.ignorecase = true       -- Ignore case when searching
+vim.o.smartcase = true        -- Override ignorecase if search contains uppercase letters
+vim.opt.hlsearch = true       -- Highlight search results
+vim.opt.incsearch = true      -- Show search results as you type
 
-vim.opt.scrolloff = 12                  -- Keep 12 lines visible above/below the cursor
+vim.opt.scrolloff = 12        -- Keep 12 lines visible above/below the cursor
 
-vim.opt.isfname:append("@-@")           -- Allow '@' in filenames
+vim.opt.isfname:append("@-@") -- Allow '@' in filenames
 
-vim.opt.clipboard:append("unnamedplus") -- Use the system clipboard for all yanks
+-- Sync clipboard between OS and Neovim.
+--  Schedule the setting after `UiEnter` because it can increase startup-time.
+vim.schedule(function()
+    vim.o.clipboard = 'unnamedplus'
+end)
 
 vim.opt.fillchars:append({ eob = " " }) -- Eliminate the end-of-buffer characters
 
