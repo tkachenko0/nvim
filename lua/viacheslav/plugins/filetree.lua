@@ -18,6 +18,7 @@ return {
       sources = {
         "filesystem",
         "buffers",
+        "git_status",
       },
       source_selector = {
         winbar = true,
