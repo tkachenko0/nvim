@@ -1,8 +1,6 @@
 return {
     "hrsh7th/nvim-cmp",
     dependencies = {
-        "L3MON4D3/LuaSnip",
-        "saadparwaiz1/cmp_luasnip",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
@@ -11,7 +9,6 @@ return {
     event = "InsertEnter",
     config = function()
         local cmp = require("cmp")
-        local luasnip = require("luasnip")
         cmp.setup({
             preselect = cmp.PreselectMode.Item,
             completion = {
@@ -23,7 +20,6 @@ return {
             },
             snippet = {
                 expand = function(args)
-                    luasnip.lsp_expand(args.body)
                 end,
             },
             mapping = {
@@ -34,7 +30,6 @@ return {
             },
             sources = {
                 { name = "nvim_lsp" },
-                { name = "luasnip" },
                 { name = "buffer" },
                 { name = "nvim_lua" },
                 { name = "path" },
