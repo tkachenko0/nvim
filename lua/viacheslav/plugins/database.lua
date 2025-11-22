@@ -12,9 +12,7 @@ return {
                 vim.g.db_ui_use_nerd_fonts = 1
                 vim.g.db_ui_show_database_icon = 1
                 vim.g.db_ui_force_echo_messages = 1
-                vim.g.db_ui_win_position = 'left'
-                vim.g.db_ui_winwidth = 40
-                vim.g.db_ui_execute_on_save = 0  -- Disable auto-execution on save
+                vim.g.db_ui_execute_on_save = 0 -- Disable auto-execution on save
 
                 -- Auto-completion setup
                 vim.api.nvim_create_autocmd('FileType', {
