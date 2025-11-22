@@ -33,6 +33,8 @@ return {
                 vim.keymap.set('n', '<leader>df', '<cmd>DBUIFindBuffer<CR>', { desc = 'Find DB buffer' })
                 vim.keymap.set('n', '<leader>dr', '<cmd>DBUIRenameBuffer<CR>', { desc = 'Rename DB buffer' })
                 vim.keymap.set('n', '<leader>dq', '<cmd>DBUILastQueryInfo<CR>', { desc = 'Last query info' })
+                vim.keymap.set('n', '<leader>rr', ':%DB<CR>', { desc = 'Run SQL file' })
+                vim.keymap.set('v', '<leader>rr', ':DB<CR>', { desc = 'Run SQL selection' })
             end,
         }
     }
