@@ -24,6 +24,7 @@ return {
                     "css",
                     "python",
                     "terraform",
+                    "sql",
                     "toml",
                 },
                 sync_install = false,

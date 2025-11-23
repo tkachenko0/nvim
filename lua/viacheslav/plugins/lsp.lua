@@ -89,6 +89,33 @@ return {
                         ),
                     })
                 end,
+                ["sqlls"] = function()
+                    require("lspconfig").sqlls.setup({
+                        settings = {
+                            sqlLanguageServer = {
+                                lint = {
+                                    rules = {
+                                        ["align-column-to-the-first"] = "off",
+                                        ["column-new-line"] = "off",
+                                        ["linebreak-after-clause-keyword"] = "off",
+                                        ["reserved-word-case"] = "off",
+                                        ["space-surrounding-operators"] = "off",
+                                        ["where-clause-new-line"] = "off",
+                                    },
+                                },
+                                format = {
+                                    enable = false,
+                                },
+                                -- Disabilita parsing per comandi psql
+                                connections = {},
+                            },
+                        },
+                        -- Disabilita diagnostica per file con comandi psql
+                        on_attach = function(client, bufnr)
+                            client.server_capabilities.diagnosticProvider = false
+                        end,
+                    })
+                end,
             },
         })
 
