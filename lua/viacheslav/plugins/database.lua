@@ -7,8 +7,8 @@ return {
     cmd = { 'DBUI', 'DBUIToggle', 'DBUIAddConnection', 'DB' },
     keys = {
         { '<leader>db', '<cmd>DBUIToggle<CR>', desc = 'Toggle DBUI' },
-        { '<leader>r', ':%DB<CR>', desc = 'Run SQL file', mode = 'n' },
-        { '<leader>r', ':DB<CR>', desc = 'Run SQL selection', mode = 'v' },
+        { '<leader>r',  ':%DB<CR>',            desc = 'Run SQL file',      mode = 'n' },
+        { '<leader>r',  ':DB<CR>',             desc = 'Run SQL selection', mode = 'v' },
     },
     init = function()
         vim.g.db_ui_use_nerd_fonts = 1
@@ -17,15 +17,5 @@ return {
         vim.g.db_ui_execute_on_save = 0
         vim.g.db_ui_save_location = '~/dev/databases'
     end,
-    config = function()
-        vim.api.nvim_create_autocmd('FileType', {
-            pattern = { 'sql', 'mysql', 'plsql' },
-            callback = function()
-                local cmp = require('cmp')
-                local sources = cmp.get_config().sources
-                table.insert(sources, { name = 'vim-dadbod-completion' })
-                cmp.setup.buffer({ sources = sources })
-            end,
-        })
-    end,
+
 }
