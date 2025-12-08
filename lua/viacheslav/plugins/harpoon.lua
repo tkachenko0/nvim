@@ -11,7 +11,11 @@ return {
             },
             default = {
                 display = function(list_item)
-                    return vim.fn.fnamemodify(list_item.value, ":t")
+                    local path = list_item.value
+                    local parent = vim.fn.fnamemodify(path, ":h:t")
+                    local filename = vim.fn.fnamemodify(path, ":t")
+                    if parent == "." then return filename end
+                    return parent .. "/" .. filename
                 end,
             },
         })
