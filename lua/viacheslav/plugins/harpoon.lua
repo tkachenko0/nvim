@@ -8,7 +8,12 @@ return {
             settings = {
                 save_on_toggle = true,
                 sync_on_ui_close = true,
-            }
+            },
+            default = {
+                display = function(list_item)
+                    return vim.fn.fnamemodify(list_item.value, ":t")
+                end,
+            },
         })
 
         local harpoon_extensions = require("harpoon.extensions")
