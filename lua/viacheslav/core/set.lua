@@ -35,9 +35,9 @@ vim.schedule(function()
     vim.o.clipboard = 'unnamedplus'
 end)
 
-vim.opt.fillchars:append({ eob = " " }) -- Eliminate the end-of-buffer characters
+-- vim.opt.fillchars:append({ eob = " " }) -- Eliminate the end-of-buffer characters
 
-vim.opt.termguicolors = true            -- Enable 24-bit RGB color in the TUI
+vim.opt.termguicolors = true -- Enable 24-bit RGB color in the TUI
 
 -- Activate sign column from the start for things like diagnostics, gitsigns, etc.
 vim.opt.signcolumn = "yes"
