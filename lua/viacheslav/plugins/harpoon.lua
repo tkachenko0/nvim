@@ -6,16 +6,14 @@ return {
         local harpoon = require("harpoon")
         harpoon:setup({
             settings = {
-                save_on_toggle = true,
-                sync_on_ui_close = true,
+                -- save_on_toggle = true,
+                -- sync_on_ui_close = true,
             },
             default = {
                 display = function(list_item)
                     local path = list_item.value
-                    local parent = vim.fn.fnamemodify(path, ":h:t")
                     local filename = vim.fn.fnamemodify(path, ":t")
-                    if parent == "." then return filename end
-                    return parent .. "/" .. filename
+                    return filename
                 end,
             },
         })
