@@ -96,7 +96,6 @@ return {
         vim.keymap.set('n', '<leader>fs', builtin.lsp_document_symbols)
         vim.keymap.set('n', '<leader>fS', builtin.lsp_dynamic_workspace_symbols)
         vim.keymap.set('n', '<leader>fw', builtin.grep_string)
-        vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find)
         vim.keymap.set('n', '<leader>fg', builtin.live_grep)
         vim.keymap.set('n', '<leader>fG', function()
             require('telescope.builtin').live_grep {
