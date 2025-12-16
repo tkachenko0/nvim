@@ -15,6 +15,8 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
+vim.opt.colorcolumn = "120"
+
 vim.opt.wrap = false     -- Line wrapping
 vim.opt.swapfile = false -- .swp files creation
 vim.opt.backup = false   -- Disable backup files
