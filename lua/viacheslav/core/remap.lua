@@ -16,6 +16,10 @@ vim.keymap.set('n', '<C-Down>', '<C-w>j', { desc = 'Move to below split' })
 vim.keymap.set('n', '<C-Up>', '<C-w>k', { desc = 'Move to above split' })
 vim.keymap.set('n', '<C-RIght>', '<C-w>l', { desc = 'Move to right split' })
 
+-- Quickfix navigation
+vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+
 -- Clear highlights for search
 vim.keymap.set("n", "<esc>", "<cmd>nohlsearch<cr>", { desc = "Clear highlights" })
 
