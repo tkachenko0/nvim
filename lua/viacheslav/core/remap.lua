@@ -65,8 +65,9 @@ vim.keymap.set("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
 vim.keymap.set('n', '<Tab>', '<C-6>', { noremap = true, silent = true }, { desc = 'Switch to last buffer' })
 vim.keymap.set("n", "Q", ":qa<CR>", { desc = "Quit all" })
 vim.keymap.set('n', '<leader>X', '<Cmd>bdelete<CR>', { desc = 'Close right buffer' })
--- vim.keymap.set('n', '<A-Left>', '<Cmd>bprevious<CR>', { desc = 'Previous buffer' })
--- vim.keymap.set('n', '<A-Right>', '<Cmd>bnext<CR>', { desc = 'Next buffer' })
+
+-- Terminal mode
+vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
 
 -- Deletions
 vim.keymap.set("n", 'cw', '"_ciw')
