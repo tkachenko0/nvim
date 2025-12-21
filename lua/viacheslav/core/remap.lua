@@ -2,6 +2,7 @@ vim.g.mapleader = " "
 
 -- Hate me for this, but I need it
 vim.keymap.set('n', ';', ':')
+vim.keymap.set('n', '\'', ';')
 
 -- Remaps for beginning and end of line
 vim.keymap.set({ 'n', 'v' }, 'B', '_', { desc = 'Go to beginning of line' })
