@@ -33,7 +33,7 @@ return {
         --     end,
         -- })
 
-        vim.keymap.set("n", "<leader>A", function() harpoon:list():add() end)
+        vim.keymap.set("n", "<leader><leader>", function() harpoon:list():add() end)
         vim.keymap.set("n", "<A-a>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
     end,
 }
