@@ -29,7 +29,6 @@ return {
                     },
                     lualine_z = {},
                 },
-                extensions = { 'fugitive' },
             }
         end
     }
