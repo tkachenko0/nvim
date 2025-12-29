@@ -44,11 +44,9 @@ vim.opt.foldcolumn = "0"
 vim.opt.foldtext = ""
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
--- vim.opt.fillchars:append({ fold = " " }) -- Clean fold fill character
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
--- See `:help 'confirm'`
 vim.o.confirm = true
 
 -- Auto-reload files when changed externally
