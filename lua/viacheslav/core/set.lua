@@ -30,7 +30,6 @@ vim.opt.scrolloff = 12        -- Keep 12 lines visible above/below the cursor
 vim.opt.isfname:append("@-@") -- Allow '@' in filenames
 
 -- Sync clipboard between OS and Neovim.
---  Schedule the setting after `UiEnter` because it can increase startup-time.
 vim.o.clipboard = 'unnamedplus'
 
 vim.opt.termguicolors = true -- Enable 24-bit RGB color in the TUI
