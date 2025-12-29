@@ -27,47 +27,15 @@ return {
                 mappings = {
                     i = {
                         ["<C-q>"] = function(prompt_bufnr)
-                            -- Get the quickfix list and remove duplicates
                             actions.send_to_qflist(prompt_bufnr)
-                            local qflist = vim.fn.getqflist()
-                            local seen = {}
-                            local deduped = {}
-                            for _, item in ipairs(qflist) do
-                                local key = string.format("%s:%d:%d",
-                                    vim.fn.bufname(item.bufnr),
-                                    item.lnum,
-                                    item.col
-                                )
-                                if not seen[key] then
-                                    table.insert(deduped, item)
-                                    seen[key] = true
-                                end
-                            end
-                            vim.fn.setqflist(deduped, 'r')
                             vim.cmd("Trouble qflist open")
                         end,
                     },
                     n = {
                         ["<C-q>"] = function(prompt_bufnr)
-                            -- Get the quickfix list and remove duplicates
                             actions.send_to_qflist(prompt_bufnr)
-                            local qflist = vim.fn.getqflist()
-                            local seen = {}
-                            local deduped = {}
-                            for _, item in ipairs(qflist) do
-                                local key = string.format("%s:%d:%d",
-                                    vim.fn.bufname(item.bufnr),
-                                    item.lnum,
-                                    item.col
-                                )
-                                if not seen[key] then
-                                    table.insert(deduped, item)
-                                    seen[key] = true
-                                end
-                            end
-                            vim.fn.setqflist(deduped, 'r')
                             vim.cmd("Trouble qflist open")
-                        end,
+                        end
                     },
                 },
             },
