@@ -3,7 +3,7 @@ return {
     dependencies = {
         "nvim-tree/nvim-web-devicons",
     },
-    enabled = true,
+    enabled = false,
     config = function()
         local alpha = require("alpha")
         local startify = require("alpha.themes.startify")
