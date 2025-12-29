@@ -25,18 +25,12 @@ return {
                     hidden = true, -- For find_files
                 },
                 mappings = {
-                    i = {
-                        ["<C-q>"] = function(prompt_bufnr)
-                            actions.send_to_qflist(prompt_bufnr)
-                            vim.cmd("Trouble qflist open")
-                        end,
-                    },
-                    n = {
-                        ["<C-q>"] = function(prompt_bufnr)
-                            actions.send_to_qflist(prompt_bufnr)
-                            vim.cmd("Trouble qflist open")
-                        end
-                    },
+                    i = { ["<C-q>"] = function(p)
+                        actions.send_to_qflist(p); vim.cmd("Trouble qflist open")
+                    end },
+                    n = { ["<C-q>"] = function(p)
+                        actions.send_to_qflist(p); vim.cmd("Trouble qflist open")
+                    end },
                 },
             },
             extensions = {
