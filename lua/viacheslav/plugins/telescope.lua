@@ -21,9 +21,7 @@ return {
         require('telescope').setup {
             defaults = {
                 path_display = { "smart" },
-                defaults = {
-                    hidden = true, -- For find_files
-                },
+                hidden = true,
                 mappings = {
                     i = { ["<C-q>"] = function(p)
                         actions.send_to_qflist(p); vim.cmd("Trouble qflist open")
