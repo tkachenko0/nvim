@@ -39,11 +39,11 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set('v', '<leader>s', '"hy:%s/<C-r>h/<C-r>h/g<Left><Left>')
 
 -- Not copy when deleting
-vim.keymap.set("n", "x", '"_x', { silent = true })
-vim.keymap.set("n", "c", '"_c', { silent = true })
-vim.keymap.set("n", "S", '"_S', { silent = true })
-vim.keymap.set({ "n", "v" }, "s", '"_s', { silent = true })
-vim.keymap.set({ "n", "v" }, "d", '"_d', { silent = true })
+vim.keymap.set("n", "x", '"_x')
+vim.keymap.set("n", "c", '"_c')
+vim.keymap.set("n", "S", '"_S')
+vim.keymap.set({ "n", "v" }, "s", '"_s')
+vim.keymap.set({ "n", "v" }, "d", '"_d')
 
 -- Paste without overwriting the unnamed register
 vim.keymap.set("v", "p", '"_dP', { silent = true })
