@@ -31,9 +31,7 @@ vim.opt.isfname:append("@-@") -- Allow '@' in filenames
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
-vim.schedule(function()
-    vim.o.clipboard = 'unnamedplus'
-end)
+vim.o.clipboard = 'unnamedplus'
 
 vim.opt.termguicolors = true -- Enable 24-bit RGB color in the TUI
 
