@@ -67,9 +67,6 @@ vim.keymap.set('n', '<Tab>', '<C-6>', { noremap = true, silent = true }, { desc 
 vim.keymap.set("n", "Q", ":qa<CR>", { desc = "Quit all" })
 vim.keymap.set('n', '<leader>X', '<Cmd>bdelete<CR>', { desc = 'Close right buffer' })
 
--- Terminal mode
-vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
-
 -- Deletions
 vim.keymap.set("n", 'cw', '"_ciw')
 vim.keymap.set("n", 'dw', '"_diw')
