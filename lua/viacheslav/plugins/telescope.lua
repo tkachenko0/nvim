@@ -43,26 +43,13 @@ return {
 
         local builtin = require 'telescope.builtin'
 
-        vim.keymap.set('n', '<C-p>', function()
-            require('telescope.builtin').git_files {
-                additional_args = function()
-                    return { '--ignore-case' }
-                end,
-            }
-        end, { desc = 'Git files (case insensitive)' })
-
+        vim.keymap.set('n', '<C-p>', function() builtin.git_files({ additional_args = { '--ignore-case' } }) end)
         vim.keymap.set('n', '<leader>ff', builtin.find_files)
         vim.keymap.set('n', '<leader>fr', builtin.lsp_references)
         vim.keymap.set('n', '<leader>fs', builtin.lsp_document_symbols)
         vim.keymap.set('n', '<leader>fS', builtin.lsp_dynamic_workspace_symbols)
         vim.keymap.set('n', '<leader>fw', builtin.grep_string)
         vim.keymap.set('n', '<leader>fg', builtin.live_grep)
-        vim.keymap.set('n', '<leader>fG', function()
-            require('telescope.builtin').live_grep {
-                additional_args = function()
-                    return { '--case-sensitive' }
-                end,
-            }
-        end)
+        vim.keymap.set('n', '<leader>fG', function() builtin.live_grep({ additional_args = { '--case-sensitive' } }) end)
     end,
 }
