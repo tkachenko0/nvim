@@ -17,5 +17,4 @@ return {
         vim.g.db_ui_execute_on_save = 0
         vim.g.db_ui_save_location = '~/dev/databases'
     end,
-
 }

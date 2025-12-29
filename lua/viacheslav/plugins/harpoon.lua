@@ -23,16 +23,6 @@ return {
         local harpoon_extensions = require("harpoon.extensions")
         harpoon:extend(harpoon_extensions.builtins.highlight_current_file())
 
-        -- vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
-        --     callback = function(args)
-        --         local buf = args.buf
-        --         if vim.bo[buf].buftype ~= "" then return end
-        --         local name = vim.api.nvim_buf_get_name(buf)
-        --         if name == "" then return end
-        --         harpoon:list():add()
-        --     end,
-        -- })
-
         vim.keymap.set("n", "<leader><leader>", function() harpoon:list():add() end)
         vim.keymap.set("n", "<A-a>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
     end,
