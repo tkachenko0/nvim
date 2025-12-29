@@ -51,7 +51,6 @@ return {
                         init_selection = "<M-w>",
                         node_incremental = "<M-w>",
                         node_decremental = "<M-W>",
-                        scope_incremental = "<M-s>",
                     },
                 },
                 fold = { enable = true },
