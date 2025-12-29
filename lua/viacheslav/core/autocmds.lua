@@ -18,12 +18,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
         vim.keymap.set("n", "[D", vim.diagnostic.goto_prev, opts)
         vim.keymap.set("n", "]D", vim.diagnostic.goto_next, opts)
-        vim.keymap.set("n", "[d", function()
-            vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })
-        end, opts)
-        vim.keymap.set("n", "]d", function()
-            vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })
-        end, opts)
+        vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR }) end,
+            opts)
+        vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR }) end,
+            opts)
     end,
 })
 

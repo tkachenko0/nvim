@@ -15,7 +15,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
-vim.opt.colorcolumn = "120"
+-- vim.opt.colorcolumn = "120"
 
 vim.opt.wrap = false     -- Line wrapping
 vim.opt.swapfile = false -- .swp files creation
@@ -36,8 +36,6 @@ vim.opt.isfname:append("@-@") -- Allow '@' in filenames
 vim.schedule(function()
     vim.o.clipboard = 'unnamedplus'
 end)
-
--- vim.opt.fillchars:append({ eob = " " }) -- Eliminate the end-of-buffer characters
 
 vim.opt.termguicolors = true -- Enable 24-bit RGB color in the TUI
 
