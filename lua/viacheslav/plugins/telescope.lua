@@ -72,34 +72,5 @@ return {
                 end,
             }
         end)
-
-        local function get_visual_selection()
-            local reg_save = vim.fn.getreg('"')
-            local regtype_save = vim.fn.getregtype('"')
-            vim.cmd('normal! "xy')
-            local selection = vim.fn.getreg('x')
-            vim.fn.setreg('"', reg_save, regtype_save)
-            return selection:gsub('\n', ''):gsub('\r', '')
-        end
-
-        vim.keymap.set('v', '<leader>f', function()
-            local selection = get_visual_selection()
-            builtin.live_grep({
-                default_text = selection,
-                additional_args = function()
-                    return { '--ignore-case' }
-                end,
-            })
-        end, { desc = 'Live grep selected text (case insensitive)' })
-
-        vim.keymap.set('v', '<leader>F', function()
-            local selection = get_visual_selection()
-            builtin.live_grep({
-                default_text = selection,
-                additional_args = function()
-                    return { '--case-sensitive' }
-                end,
-            })
-        end, { desc = 'Live grep selected text (case sensitive)' })
     end,
 }
