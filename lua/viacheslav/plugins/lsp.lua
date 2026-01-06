@@ -5,12 +5,9 @@ return {
         "williamboman/mason-lspconfig.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
         "b0o/schemastore.nvim",
-        "j-hui/fidget.nvim",
-        -- add roslyn.nvim
-        "seblj/roslyn.nvim",
+        "seblj/roslyn.nvim", -- add roslyn.nvim
     },
     config = function()
-        require("fidget").setup()
         require("mason").setup({
             registries = {
                 "github:mason-org/mason-registry",
