@@ -60,8 +60,7 @@ vim.keymap.set('n', '<', '<<')
 -- Buffers
 vim.keymap.set("n", "<C-c>", "<cmd>%y+<CR>", { desc = "Copy the whole file" })
 vim.keymap.set("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
-vim.keymap.set('n', '<Tab>', '<C-6>', { noremap = true }, { desc = 'Switch to last buffer' })
-vim.keymap.set('n', '<leader>X', '<Cmd>bdelete<CR>', { desc = 'Close right buffer' })
+vim.keymap.set('n', '<Tab>', '<C-6>', { desc = 'Switch to last buffer' })
 
 -- Deletions
 vim.keymap.set("n", 'cw', '"_ciw')
