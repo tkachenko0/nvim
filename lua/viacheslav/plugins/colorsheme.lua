@@ -2,7 +2,7 @@ return {
     "Mofiqul/vscode.nvim",
     config = function()
         require("vscode").setup({
-            transparent = true,
+            -- transparent = true,
         })
         vim.cmd("colorscheme vscode")
         -- Git diff colors (Visual Studio-like)
