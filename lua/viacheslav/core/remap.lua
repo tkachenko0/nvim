@@ -44,6 +44,7 @@ vim.keymap.set({ "n", "v" }, "S", '"_S')
 vim.keymap.set({ "n", "v" }, "x", '"_x')
 vim.keymap.set({ "n", "v" }, "s", '"_s')
 vim.keymap.set({ "n", "v" }, "d", '"_d')
+vim.keymap.set({ "n", "v" }, "c", '"_c')
 
 -- Paste without overwriting the unnamed register
 vim.keymap.set("v", "p", '"_dP', { silent = true })
