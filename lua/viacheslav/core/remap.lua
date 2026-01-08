@@ -43,6 +43,8 @@ vim.keymap.set('v', '<leader>s', '"hy:%s/<C-r>h/<C-r>h/g<Left><Left>')
 vim.keymap.set({ "n", "v" }, "d", '"_d')
 vim.keymap.set({ "n", "v" }, "c", '"_c')
 vim.keymap.set({ "n", "v" }, "x", '"_x')
+vim.keymap.set({ "n", "v" }, "C", '"_C')
+vim.keymap.set({ "n", "v" }, "S", '"_S')
 
 -- Paste without overwriting the unnamed register
 vim.keymap.set("v", "p", '"_dP', { silent = true })
