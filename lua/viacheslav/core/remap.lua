@@ -39,6 +39,12 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set('v', '<leader>s', '"hy:%s/<C-r>h/<C-r>h/g<Left><Left>')
 
+-- Text objects
+vim.keymap.set("n", 'yw', 'yiw')
+vim.keymap.set("n", 'vw', 'viw')
+vim.keymap.set("n", 'cw', 'ciw')
+vim.keymap.set("n", 'dw', 'diw')
+
 -- Black-hole destructive actions
 vim.keymap.set({ "n", "v" }, "da", '"_da')
 vim.keymap.set({ "n", "v" }, "di", '"_di')
