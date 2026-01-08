@@ -46,13 +46,13 @@ vim.keymap.set({ "n", "v" }, "x", '"_x')
 vim.keymap.set({ "n", "v" }, "C", '"_C')
 vim.keymap.set({ "n", "v" }, "S", '"_S')
 
+-- Buffers & selection
+vim.keymap.set("n", "<C-c>", "<cmd>%y+<CR>")
+vim.keymap.set("n", "<C-a>", "gg<S-v>G")
+vim.keymap.set('n', '<Tab>', '<C-6>')
+
 -- Paste without overwriting the unnamed register
 vim.keymap.set("v", "p", '"_dP', { silent = true })
-
-vim.keymap.set("x", "<leader>p", [["_dP]])
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- File navigation
 vim.keymap.set({ "n", "v" }, "gg", "gg0")
@@ -63,8 +63,3 @@ vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
 vim.keymap.set('n', '>', '>>')
 vim.keymap.set('n', '<', '<<')
-
--- Buffers & selection
-vim.keymap.set("n", "<C-c>", "<cmd>%y+<CR>")
-vim.keymap.set("n", "<C-a>", "gg<S-v>G")
-vim.keymap.set('n', '<Tab>', '<C-6>')
