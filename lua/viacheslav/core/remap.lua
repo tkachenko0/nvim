@@ -26,10 +26,10 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<esc>", "<cmd>nohlsearch<cr>", { desc = "Clear highlights" })
 
 -- Move lines up and down
-vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv")
-vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv")
-vim.keymap.set('n', '<A-j>', ':m .+1<CR>==')
-vim.keymap.set('n', '<A-k>', ':m .-2<CR>==')
+vim.keymap.set('v', '<A-Down>', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', '<A-Up>', ":m '<-2<CR>gv=gv")
+vim.keymap.set('n', '<A-Down>', ':m .+1<CR>==')
+vim.keymap.set('n', '<A-Up>', ':m .-2<CR>==')
 
 -- Vertical scroll and center
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
