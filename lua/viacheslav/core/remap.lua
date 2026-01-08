@@ -42,22 +42,19 @@ vim.keymap.set('v', '<leader>s', '"hy:%s/<C-r>h/<C-r>h/g<Left><Left>')
 -- Text objects
 vim.keymap.set("n", 'yw', 'yiw')
 vim.keymap.set("n", 'vw', 'viw')
-vim.keymap.set("n", 'cw', '"_ciw')
-vim.keymap.set("n", 'dw', '"_diw')
+vim.keymap.set("n", 'cw', 'ciw')
+vim.keymap.set("n", 'dw', 'diw')
 
--- Black-hole destructive actions
-vim.keymap.set({ "n", "v" }, "da", '"_da')
-vim.keymap.set({ "n", "v" }, "di", '"_di')
-vim.keymap.set({ "n", "v" }, "c", '"_c')
-vim.keymap.set({ "n", "v" }, "c", '"_c')
-vim.keymap.set({ "n", "v" }, "x", '"_x')
-vim.keymap.set({ "n", "v" }, "C", '"_C')
-vim.keymap.set({ "n", "v" }, "S", '"_S')
 
 -- Buffers & selection
 vim.keymap.set("n", "<C-c>", "<cmd>%y+<CR>")
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 vim.keymap.set('n', '<Tab>', '<C-6>')
+
+-- Yank-safe paste (uses register 0: last yank)
+vim.keymap.set('n', '<leader>p', '"0p', { desc = 'Paste last yank' })
+vim.keymap.set('n', '<leader>P', '"0P', { desc = 'Paste last yank before cursor' })
+vim.keymap.set('v', '<leader>p', '"0p')
 
 -- Paste without overwriting the unnamed register
 vim.keymap.set("v", "p", '"_dP', { silent = true })
