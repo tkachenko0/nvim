@@ -1,4 +1,5 @@
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- Hate me for this, but I need it
 vim.keymap.set('n', ';', ':')
