@@ -19,8 +19,8 @@ vim.keymap.set('n', '<C-Up>', '<C-w>k')
 vim.keymap.set('n', '<C-RIght>', '<C-w>l')
 
 -- Quickfix navigation
-vim.keymap.set("n", "<C-Up>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-Down>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 
 -- Clear highlights for search
 vim.keymap.set("n", "<esc>", "<cmd>nohlsearch<cr>", { desc = "Clear highlights" })
