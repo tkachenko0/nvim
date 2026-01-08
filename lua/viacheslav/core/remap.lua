@@ -67,3 +67,5 @@ vim.keymap.set('n', '<Tab>', '<C-6>')
 -- Text objects
 vim.keymap.set("n", 'yw', 'yiw')
 vim.keymap.set("n", 'vw', 'viw')
+vim.keymap.set("n", 'cw', 'ciw')
+vim.keymap.set("n", 'dw', 'diw')
