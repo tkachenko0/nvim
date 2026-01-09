@@ -39,28 +39,16 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set('v', '<leader>s', '"hy:%s/<C-r>h/<C-r>h/g<Left><Left>')
 
--- Text objects
+-- Copy, Cut, Paste, Select
 vim.keymap.set("n", 'yw', 'yiw')
-vim.keymap.set("n", 'vw', 'viw')
 vim.keymap.set("n", 'cw', '"_ciw')
 vim.keymap.set("n", 'dw', '"_diw')
-
--- Black-hole destructive actions
-vim.keymap.set({ "n", "v" }, "da", '"_da')
-vim.keymap.set({ "n", "v" }, "di", '"_di')
-vim.keymap.set({ "n", "v" }, "c", '"_c')
-vim.keymap.set({ "n", "v" }, "c", '"_c')
-vim.keymap.set({ "n", "v" }, "x", '"_x')
-vim.keymap.set({ "n", "v" }, "C", '"_C')
+vim.keymap.set("n", 'vw', 'viw')
+vim.keymap.set("v", "p", '"_dP')
 vim.keymap.set({ "n", "v" }, "S", '"_S')
-
--- Buffers & selection
-vim.keymap.set("n", "<C-c>", "<cmd>%y+<CR>")
-vim.keymap.set("n", "<C-a>", "gg<S-v>G")
-vim.keymap.set('n', '<Tab>', '<C-6>')
-
--- Paste without overwriting the unnamed register
-vim.keymap.set("v", "p", '"_dP', { silent = true })
+vim.keymap.set({ "n", "v" }, "x", '"_x')
+vim.keymap.set({ "n", "v" }, "s", '"_s')
+vim.keymap.set({ "n", "v" }, "d", '"_d')
 
 -- File navigation
 vim.keymap.set({ "n", "v" }, "gg", "gg0")
@@ -71,3 +59,8 @@ vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
 vim.keymap.set('n', '>', '>>')
 vim.keymap.set('n', '<', '<<')
+
+-- Buffers
+vim.keymap.set("n", "<C-c>", "<cmd>%y+<CR>")
+vim.keymap.set("n", "<C-a>", "gg<S-v>G")
+vim.keymap.set('n', '<Tab>', '<C-6>')
