@@ -42,6 +42,7 @@ vim.keymap.set('v', '<leader>s', '"hy:%s/<C-r>h/<C-r>h/g<Left><Left>')
 -- Copy, Cut, Paste, Select
 vim.keymap.set("n", 'yw', 'yiw')
 vim.keymap.set("n", 'cw', '"_ciw')
+vim.keymap.set("n", 'ci"', '"_ci"')
 vim.keymap.set("n", 'dw', '"_diw')
 vim.keymap.set("n", 'vw', 'viw')
 vim.keymap.set("v", "p", '"_dP')
