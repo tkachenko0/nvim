@@ -23,12 +23,12 @@ return {
                 path_display = { "smart" },
                 hidden = true,
                 mappings = {
-                    -- i = { ["<C-q>"] = function(p)
-                    --     actions.send_to_qflist(p); vim.cmd("Trouble qflist open")
-                    -- end },
-                    -- n = { ["<C-q>"] = function(p)
-                    --     actions.send_to_qflist(p); vim.cmd("Trouble qflist open")
-                    -- end },
+                    i = { ["<C-q>"] = function(p)
+                        actions.send_to_qflist(p); vim.cmd("Trouble qflist open")
+                    end },
+                    n = { ["<C-q>"] = function(p)
+                        actions.send_to_qflist(p); vim.cmd("Trouble qflist open")
+                    end },
                 },
             },
         }
