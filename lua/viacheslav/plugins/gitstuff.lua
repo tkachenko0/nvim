@@ -57,10 +57,8 @@ return {
 			local actions = require("diffview.actions")
 			require("diffview").setup({
 				file_panel = {
-					listing_style = "list",
 					win_config = {
 						position = "bottom",
-						height = 10,
 					},
 				},
 				keymaps = {
