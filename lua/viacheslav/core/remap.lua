@@ -5,10 +5,6 @@ vim.g.maplocalleader = ' '
 vim.keymap.set('n', ';', ':')
 vim.keymap.set('n', '\'', ';')
 
--- Line navigation
-vim.keymap.set({ 'n', 'v' }, 'B', '_')
-vim.keymap.set({ 'n', 'v' }, 'E', '$')
-
 -- Custom scripts
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 

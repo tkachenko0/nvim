@@ -5,13 +5,13 @@ return {
         "williamboman/mason-lspconfig.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
         "b0o/schemastore.nvim",
-        "seblj/roslyn.nvim", -- add roslyn.nvim
+        "seblj/roslyn.nvim",
     },
     config = function()
         require("mason").setup({
             registries = {
                 "github:mason-org/mason-registry",
-                "github:Crashdummyy/mason-registry", -- needed for roslyn
+                "github:Crashdummyy/mason-registry",
             },
         })
 
@@ -23,7 +23,7 @@ return {
                 "black",
                 "pylint",
                 "markdownlint",
-                "roslyn", -- install Roslyn LSP through Mason
+                "roslyn",
             },
             auto_update = true,
             run_on_start = true,
@@ -89,28 +89,11 @@ return {
             },
         })
 
-        -- Roslyn.nvim setup (separate from mason-lspconfig)
         require("roslyn").setup({
             filewatching = "auto",
             broad_search = false,
             lock_target = false,
             silent = false,
-        })
-
-        -- Extra Roslyn-specific LSP config
-        vim.lsp.config("roslyn", {
-            on_attach = function(client, bufnr)
-                print("Roslyn LSP attached to buffer " .. bufnr)
-            end,
-            settings = {
-                ["csharp|inlay_hints"] = {
-                    csharp_enable_inlay_hints_for_implicit_object_creation = true,
-                    csharp_enable_inlay_hints_for_implicit_variable_types = true,
-                },
-                ["csharp|code_lens"] = {
-                    dotnet_enable_references_code_lens = true,
-                },
-            },
         })
     end,
 }
