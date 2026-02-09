@@ -56,7 +56,6 @@ return {
                 highlight = {
                     enable = true,
                 },
-                fold = { enable = true },
             })
         end,
     },
