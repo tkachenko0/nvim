@@ -33,6 +33,7 @@ return {
                 highlight = {
                     enable = true,
                 },
+                fold = { enable = true },
                 textobjects = {
                     select = {
                         enable = true,
@@ -45,16 +46,22 @@ return {
                         },
                     },
                 },
-                incremental_selection = {
-                    enable = true,
-                    keymaps = {
-                        init_selection = "<M-w>",
-                        node_incremental = "<M-w>",
-                        node_decremental = "<M-W>",
-                    },
-                },
-                fold = { enable = true },
             })
         end,
+    },
+
+    {
+        "MeanderingProgrammer/treesitter-modules.nvim",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        opts = {
+            incremental_selection = {
+                enable = true,
+                keymaps = {
+                    init_selection = "<M-w>",
+                    node_incremental = "<M-w>",
+                    node_decremental = "<M-W>",
+                },
+            },
+        },
     },
 }
