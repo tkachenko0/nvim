@@ -23,28 +23,10 @@ return {
 	},
 
 	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		config = function()
-			require("nvim-treesitter").install({
-				"vimdoc",
-				"javascript",
-				"typescript",
-				"tsx",
-				"lua",
-				"jsdoc",
-				"html",
-				"go",
-				"json",
-				"yaml",
-				"css",
-				"python",
-				"terraform",
-				"sql",
-				"toml",
-			})
-		end,
-	},
+		'nvim-treesitter/nvim-treesitter',
+		lazy = false,
+		build = ':TSUpdate'
+        },
 
 	{
 		"MeanderingProgrammer/treesitter-modules.nvim",
