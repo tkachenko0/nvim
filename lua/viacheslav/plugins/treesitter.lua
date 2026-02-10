@@ -4,12 +4,6 @@ return {
         "nvim-treesitter/nvim-treesitter-textobjects",
         dependencies = { "nvim-treesitter/nvim-treesitter" },
         config = function()
-            require("nvim-treesitter-textobjects").setup({
-                select = {
-                    lookahead = true,
-                },
-            })
-
             local select = require("nvim-treesitter-textobjects.select")
             for _, mode in ipairs({ "x", "o" }) do
                 vim.keymap.set(mode, "af", function()
