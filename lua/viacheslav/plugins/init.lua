@@ -5,10 +5,7 @@ return {
         name = "plenary"
     },
 
-    -- "github/copilot.vim",
-
-    -- Detect tabstop and shiftwidth automatically
-    'tpope/vim-sleuth',
+    { 'NMAC427/guess-indent.nvim', opts = {} },
 
     {
         'windwp/nvim-ts-autotag',
