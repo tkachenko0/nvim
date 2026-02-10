@@ -42,6 +42,19 @@ vim.opt.foldcolumn = "0"
 vim.opt.foldtext = ""
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "*",
+    callback = function()
+        local has_parser = pcall(vim.treesitter.get_parser)
+        if has_parser then
+            vim.opt_local.foldmethod = "expr"
+            vim.opt_local.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+        else
+            vim.opt_local.foldmethod = "indent"
+        end
+    end,
+})
+
 
 -- Confirm before closing with unsaved changes
 vim.o.confirm = true
