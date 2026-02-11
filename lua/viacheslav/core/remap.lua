@@ -38,14 +38,15 @@ vim.keymap.set('v', '<leader>s', '"hy:%s/<C-r>h/<C-r>h/g<Left><Left>')
 -- Copy, Cut, Paste, Select
 vim.keymap.set("n", 'yw', 'yiw')
 vim.keymap.set("n", 'cw', '"_ciw')
-vim.keymap.set("n", 'ci', '"_ci')
 vim.keymap.set("n", 'dw', '"_diw')
 vim.keymap.set("n", 'vw', 'viw')
 vim.keymap.set("v", "p", '"_dP')
+vim.keymap.set({ "n", "v" }, "c", '"_c')
 vim.keymap.set({ "n", "v" }, "S", '"_S')
 vim.keymap.set({ "n", "v" }, "x", '"_x')
 vim.keymap.set({ "n", "v" }, "s", '"_s')
 vim.keymap.set({ "n", "v" }, "d", '"_d')
+vim.keymap.set({ "n", "v" }, "<leader>c", 'c')
 
 -- File navigation
 vim.keymap.set({ "n", "v" }, "gg", "gg0")
