@@ -24,6 +24,7 @@ return {
                 "pylint",
                 "markdownlint",
                 "roslyn",
+                "sql-formatter",
             },
             auto_update = true,
             run_on_start = true,

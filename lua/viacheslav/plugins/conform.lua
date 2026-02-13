@@ -42,6 +42,7 @@ return {
             liquid = { "prettier" },
             lua = {},
             python = { "isort", "black" },
+            sql = { "sql_formatter" },
         },
     },
     config = function(_, opts)
