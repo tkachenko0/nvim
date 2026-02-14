@@ -37,14 +37,10 @@ return {
 				"query",
 				"vim",
 				"vimdoc",
-				"vimdoc",
 				"javascript",
 				"typescript",
-				"typescriptreact",
 				"tsx",
-				"lua",
 				"jsdoc",
-				"html",
 				"go",
 				"json",
 				"yaml",
@@ -56,6 +52,7 @@ return {
 				"c_sharp",
 			}
 			require("nvim-treesitter").install(filetypes)
+
 			vim.api.nvim_create_autocmd("FileType", {
 				pattern = filetypes,
 				callback = function()
