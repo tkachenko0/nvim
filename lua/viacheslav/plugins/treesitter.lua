@@ -40,6 +40,7 @@ return {
 				"vimdoc",
 				"javascript",
 				"typescript",
+				"typescriptreact",
 				"tsx",
 				"lua",
 				"jsdoc",
