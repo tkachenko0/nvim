@@ -1,18 +1,8 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Hate me for this, but I need it
-vim.keymap.set('n', ';', ':')
-vim.keymap.set('n', '\'', ';')
-
 -- Custom scripts
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-
--- Window navigation
-vim.keymap.set('n', '<C-Left>', '<C-w>h')
-vim.keymap.set('n', '<C-Down>', '<C-w>j')
-vim.keymap.set('n', '<C-Up>', '<C-w>k')
-vim.keymap.set('n', '<C-Right>', '<C-w>l')
 
 -- Quickfix navigation
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
@@ -22,10 +12,10 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<esc>", "<cmd>nohlsearch<cr>", { desc = "Clear highlights" })
 
 -- Move lines
-vim.keymap.set('v', '<A-Down>', ":m '>+1<CR>gv=gv")
-vim.keymap.set('v', '<A-Up>', ":m '<-2<CR>gv=gv")
-vim.keymap.set('n', '<A-Down>', ':m .+1<CR>==')
-vim.keymap.set('n', '<A-Up>', ':m .-2<CR>==')
+vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv")
+vim.keymap.set('n', '<A-j>', ':m .+1<CR>==')
+vim.keymap.set('n', '<A-k>', ':m .-2<CR>==')
 
 -- Scroll & center
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -50,10 +40,7 @@ vim.keymap.set({ "n", "v" }, "X", '"_X')
 vim.keymap.set({ "n", "v" }, "d", '"_d')
 vim.keymap.set({ "n", "v" }, "D", '"_D')
 vim.keymap.set({ "n", "v" }, "<leader>c", 'c')
-
--- File navigation
-vim.keymap.set({ "n", "v" }, "gg", "gg0")
-vim.keymap.set({ "n", "v" }, "G", "G$")
+vim.keymap.set({ "n", "v" }, "<leader>C", 'C')
 
 -- Indentation
 vim.keymap.set('v', '<', '<gv')
