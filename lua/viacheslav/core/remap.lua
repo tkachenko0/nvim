@@ -9,7 +9,7 @@ vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 
 -- Clear highlights for search
-vim.keymap.set("n", "<esc>", "<cmd>nohlsearch<cr>", { desc = "Clear highlights" })
+vim.keymap.set("n", "<esc>", "<cmd>nohlsearch<cr>")
 
 -- Move lines
 vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv")
