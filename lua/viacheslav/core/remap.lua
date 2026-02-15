@@ -49,6 +49,5 @@ vim.keymap.set('n', '>', '>>')
 vim.keymap.set('n', '<', '<<')
 
 -- Buffers
-vim.keymap.set("n", "<C-c>", "<cmd>%y+<CR>")
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 vim.keymap.set('n', '<Tab>', '<C-6>')
