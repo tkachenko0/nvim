@@ -42,6 +42,12 @@ vim.keymap.set({ "n", "v" }, "D", '"_D')
 vim.keymap.set({ "n", "v" }, "<leader>c", 'c')
 vim.keymap.set({ "n", "v" }, "<leader>C", 'C')
 
+-- Window navigation
+vim.keymap.set('n', '<C-Left>', '<C-w>h')
+vim.keymap.set('n', '<C-Down>', '<C-w>j')
+vim.keymap.set('n', '<C-Up>', '<C-w>k')
+vim.keymap.set('n', '<C-Right>', '<C-w>l')
+
 -- Indentation
 vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
