@@ -1,8 +1,6 @@
 vim.opt.relativenumber = true
 vim.opt.nu = true
 
-vim.o.mouse = 'a'
-
 -- Highlight the current line
 vim.opt.cursorline = true
 
@@ -20,14 +18,12 @@ vim.opt.swapfile = false -- .swp files creation
 vim.opt.backup = false   -- Disable backup files
 
 -- Search settings
-vim.o.ignorecase = true       -- Ignore case when searching
-vim.o.smartcase = true        -- Override ignorecase if search contains uppercase letters
-vim.opt.hlsearch = true       -- Highlight search results
-vim.opt.incsearch = true      -- Show search results as you type
+vim.o.ignorecase = true  -- Ignore case when searching
+vim.o.smartcase = true   -- Override ignorecase if search contains uppercase letters
+vim.opt.hlsearch = true  -- Highlight search results
+vim.opt.incsearch = true -- Show search results as you type
 
-vim.opt.scrolloff = 12        -- Keep 12 lines visible above/below the cursor
-
-vim.opt.isfname:append("@-@") -- Allow '@' in filenames
+vim.opt.scrolloff = 12   -- Keep 12 lines visible above/below the cursor
 
 -- Sync clipboard between OS and Neovim.
 vim.o.clipboard = 'unnamedplus'
