@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
         vim.keymap.set("n", "K", function() vim.lsp.buf.hover { border = "single" } end, opts)
         vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-        vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, opts)
+        vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
         vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
         vim.keymap.set("n", "[D", vim.diagnostic.goto_prev, opts)
         vim.keymap.set("n", "]D", vim.diagnostic.goto_next, opts)
