@@ -25,7 +25,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		config = function()
-			local filetypes = {
+			local parsers = {
 				"bash",
 				"c",
 				"diff",
@@ -51,10 +51,13 @@ return {
 				"toml",
 				"c_sharp",
 			}
-			require("nvim-treesitter").install(filetypes)
+			require("nvim-treesitter").install(parsers)
 
 			vim.api.nvim_create_autocmd("FileType", {
-				pattern = filetypes,
+				pattern = {
+					"typescriptreact",
+					unpack(parsers)
+				},
 				callback = function()
 					vim.treesitter.start()
 				end,
