@@ -1,10 +1,8 @@
 vim.opt.relativenumber = true
 vim.opt.nu = true
 
--- Highlight the current line
 vim.opt.cursorline = true
 
--- Neovim bottm line
 vim.o.laststatus = 3
 
 vim.opt.tabstop = 4
@@ -13,24 +11,20 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
-vim.opt.wrap = false     -- Line wrapping
-vim.opt.swapfile = false -- .swp files creation
-vim.opt.backup = false   -- Disable backup files
+vim.opt.wrap = false
+vim.opt.swapfile = false
+vim.opt.backup = false
 
 -- Search settings
-vim.o.ignorecase = true  -- Ignore case when searching
-vim.o.smartcase = true   -- Override ignorecase if search contains uppercase letters
-vim.opt.hlsearch = true  -- Highlight search results
-vim.opt.incsearch = true -- Show search results as you type
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.opt.hlsearch = true
+vim.opt.incsearch = true
 
-vim.opt.scrolloff = 12   -- Keep 12 lines visible above/below the cursor
+vim.opt.scrolloff = 8
 
--- Sync clipboard between OS and Neovim.
-vim.o.clipboard = 'unnamedplus'
+vim.opt.termguicolors = true
 
-vim.opt.termguicolors = true -- Enable 24-bit RGB color in the TUI
-
--- Activate sign column from the start for things like diagnostics, gitsigns, etc.
 vim.opt.signcolumn = "yes"
 
 -- Folding
