@@ -6,9 +6,8 @@ return {
         keymap = {
             preset = "default",
             ["<CR>"] = { "accept", "fallback" },
-            ["<C-Space>"] = { "show", "show_documentation", "hide_documentation" },
-            ["<Down>"] = { "select_next", "fallback" },
-            ["<Up>"] = { "select_prev", "fallback" },
+            ["<Tab>"] = { "select_next", "fallback" },
+            ["<S-Tab>"] = { "select_prev", "fallback" },
         },
         appearance = {
             use_nvim_cmp_as_default = true,
