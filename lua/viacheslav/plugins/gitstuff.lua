@@ -56,10 +56,9 @@ return {
 		config = function()
 			local actions = require("diffview.actions")
 			require("diffview").setup({
-				file_panel = {
-					win_config = {
-						position = "bottom",
-						height = 10,
+				view = {
+					merge_tool = {
+						layout = "diff3_mixed",
 					},
 				},
 				keymaps = {
