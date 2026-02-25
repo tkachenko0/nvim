@@ -20,6 +20,7 @@ vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set('v', '<leader>s', '"hy:%s/<C-r>h/<C-r>h/g<Left><Left>')
 
 vim.keymap.set('x', 'p', '"_dP')
+vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+P')
 vim.keymap.set({ 'n', 'v' }, 'y', '"+y')
 
 vim.keymap.set('v', '<', '<gv')
