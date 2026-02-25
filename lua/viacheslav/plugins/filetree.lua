@@ -3,7 +3,7 @@ return {
   branch = 'v3.x',
   dependencies = {
     'nvim-lua/plenary.nvim',
-    'nvim-tree/nvim-web-devicons',
+    { 'nvim-tree/nvim-web-devicons', enabled = false },
     'MunifTanjim/nui.nvim',
   },
   cmd = 'Neotree',
@@ -24,9 +24,9 @@ return {
         winbar = true,
         tabs_layout = 'equal',
         sources = {
-          { source = 'filesystem', display_name = '󰉓 Files' },
-          { source = 'buffers', display_name = '󰈚 Buffers' },
-          { source = 'git_status', display_name = '󰊢 Git' },
+          { source = 'filesystem', display_name = 'Files' },
+          { source = 'buffers', display_name = 'Buffers' },
+          { source = 'git_status', display_name = 'Git' },
         },
       },
       default_component_configs = {
