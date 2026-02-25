@@ -6,6 +6,7 @@ return {
       options = {
         theme = 'auto',
         globalstatus = true,
+        icons_enabled = false,
       },
       sections = {
         lualine_a = { 'branch' },
