@@ -1,20 +1,20 @@
 return {
-    "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-        require("lualine").setup {
-            options = {
-                theme = "auto",
-                globalstatus = true,
-            },
-            sections = {
-                lualine_a = { 'branch' },
-                lualine_b = { "filename" },
-                lualine_c = { "diagnostics" },
-                lualine_x = {},
-                lualine_y = { 'filetype' },
-                lualine_z = {},
-            },
-        }
-    end
+  'nvim-lualine/lualine.nvim',
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
+  config = function()
+    require('lualine').setup {
+      options = {
+        theme = 'auto',
+        globalstatus = true,
+      },
+      sections = {
+        lualine_a = { 'branch' },
+        lualine_b = { 'filename' },
+        lualine_c = { 'diagnostics' },
+        lualine_x = {},
+        lualine_y = { 'filetype' },
+        lualine_z = {},
+      },
+    }
+  end,
 }

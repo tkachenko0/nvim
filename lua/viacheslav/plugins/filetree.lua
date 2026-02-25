@@ -1,54 +1,54 @@
 return {
-  "nvim-neo-tree/neo-tree.nvim",
-  branch = "v3.x",
+  'nvim-neo-tree/neo-tree.nvim',
+  branch = 'v3.x',
   dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons",
-    "MunifTanjim/nui.nvim",
+    'nvim-lua/plenary.nvim',
+    'nvim-tree/nvim-web-devicons',
+    'MunifTanjim/nui.nvim',
   },
-  cmd = "Neotree",
+  cmd = 'Neotree',
   keys = {
-    { "<leader>\\", "<cmd>Neotree filesystem reveal toggle<CR>" },
+    { '<leader>\\', '<cmd>Neotree filesystem reveal toggle<CR>' },
   },
   config = function()
-    require("neo-tree").setup({
+    require('neo-tree').setup {
       close_if_last_window = true,
       hide_root_node = true,
-      log_level = "error",
+      log_level = 'error',
       sources = {
-        "filesystem",
-        "buffers",
-        "git_status",
+        'filesystem',
+        'buffers',
+        'git_status',
       },
       source_selector = {
         winbar = true,
-        tabs_layout = "equal",
+        tabs_layout = 'equal',
         sources = {
-          { source = "filesystem", display_name = "󰉓 Files" },
-          { source = "buffers", display_name = "󰈚 Buffers" },
-          { source = "git_status", display_name = "󰊢 Git" },
+          { source = 'filesystem', display_name = '󰉓 Files' },
+          { source = 'buffers', display_name = '󰈚 Buffers' },
+          { source = 'git_status', display_name = '󰊢 Git' },
         },
       },
       default_component_configs = {
         git_status = {
           symbols = {
-            ignored = "◌",
+            ignored = '◌',
           },
         },
         indent = {
           with_markers = false,
         },
         name = {
-          highlight = "NeoTreeFileName",
+          highlight = 'NeoTreeFileName',
           use_git_status_colors = true,
         },
       },
       window = {
         mappings = {
-          ["<cr>"] = "open",
-          ["<Tab>"] = "next_source",
-          ["<Right>"] = "toggle_node",
-          ["<Left>"] = "close_node",
+          ['<cr>'] = 'open',
+          ['<Tab>'] = 'next_source',
+          ['<Right>'] = 'toggle_node',
+          ['<Left>'] = 'close_node',
         },
       },
       filesystem = {
@@ -62,9 +62,9 @@ return {
           hide_dotfiles = false,
           hide_gitignored = false,
           never_show = {
-            ".git",
-            ".DS_Store",
-            "__pycache__",
+            '.git',
+            '.DS_Store',
+            '__pycache__',
           },
         },
         use_libuv_file_watcher = true,
@@ -75,8 +75,8 @@ return {
         },
         show_hidden = true,
       },
-    })
-    vim.api.nvim_set_hl(0, "NeoTreeGitIgnored", { fg = "#6A6A6A", italic = true })
-    vim.api.nvim_set_hl(0, "NeoTreeHidden", { fg = "#6A6A6A", italic = true })
+    }
+    vim.api.nvim_set_hl(0, 'NeoTreeGitIgnored', { fg = '#6A6A6A', italic = true })
+    vim.api.nvim_set_hl(0, 'NeoTreeHidden', { fg = '#6A6A6A', italic = true })
   end,
 }

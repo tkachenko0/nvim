@@ -1,2 +1,2 @@
-require("viacheslav.core")
-require("viacheslav.lazy")
+require 'viacheslav.core'
+require 'viacheslav.lazy'
