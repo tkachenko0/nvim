@@ -9,10 +9,6 @@ return {
       cond = function() return vim.fn.executable 'make' == 1 end,
     },
     { 'nvim-telescope/telescope-ui-select.nvim' },
-    {
-      'nvim-tree/nvim-web-devicons',
-      enabled = false,
-    },
   },
   config = function()
     local actions = require 'telescope.actions'
