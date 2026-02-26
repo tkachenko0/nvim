@@ -61,10 +61,10 @@ return {
         },
         keymaps = {
           file_panel = {
-         { 'n', 'a',    actions.toggle_stage_entry },
-        { 'n', 'A',     actions.stage_all },
-         { 'n', 'u',    actions.toggle_stage_entry },
-      { 'n', 'U',       actions.unstage_all },
+            { 'n', 'a', actions.toggle_stage_entry },
+            { 'n', 'A', actions.stage_all },
+            { 'n', 'u', actions.toggle_stage_entry },
+            { 'n', 'U', actions.unstage_all },
             { 'n', '<leader>e', '<cmd>DiffviewToggleFiles<cr>' },
           },
         },

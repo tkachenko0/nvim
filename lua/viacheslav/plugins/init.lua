@@ -5,6 +5,20 @@ return {
     name = 'plenary',
   },
 
+  {
+    'goolord/alpha-nvim',
+    enabled = false,
+    config = function()
+      local alpha = require 'alpha'
+      local startify = require 'alpha.themes.startify'
+      startify.file_icons.enabled = false
+      startify.section.top_buttons.val = {}
+      startify.section.mru.val = { { type = 'padding', val = 0 } }
+      startify.section.bottom_buttons.val = {}
+      alpha.setup(startify.opts)
+    end,
+  },
+
   { 'NMAC427/guess-indent.nvim', opts = {} },
 
   {
@@ -21,22 +35,6 @@ return {
   },
 
   'RRethy/vim-illuminate',
-
-  {
-    'norcalli/nvim-colorizer.lua',
-    config = function()
-      require('colorizer').setup {
-        'css',
-        'scss',
-        'lua',
-        'tsx',
-        'html',
-        'less',
-        'tmux',
-        'typescriptreact',
-      }
-    end,
-  },
 
   {
     'mbbill/undotree',
