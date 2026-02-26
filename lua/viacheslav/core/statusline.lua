@@ -1,22 +1,32 @@
 local function git_branch()
-  local branch = vim.fn.system "git branch --show-current 2>/dev/null | tr -d '\n'"
-  return branch ~= '' and ' %#Type#[' .. branch .. ']%*' or ''
+  local head = vim.b.gitsigns_head
+  if head and head ~= '' then return ' %#Type# ' .. head .. '%*' end
+  return ''
 end
 
 local function diagnostics()
-  local errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
-  local warnings = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
-  local hints = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
-  local info = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO })
+  local diags = vim.diagnostic.get(0)
+  if vim.tbl_isempty(diags) then return '' end
+
+  local counts = { E = 0, W = 0, H = 0, I = 0 }
+
+  for _, d in ipairs(diags) do
+    if d.severity == vim.diagnostic.severity.ERROR then counts.E = counts.E + 1 end
+    if d.severity == vim.diagnostic.severity.WARN then counts.W = counts.W + 1 end
+    if d.severity == vim.diagnostic.severity.HINT then counts.H = counts.H + 1 end
+    if d.severity == vim.diagnostic.severity.INFO then counts.I = counts.I + 1 end
+  end
 
   local parts = {}
-  if errors > 0 then table.insert(parts, '%#DiagnosticError#E:' .. errors .. '%*') end
-  if warnings > 0 then table.insert(parts, '%#DiagnosticWarn#W:' .. warnings .. '%*') end
-  if hints > 0 then table.insert(parts, '%#DiagnosticHint#H:' .. hints .. '%*') end
-  if info > 0 then table.insert(parts, '%#DiagnosticInfo#I:' .. info .. '%*') end
+  if counts.E > 0 then table.insert(parts, '%#DiagnosticError#E' .. counts.E .. '%*') end
+  if counts.W > 0 then table.insert(parts, '%#DiagnosticWarn#W' .. counts.W .. '%*') end
+  if counts.H > 0 then table.insert(parts, '%#DiagnosticHint#H' .. counts.H .. '%*') end
+  if counts.I > 0 then table.insert(parts, '%#DiagnosticInfo#I' .. counts.I .. '%*') end
 
-  return #parts > 0 and ' ' .. table.concat(parts, ' ') or ''
+  return ' ' .. table.concat(parts, ' ')
 end
+
+local function filetype() return vim.bo.filetype ~= '' and ' ' .. vim.bo.filetype or '' end
 
 function _G.statusline()
   return table.concat {
@@ -24,10 +34,8 @@ function _G.statusline()
     ' %t',
     diagnostics(),
     '%=',
-    '%y',
+    filetype(),
   }
 end
 
 vim.o.statusline = '%!v:lua.statusline()'
-
-return {}
