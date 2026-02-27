@@ -1,6 +1,6 @@
 local function git_branch()
   local head = vim.b.gitsigns_head
-  if head and head ~= '' then return ' %#Type# ' .. head .. '%*' end
+  if head and head ~= '' then return ' %#Type# [' .. head .. ']%*' end
   return ''
 end
 
@@ -26,14 +26,28 @@ local function diagnostics()
   return ' ' .. table.concat(parts, ' ')
 end
 
+local function modified() return vim.bo.modified and ' [+]' or '' end
+
+local function lsp_status()
+  local clients = vim.lsp.get_clients({ bufnr = 0 })
+  if #clients == 0 then return '' end
+  local names = {}
+  for _, client in ipairs(clients) do
+    table.insert(names, client.name)
+  end
+  return ' %#Type#[' .. table.concat(names, ',') .. ']%*'
+end
+
 local function filetype() return vim.bo.filetype ~= '' and ' ' .. vim.bo.filetype or '' end
 
 function _G.statusline()
   return table.concat {
     git_branch(),
     ' %t',
+    modified(),
     diagnostics(),
     '%=',
+    lsp_status(),
     filetype(),
   }
 end
