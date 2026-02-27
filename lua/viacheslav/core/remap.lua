@@ -22,6 +22,7 @@ vim.keymap.set('v', '<leader>s', '"hy:%s/<C-r>h/<C-r>h/g<Left><Left>')
 vim.keymap.set('x', 'p', '"_dP')
 vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+P')
 vim.keymap.set({ 'n', 'v' }, 'y', '"+y')
+vim.keymap.set({ 'n', 'v' }, '<leader>c', '"+c')
 
 vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
