@@ -1,7 +1,6 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.opt.cursorline = true
 vim.o.laststatus = 3
 vim.opt.signcolumn = 'yes'
 vim.o.confirm = true
