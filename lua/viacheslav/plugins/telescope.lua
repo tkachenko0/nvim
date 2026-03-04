@@ -11,25 +11,10 @@ return {
     { 'nvim-telescope/telescope-ui-select.nvim' },
   },
   config = function()
-    local actions = require 'telescope.actions'
     require('telescope').setup {
       defaults = {
         path_display = { 'smart' },
         hidden = true,
-        mappings = {
-          i = {
-            ['<C-q>'] = function(p)
-              actions.send_to_qflist(p)
-              vim.cmd 'Trouble qflist open'
-            end,
-          },
-          n = {
-            ['<C-q>'] = function(p)
-              actions.send_to_qflist(p)
-              vim.cmd 'Trouble qflist open'
-            end,
-          },
-        },
       },
     }
 
@@ -43,26 +28,16 @@ return {
         additional_args = { '--ignore-case' },
       }
     end)
-    vim.keymap.set(
-      'n',
-      '<leader>ff',
-      function()
-        builtin.find_files {
-          hidden = true,
-          no_ignore = true,
-          no_ignore_parent = true,
-        }
-      end
-    )
+    vim.keymap.set('n', '<leader>ff', function()
+      builtin.find_files {
+        hidden = true,
+        no_ignore = true,
+        no_ignore_parent = true,
+      }
+    end)
     vim.keymap.set('n', '<leader>fr', builtin.lsp_references)
     vim.keymap.set('n', '<leader>fs', builtin.lsp_document_symbols)
     vim.keymap.set('n', '<leader>fS', builtin.lsp_dynamic_workspace_symbols)
-    vim.keymap.set('n', '<leader>fw', builtin.grep_string)
     vim.keymap.set('n', '<leader>fg', builtin.live_grep)
-    vim.keymap.set('n', '<leader>fG', function()
-      builtin.live_grep {
-        additional_args = { '--case-sensitive' },
-      }
-    end)
   end,
 }

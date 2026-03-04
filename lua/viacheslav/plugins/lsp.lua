@@ -73,15 +73,7 @@ return {
         end,
         ['docker_compose_language_service'] = function()
           require('lspconfig').docker_compose_language_service.setup {
-            root_dir = require('lspconfig.util').root_pattern(
-              'docker-compose.yaml',
-              'Docker-compose.yaml',
-              'docker-compose.yml',
-              'Docker-compose.yml',
-              'compose.yaml',
-              'compose.yml',
-              '.git'
-            ),
+            root_dir = require('lspconfig.util').root_pattern('docker-compose.yaml', 'Docker-compose.yaml', 'docker-compose.yml', 'Docker-compose.yml', 'compose.yaml', 'compose.yml', '.git'),
           }
         end,
       },

@@ -1,7 +1,4 @@
 {
-  "Lua": {
-    "diagnostics": {
-      "globals": ["vim", "TelescopePrompt"]
-    }
-  }
+  "runtime.version": "LuaJIT",
+  "diagnostics.globals": ["vim"]
 }
