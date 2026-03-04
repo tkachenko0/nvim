@@ -1,14 +1,21 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.o.laststatus = 3
 vim.opt.signcolumn = 'yes'
 vim.o.confirm = true
 vim.opt.scrolloff = 8
 vim.opt.termguicolors = true
-vim.opt.wrap = false
 vim.opt.swapfile = false
 vim.opt.backup = false
+
+vim.opt.wrap = false
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'markdown',
+  callback = function()
+    vim.wo.wrap = true
+    vim.wo.linebreak = true
+  end,
+})
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
