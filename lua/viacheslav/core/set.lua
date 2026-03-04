@@ -5,8 +5,6 @@ vim.opt.signcolumn = 'yes'
 vim.o.confirm = true
 vim.opt.scrolloff = 8
 vim.opt.termguicolors = true
-vim.opt.swapfile = false
-vim.opt.backup = false
 
 vim.opt.wrap = false
 vim.api.nvim_create_autocmd('FileType', {
