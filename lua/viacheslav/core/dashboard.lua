@@ -24,7 +24,7 @@ vim.api.nvim_create_autocmd('VimEnter', {
       local lines = {}
 
       for _, file in ipairs(recent) do
-        table.insert(lines, vim.fn.fnamemodify(file, ':~:.'))
+        table.insert(lines, vim.fn.fnamemodify(file, ':t'))
       end
 
       vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
