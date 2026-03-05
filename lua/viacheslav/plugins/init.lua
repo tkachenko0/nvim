@@ -5,6 +5,11 @@ return {
     name = 'plenary',
   },
 
+  {
+    'laytan/cloak.nvim',
+    config = function() require('cloak').setup() end,
+  },
+
   { 'NMAC427/guess-indent.nvim', opts = {} },
 
   {
@@ -18,6 +23,17 @@ return {
         },
       }
     end,
+  },
+
+  {
+    'stevearc/aerial.nvim',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+    },
+    keys = {
+      { '<leader>a', '<cmd>AerialToggle!<CR>' },
+    },
+    opts = {},
   },
 
   {
