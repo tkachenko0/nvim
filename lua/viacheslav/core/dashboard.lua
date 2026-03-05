@@ -1,4 +1,4 @@
-local RECENT_FILES_COUNT = 3
+local RECENT_FILES_COUNT = 10
 
 vim.api.nvim_create_autocmd('VimEnter', {
   callback = function()
