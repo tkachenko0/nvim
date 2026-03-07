@@ -3,13 +3,13 @@ vim.g.maplocalleader = ' '
 
 local set = vim.keymap.set
 
--- set("n", "<C-j>", "<c-w><c-j>")
--- set("n", "<C-k>", "<c-w><c-k>")
--- set("n", "<C-l>", "<c-w><c-l>")
--- set("n", "<C-h>", "<c-w><c-h>")
+set("n", "<C-j>", "<c-w><c-j>")
+set("n", "<C-k>", "<c-w><c-k>")
+set("n", "<C-l>", "<c-w><c-l>")
+set("n", "<C-h>", "<c-w><c-h>")
 
-set('n', '<C-k>', '<cmd>cnext<CR>zz')
-set('n', '<C-j>', '<cmd>cprev<CR>zz')
+set('n', '<leader>k', '<cmd>cnext<CR>zz')
+set('n', '<leader>j', '<cmd>cprev<CR>zz')
 
 set('v', '<A-j>', ":m '>+1<CR>gv=gv")
 set('v', '<A-k>', ":m '<-2<CR>gv=gv")
