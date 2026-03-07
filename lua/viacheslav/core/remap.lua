@@ -8,8 +8,8 @@ set("n", "<C-k>", "<c-w><c-k>")
 set("n", "<C-l>", "<c-w><c-l>")
 set("n", "<C-h>", "<c-w><c-h>")
 
-set('n', '<leader>k', '<cmd>cnext<CR>zz')
-set('n', '<leader>j', '<cmd>cprev<CR>zz')
+set('n', '[j', '<cmd>cprev<CR>zz')
+set('n', ']k', '<cmd>cnext<CR>zz')
 
 set('v', '<A-j>', ":m '>+1<CR>gv=gv")
 set('v', '<A-k>', ":m '<-2<CR>gv=gv")
@@ -31,3 +31,18 @@ set('n', '<', '<<')
 
 set('n', '<Tab>', '<C-6>')
 set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer<CR>')
+
+vim.api.nvim_create_autocmd('LspAttach', {
+    callback = function(e)
+        local opts = { buffer = e.buf }
+        set('n', 'gd', function() vim.lsp.buf.definition() end, opts)
+        set('n', 'K', function() vim.lsp.buf.hover { border = 'single' } end, opts)
+        set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+        set('n', 'gr', vim.lsp.buf.references, opts)
+        set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+        set('n', '[D', vim.diagnostic.goto_prev, opts)
+        set('n', ']D', vim.diagnostic.goto_next, opts)
+        set('n', '[d', function() vim.diagnostic.goto_prev { severity = vim.diagnostic.severity.ERROR } end, opts)
+        set('n', ']d', function() vim.diagnostic.goto_next { severity = vim.diagnostic.severity.ERROR } end, opts)
+    end,
+})
