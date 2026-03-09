@@ -8,9 +8,6 @@ set("n", "<C-k>", "<c-w><c-k>")
 set("n", "<C-l>", "<c-w><c-l>")
 set("n", "<C-h>", "<c-w><c-h>")
 
-set('n', '[j', '<cmd>cprev<CR>zz')
-set('n', ']k', '<cmd>cnext<CR>zz')
-
 set('v', '<A-j>', ":m '>+1<CR>gv=gv")
 set('v', '<A-k>', ":m '<-2<CR>gv=gv")
 set('n', '<A-j>', ':m .+1<CR>==')
@@ -19,7 +16,7 @@ set('n', '<A-k>', ':m .-2<CR>==')
 set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 set('v', '<leader>s', '"hy:%s/<C-r>h/<C-r>h/g<Left><Left>')
 
-vim.keymap.set('n', '<leader>q', function()
+local function toggle_qf()
     for _, win in ipairs(vim.fn.getwininfo()) do
         if win.quickfix == 1 then
             vim.cmd('cclose')
@@ -27,18 +24,18 @@ vim.keymap.set('n', '<leader>q', function()
         end
     end
     vim.cmd('copen')
+end
+
+set('n', '<leader>q', toggle_qf)
+set('n', '<leader>x', function()
+    vim.diagnostic.setqflist()
+    toggle_qf()
 end)
 
-vim.keymap.set('n', '<leader>x', function()
-    for _, win in ipairs(vim.fn.getwininfo()) do
-        if win.quickfix == 1 then
-            vim.cmd('cclose')
-            return
-        end
-    end
-    vim.diagnostic.setqflist()
-    vim.cmd('copen')
-end, { desc = 'Diagnostics (quickfix)' })
+set('n', '[D', vim.diagnostic.goto_prev)
+set('n', ']D', vim.diagnostic.goto_next)
+set('n', '[d', function() vim.diagnostic.goto_prev { severity = vim.diagnostic.severity.ERROR } end)
+set('n', ']d', function() vim.diagnostic.goto_next { severity = vim.diagnostic.severity.ERROR } end)
 
 set('x', 'p', '"_dP')
 set({ 'n', 'v' }, '<leader>p', '"+P')
@@ -61,9 +58,5 @@ vim.api.nvim_create_autocmd('LspAttach', {
         set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
         set('n', 'gr', vim.lsp.buf.references, opts)
         set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-        set('n', '[D', vim.diagnostic.goto_prev, opts)
-        set('n', ']D', vim.diagnostic.goto_next, opts)
-        set('n', '[d', function() vim.diagnostic.goto_prev { severity = vim.diagnostic.severity.ERROR } end, opts)
-        set('n', ']d', function() vim.diagnostic.goto_next { severity = vim.diagnostic.severity.ERROR } end, opts)
     end,
 })
