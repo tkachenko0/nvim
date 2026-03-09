@@ -33,7 +33,7 @@ return {
         'ts_ls',
         'cssls',
         'html',
-        'angularls',
+        -- 'angularls',
         'pyright',
         'jsonls',
         'dockerls',
