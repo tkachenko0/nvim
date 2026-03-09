@@ -19,6 +19,16 @@ set('n', '<A-k>', ':m .-2<CR>==')
 set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 set('v', '<leader>s', '"hy:%s/<C-r>h/<C-r>h/g<Left><Left>')
 
+vim.keymap.set('n', '<leader>q', function()
+    for _, win in ipairs(vim.fn.getwininfo()) do
+        if win.quickfix == 1 then
+            vim.cmd('cclose')
+            return
+        end
+    end
+    vim.cmd('copen')
+end)
+
 set('x', 'p', '"_dP')
 set({ 'n', 'v' }, '<leader>p', '"+P')
 set({ 'n', 'v' }, 'y', '"+y')
