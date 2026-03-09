@@ -16,7 +16,7 @@ set('n', '<A-k>', ':m .-2<CR>==')
 set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 set('v', '<leader>s', '"hy:%s/<C-r>h/<C-r>h/g<Left><Left>')
 
-local function toggle_qf()
+set('n', '<leader>q', function()
     for _, win in ipairs(vim.fn.getwininfo()) do
         if win.quickfix == 1 then
             vim.cmd('cclose')
@@ -24,12 +24,6 @@ local function toggle_qf()
         end
     end
     vim.cmd('copen')
-end
-
-set('n', '<leader>q', toggle_qf)
-set('n', '<leader>x', function()
-    vim.diagnostic.setqflist()
-    toggle_qf()
 end)
 
 set('n', '[D', vim.diagnostic.goto_prev)
