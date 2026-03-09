@@ -5,13 +5,7 @@ return {
     local lint = require 'lint'
 
     lint.linters_by_ft = {
-      markdown = { 'markdownlint' },
-    }
-
-    lint.linters.markdownlint.args = {
-      '--disable',
-      'MD013',
-      '--stdin',
+      markdown = {},
     }
 
     vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave' }, {

@@ -23,11 +23,7 @@ return {
 
     local builtin = require 'telescope.builtin'
 
-    vim.keymap.set('n', '<C-p>', function()
-      builtin.git_files {
-        additional_args = { '--ignore-case' },
-      }
-    end)
+    vim.keymap.set('n', '<C-p>', builtin.git_files)
     vim.keymap.set('n', '<leader>ff', function()
       builtin.find_files {
         hidden = true,

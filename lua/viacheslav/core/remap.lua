@@ -29,6 +29,17 @@ vim.keymap.set('n', '<leader>q', function()
     vim.cmd('copen')
 end)
 
+vim.keymap.set('n', '<leader>x', function()
+    for _, win in ipairs(vim.fn.getwininfo()) do
+        if win.quickfix == 1 then
+            vim.cmd('cclose')
+            return
+        end
+    end
+    vim.diagnostic.setqflist()
+    vim.cmd('copen')
+end, { desc = 'Diagnostics (quickfix)' })
+
 set('x', 'p', '"_dP')
 set({ 'n', 'v' }, '<leader>p', '"+P')
 set({ 'n', 'v' }, 'y', '"+y')

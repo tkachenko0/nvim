@@ -40,7 +40,7 @@ return {
       graphql = { 'prettier' },
       liquid = { 'prettier' },
       lua = {},
-      python = { 'isort', 'black' },
+      python = {},
       sql = { 'sql_formatter' },
     },
   },
