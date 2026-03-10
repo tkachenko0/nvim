@@ -6,17 +6,6 @@ return {
     'FormatEnable',
     'FormatDisable',
   },
-  keys = {
-    {
-      '<leader>F',
-      function()
-        require('conform').format {
-          async = true,
-          lsp_fallback = true,
-        }
-      end,
-    },
-  },
   opts = {
     format_on_save = function()
       return vim.g.autoformat_enabled and {
