@@ -63,6 +63,9 @@ return {
             { 'n', 'U',         actions.unstage_all },
             { 'n', '<leader>e', '<cmd>DiffviewToggleFiles<cr>' },
           },
+          file_history_panel = {
+            { 'n', '<leader>e', '<cmd>DiffviewToggleFiles<cr>' },
+          },
         },
       }
     end,
