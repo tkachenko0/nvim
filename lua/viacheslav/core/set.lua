@@ -31,20 +31,28 @@ vim.opt.foldmethod = 'indent'
 vim.opt.autoread = true
 vim.opt.updatetime = 50
 vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter', 'CursorHold', 'CursorHoldI' }, {
-    pattern = '*',
-    command = "if mode() != 'c' | checktime | endif",
+  pattern = '*',
+  command = "if mode() != 'c' | checktime | endif",
 })
 
 vim.diagnostic.config {
-    update_in_insert = true,
-    severity_sort = true,
-    float = {
-        source = 'always',
-        border = 'rounded',
-    },
+  update_in_insert = true,
+  severity_sort = true,
+  float = {
+    source = 'always',
+    border = 'rounded',
+  },
 }
 
 vim.api.nvim_create_autocmd('TextYankPost', {
-    pattern = '*',
-    callback = function() vim.highlight.on_yank() end,
+  pattern = '*',
+  callback = function() vim.highlight.on_yank() end,
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'txt', 'markdown', 'md', 'text' },
+  callback = function()
+    vim.opt_local.wrap = true -- Enable line wrapping
+    vim.opt_local.spell = true -- Enable spell checking
+  end,
 })
