@@ -12,7 +12,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup({ { import = 'viacheslav.plugins' } }, {
+require('lazy').setup({ { import = 'plugins' } }, {
   checker = {
     enabled = true,
     notify = false,

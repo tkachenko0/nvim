@@ -1,2 +1,2 @@
-require 'viacheslav.core'
-require 'viacheslav.lazy'
+require 'core'
+require 'lazy-setup'
