@@ -57,3 +57,9 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.opt_local.spelllang = 'en,it'
   end,
 })
+
+vim.filetype.add {
+  pattern = {
+    ['%.env%.[%w_.-]+'] = 'sh',
+  },
+}
