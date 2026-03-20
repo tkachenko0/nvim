@@ -56,6 +56,9 @@ return {
           },
         },
         keymaps = {
+          view = {
+            { 'n', 'gf', actions.goto_file_edit },
+          },
           file_panel = {
             { 'n', 'a',         actions.toggle_stage_entry },
             { 'n', 'A',         actions.stage_all },
