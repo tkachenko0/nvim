@@ -22,34 +22,29 @@ vim.o.smartcase = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
-vim.opt.foldcolumn = '0'
-vim.opt.foldlevel = 99
-vim.opt.foldlevelstart = 99
-vim.opt.foldmethod = 'indent'
-
 vim.opt.autoread = true
 vim.opt.updatetime = 50
 vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter', 'CursorHold', 'CursorHoldI' }, {
-  pattern = '*',
-  command = "if mode() != 'c' | checktime | endif",
+    pattern = '*',
+    command = "if mode() != 'c' | checktime | endif",
 })
 
 vim.diagnostic.config {
-  update_in_insert = true,
-  severity_sort = true,
-  float = {
-    source = 'always',
-    border = 'rounded',
-  },
+    update_in_insert = true,
+    severity_sort = true,
+    float = {
+        source = 'always',
+        border = 'rounded',
+    },
 }
 
 vim.api.nvim_create_autocmd('TextYankPost', {
-  pattern = '*',
-  callback = function() vim.highlight.on_yank() end,
+    pattern = '*',
+    callback = function() vim.highlight.on_yank() end,
 })
 
 vim.filetype.add {
-  pattern = {
-    ['%.env%.[%w_.-]+'] = 'sh',
-  },
+    pattern = {
+        ['%.env%.[%w_.-]+'] = 'sh',
+    },
 }
