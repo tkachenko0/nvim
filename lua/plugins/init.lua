@@ -6,14 +6,6 @@ return {
   },
 
   {
-    "jiaoshijie/undotree",
-    opts = {},
-    keys = {
-      { "<leader>u", "<cmd>lua require('undotree').toggle()<cr>" },
-    },
-  },
-
-  {
     'laytan/cloak.nvim',
     config = function() require('cloak').setup() end,
   },

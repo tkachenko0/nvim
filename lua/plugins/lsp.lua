@@ -18,7 +18,6 @@ return {
     require('mason-tool-installer').setup {
       ensure_installed = {
         'prettier',
-        'stylua',
         'pylint',
         'roslyn',
         'sql-formatter',
@@ -33,7 +32,6 @@ return {
         'ts_ls',
         'cssls',
         'html',
-        -- 'angularls',
         'pyright',
         'jsonls',
         'dockerls',

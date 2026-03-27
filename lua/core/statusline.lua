@@ -26,8 +26,6 @@ local function diagnostics()
   return ' ' .. table.concat(parts, ' ')
 end
 
-local function modified() return vim.bo.modified and ' [+]' or '' end
-
 local function lsp_status()
   local clients = vim.lsp.get_clients { bufnr = 0 }
   if #clients == 0 then return '' end
@@ -38,17 +36,16 @@ local function lsp_status()
   return ' %#Type#[' .. table.concat(names, ', ') .. ']%*'
 end
 
-local function filetype() return vim.bo.filetype ~= '' and ' ' .. vim.bo.filetype or '' end
 
 function _G.statusline()
   return table.concat {
     git_branch(),
     ' %t',
-    modified(),
+    vim.bo.modified and ' [+]' or '',
     diagnostics(),
     '%=',
     lsp_status(),
-    filetype(),
+    vim.bo.filetype ~= '' and ' ' .. vim.bo.filetype or '',
   }
 end
 

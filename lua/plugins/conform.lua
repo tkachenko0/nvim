@@ -28,8 +28,6 @@ return {
       markdown = { 'prettier' },
       graphql = { 'prettier' },
       liquid = { 'prettier' },
-      lua = {},
-      python = {},
       sql = { 'sql_formatter' },
     },
   },

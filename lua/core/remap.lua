@@ -1,5 +1,4 @@
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
 
 local set = vim.keymap.set
 
@@ -31,9 +30,8 @@ set('n', ']D', vim.diagnostic.goto_next)
 set('n', '[d', function() vim.diagnostic.goto_prev { severity = vim.diagnostic.severity.ERROR } end)
 set('n', ']d', function() vim.diagnostic.goto_next { severity = vim.diagnostic.severity.ERROR } end)
 
-set('x', 'p', '"_dP')
-set({ 'n', 'v' }, '<leader>p', '"+P')
 set({ 'n', 'v' }, 'y', '"+y')
+set({ 'n', 'v' }, '<leader>p', '"+p')
 set({ 'n', 'v' }, '<leader>c', '"+c')
 
 set('v', '<', '<gv')

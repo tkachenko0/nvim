@@ -4,14 +4,6 @@ return {
     'lewis6991/gitsigns.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
     opts = {
-      -- current_line_blame = true,
-      -- current_line_blame_opts = {
-      --   virt_text = true,
-      --   delay = 0,
-      --   ignore_whitespace = false,
-      --   virt_text_priority = 100,
-      --   use_focus = true,
-      -- },
       on_attach = function(bufnr)
         local gs = package.loaded.gitsigns
         local function map(mode, l, r)
@@ -57,9 +49,6 @@ return {
           },
         },
         keymaps = {
-          view = {
-            { 'n', 'gf', actions.goto_file_edit },
-          },
           file_panel = {
             { 'n', 'a',         actions.toggle_stage_entry },
             { 'n', 'A',         actions.stage_all },

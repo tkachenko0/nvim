@@ -5,7 +5,6 @@ vim.opt.signcolumn = 'yes'
 vim.opt.confirm = true
 vim.opt.scrolloff = 8
 vim.opt.termguicolors = true
-vim.opt.wrap = false
 vim.opt.cursorline = true
 vim.opt.laststatus = 3
 
@@ -47,15 +46,6 @@ vim.diagnostic.config {
 vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
   callback = function() vim.highlight.on_yank() end,
-})
-
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'txt', 'markdown', 'md', 'text' },
-  callback = function()
-    vim.opt_local.wrap = true
-    vim.opt_local.spell = true
-    vim.opt_local.spelllang = 'en,it'
-  end,
 })
 
 vim.filetype.add {
