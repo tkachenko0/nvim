@@ -31,6 +31,7 @@ return {
         no_ignore_parent = true,
       }
     end)
+    vim.keymap.set('n', '<leader>fR', builtin.resume)
     vim.keymap.set('n', '<leader>fr', builtin.lsp_references)
     vim.keymap.set('n', '<leader>fs', builtin.lsp_document_symbols)
     vim.keymap.set('n', '<leader>fS', builtin.lsp_dynamic_workspace_symbols)
