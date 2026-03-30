@@ -13,6 +13,7 @@ set('n', '<A-j>', ':m .+1<CR>==')
 set('n', '<A-k>', ':m .-2<CR>==')
 
 set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+set('v', '<leader>s', '"hy:%s/<C-r>h/<C-r>h/g<Left><Left>')
 
 set('n', '<leader>q', function()
     for _, win in ipairs(vim.fn.getwininfo()) do
