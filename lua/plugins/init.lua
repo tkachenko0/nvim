@@ -5,8 +5,6 @@ return {
     name = 'plenary',
   },
 
-  'RRethy/vim-illuminate',
-
   {
     'laytan/cloak.nvim',
     config = function() require('cloak').setup() end,
@@ -36,11 +34,5 @@ return {
       { '<leader>a', '<cmd>AerialToggle!<CR>' },
     },
     opts = {},
-  },
-
-  {
-    'windwp/nvim-autopairs',
-    event = 'InsertEnter',
-    config = function() require('nvim-autopairs').setup() end,
   },
 }
