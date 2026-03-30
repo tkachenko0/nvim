@@ -5,6 +5,8 @@ return {
     name = 'plenary',
   },
 
+  'RRethy/vim-illuminate',
+
   {
     'laytan/cloak.nvim',
     config = function() require('cloak').setup() end,
