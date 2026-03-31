@@ -43,6 +43,7 @@ return {
     config = function()
       local actions = require 'diffview.actions'
       require('diffview').setup {
+        use_icons = false,
         view = {
           merge_tool = {
             layout = 'diff3_mixed',
