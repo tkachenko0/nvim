@@ -69,4 +69,9 @@ return {
       }
     end,
   },
+
+  {
+    -- dir = '~/dev/personal/diffstore.nvim',
+    'tkachenko0/diffstore.nvim',
+  },
 }
