@@ -4,6 +4,19 @@ local function git_branch()
   return ''
 end
 
+local function git_diff()
+  local s = vim.b.gitsigns_status_dict
+  if not s then return '' end
+
+  local parts = {}
+  if (s.added or 0) > 0 then table.insert(parts, '%#DiffAdd#+' .. s.added .. '%*') end
+  if (s.changed or 0) > 0 then table.insert(parts, '%#DiffChange#~' .. s.changed .. '%*') end
+  if (s.removed or 0) > 0 then table.insert(parts, '%#DiffDelete#-' .. s.removed .. '%*') end
+
+  if #parts == 0 then return '' end
+  return ' ' .. table.concat(parts, ' ')
+end
+
 local function diagnostics()
   local diags = vim.diagnostic.get(0)
   if vim.tbl_isempty(diags) then return '' end
@@ -40,6 +53,7 @@ end
 function _G.statusline()
   return table.concat {
     git_branch(),
+    git_diff(),
     ' %t',
     vim.bo.modified and ' [+]' or '',
     diagnostics(),
