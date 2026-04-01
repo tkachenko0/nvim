@@ -6,9 +6,8 @@ return {
   },
   cmd = { 'DBUI', 'DBUIToggle', 'DBUIAddConnection', 'DB' },
   keys = {
-    { '<leader>db', '<cmd>DBUIToggle<CR>' },
-    { '<leader>r',  ':%DB<CR>',           mode = 'n' },
-    { '<leader>r',  ':DB<CR>',            mode = 'v' },
+    { '<leader>r', ':%DB<CR>', mode = 'n' },
+    { '<leader>r', ':DB<CR>',  mode = 'v' },
   },
   init = function()
     vim.g.db_ui_show_database_icon = 0
