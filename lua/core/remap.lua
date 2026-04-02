@@ -48,7 +48,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
         set('n', 'gd', function() vim.lsp.buf.definition() end, opts)
         set('n', 'K', function() vim.lsp.buf.hover { border = 'single' } end, opts)
         set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
-        set('n', 'gr', vim.lsp.buf.references, opts)
         set('n', '<leader>rn', vim.lsp.buf.rename, opts)
     end,
 })
