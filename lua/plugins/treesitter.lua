@@ -52,21 +52,6 @@ return {
   },
 
   {
-    'MeanderingProgrammer/treesitter-modules.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
-    opts = {
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = '<M-w>',
-          node_incremental = '<M-w>',
-          node_decremental = '<M-W>',
-        },
-      },
-    },
-  },
-
-  {
     "nvim-treesitter/nvim-treesitter-context",
     after = "nvim-treesitter",
     config = function()
