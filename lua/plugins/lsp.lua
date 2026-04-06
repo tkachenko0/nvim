@@ -77,10 +77,21 @@ return {
   },
   {
     'seblyng/roslyn.nvim',
+    ft = 'cs',
     opts = {
       filewatching = 'auto',
       broad_search = false,
       lock_target = false,
     },
+    init = function()
+      vim.lsp.config('roslyn', {
+        settings = {
+          ['csharp|background_analysis'] = {
+            dotnet_analyzer_diagnostics_scope = 'openFiles',
+            dotnet_compiler_diagnostics_scope = 'openFiles',
+          },
+        },
+      })
+    end,
   },
 }
