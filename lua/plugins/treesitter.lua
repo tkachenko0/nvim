@@ -50,14 +50,4 @@ return {
       })
     end,
   },
-
-  {
-    "nvim-treesitter/nvim-treesitter-context",
-    after = "nvim-treesitter",
-    config = function()
-      require("treesitter-context").setup({
-        max_lines = 1,
-      })
-    end,
-  },
 }

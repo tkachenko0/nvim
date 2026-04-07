@@ -1,11 +1,6 @@
 return {
 
   {
-    'nvim-lua/plenary.nvim',
-    name = 'plenary',
-  },
-
-  {
     'laytan/cloak.nvim',
     config = function() require('cloak').setup() end,
   },
