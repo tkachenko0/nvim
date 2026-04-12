@@ -87,12 +87,19 @@ return {
     'seblyng/roslyn.nvim',
     ft = 'cs',
     opts = {
-      filewatching = 'auto',
+      filewatching = 'off',
       broad_search = false,
       lock_target = false,
     },
     init = function()
       vim.lsp.config('roslyn', {
+        capabilities = {
+          workspace = {
+            didChangeWatchedFiles = {
+              dynamicRegistration = true,
+            },
+          },
+        },
         settings = {
           ['csharp|background_analysis'] = {
             dotnet_analyzer_diagnostics_scope = 'openFiles',
