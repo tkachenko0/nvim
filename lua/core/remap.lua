@@ -30,7 +30,7 @@ set('n', ']D', function() vim.diagnostic.jump { count = 1, float = true } end)
 set('n', '[d', function() vim.diagnostic.jump { count = -1, severity = vim.diagnostic.severity.ERROR, float = true } end)
 set('n', ']d', function() vim.diagnostic.jump { count = 1, severity = vim.diagnostic.severity.ERROR, float = true } end)
 
-set({ 'n', 'v' }, 'y', '"+y')
+set({ 'n', 'v' }, '<leader>y', '"+y')
 set({ 'n', 'v' }, '<leader>p', '"+p')
 set({ 'n', 'v' }, '<leader>c', '"+c')
 
@@ -39,7 +39,6 @@ set('v', '>', '>gv')
 set('n', '>', '>>')
 set('n', '<', '<<')
 
-set('n', '<Tab>', '<C-6>')
 set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer<CR>')
 
 vim.api.nvim_create_autocmd('LspAttach', {

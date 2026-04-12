@@ -21,14 +21,13 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.autoread = true
-vim.opt.updatetime = 50
+vim.opt.updatetime = 250
 vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter', 'CursorHold', 'CursorHoldI' }, {
     pattern = '*',
     command = "if mode() != 'c' | checktime | endif",
 })
 
 vim.diagnostic.config {
-    update_in_insert = true,
     severity_sort = true,
     float = {
         source = true,
