@@ -12,6 +12,9 @@ set('v', '<A-k>', ":m '<-2<CR>gv=gv")
 set('n', '<A-j>', ':m .+1<CR>==')
 set('n', '<A-k>', ':m .-2<CR>==')
 
+set("n", "n", "nzzzv")
+set("n", "N", "Nzzzv")
+
 set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 set('v', '<leader>s', '"hy:%s/<C-r>h/<C-r>h/g<Left><Left>')
 
