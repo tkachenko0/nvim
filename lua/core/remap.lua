@@ -7,6 +7,8 @@ set("n", "<C-k>", "<c-w><c-k>")
 set("n", "<C-l>", "<c-w><c-l>")
 set("n", "<C-h>", "<c-w><c-h>")
 
+set("n", "\\", "<C-^>")
+
 set('v', '<A-j>', ":m '>+1<CR>gv=gv")
 set('v', '<A-k>', ":m '<-2<CR>gv=gv")
 set('n', '<A-j>', ':m .+1<CR>==')
