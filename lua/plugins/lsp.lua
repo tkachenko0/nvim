@@ -89,6 +89,9 @@ return {
       filewatching = 'off',
       broad_search = false,
       lock_target = false,
+      extensions = {
+        razor = { enabled = false },
+      },
     },
     init = function()
       vim.lsp.config('roslyn', {
