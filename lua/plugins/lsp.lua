@@ -2,8 +2,8 @@ return {
   {
     'neovim/nvim-lspconfig',
     dependencies = {
-      'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
+      'mason-org/mason.nvim',
+      'mason-org/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
       'b0o/schemastore.nvim',
     },
@@ -25,6 +25,38 @@ return {
         run_on_start = true,
       }
 
+      vim.lsp.config('jsonls', {
+        settings = {
+          json = {
+            schemas = require('schemastore').json.schemas(),
+            validate = { enable = true },
+          },
+        },
+      })
+
+      vim.lsp.config('yamlls', {
+        settings = {
+          yaml = {
+            validate = true,
+            hover = true,
+            completion = true,
+            schemas = require('schemastore').yaml.schemas(),
+            schemaStore = { enable = false },
+            format = { enable = true },
+          },
+        },
+      })
+
+      vim.lsp.config('docker_compose_language_service', {
+        root_markers = {
+          'docker-compose.yaml',
+          'docker-compose.yml',
+          'compose.yaml',
+          'compose.yml',
+          '.git',
+        },
+      })
+
       require('mason-lspconfig').setup {
         ensure_installed = {
           'lua_ls',
@@ -38,46 +70,6 @@ return {
           'yamlls',
           'eslint',
           'sqlls',
-        },
-        handlers = {
-          function(server_name) require('lspconfig')[server_name].setup {} end,
-          ['jsonls'] = function()
-            require('lspconfig').jsonls.setup {
-              settings = {
-                json = {
-                  schemas = require('schemastore').json.schemas(),
-                  validate = { enable = true },
-                },
-              },
-            }
-          end,
-          ['yamlls'] = function()
-            require('lspconfig').yamlls.setup {
-              settings = {
-                yaml = {
-                  validate = true,
-                  hover = true,
-                  completion = true,
-                  schemas = require('schemastore').yaml.schemas(),
-                  schemaStore = { enable = false },
-                  format = { enable = true },
-                },
-              },
-            }
-          end,
-          ['docker_compose_language_service'] = function()
-            require('lspconfig').docker_compose_language_service.setup {
-              root_dir = require('lspconfig.util').root_pattern(
-                'docker-compose.yaml',
-                'Docker-compose.yaml',
-                'docker-compose.yml',
-                'Docker-compose.yml',
-                'compose.yaml',
-                'compose.yml',
-                '.git'
-              ),
-            }
-          end,
         },
       }
     end,

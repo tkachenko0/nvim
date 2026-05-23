@@ -10,7 +10,7 @@ return {
     format_on_save = function()
       return vim.g.autoformat_enabled and {
         timeout_ms = 3000,
-        lsp_fallback = true,
+        lsp_format = 'fallback',
       }
     end,
     formatters_by_ft = {
