@@ -1,7 +1,9 @@
 return {
   'Mofiqul/vscode.nvim',
   config = function()
-    require('vscode').setup {}
+    require('vscode').setup {
+      transparent = true,
+    }
     vim.cmd 'colorscheme vscode'
     vim.api.nvim_set_hl(0, 'DiffAdd', { bg = '#005a00', fg = 'NONE' })
     vim.api.nvim_set_hl(0, 'DiffDelete', { bg = '#5f0000', fg = 'NONE' })
